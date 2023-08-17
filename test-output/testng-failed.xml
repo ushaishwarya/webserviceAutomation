@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="v3.Get.api.GetMeasurementDataBySku">
+      <class name="v3.Get.api.DeleteAccessandRefreshToken">
         <methods>
-          <include name="badRequestWithMultipeScenarious"/>
+          <include name="deletetoken"/>
         </methods>
-      </class> <!-- v3.Get.api.GetMeasurementDataBySku -->
+      </class> <!-- v3.Get.api.DeleteAccessandRefreshToken -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
