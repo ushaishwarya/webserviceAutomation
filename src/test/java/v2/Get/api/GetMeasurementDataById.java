@@ -268,9 +268,4 @@ public class GetMeasurementDataById {
         }
    }
 
-
-    
-
-
-
 }
