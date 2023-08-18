@@ -3,27 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="v3.Get.api.GetMeasurementDataById">
+      <class name="v1.Get.api.GetMeasurementDataBySku">
         <methods>
           <include name="unauthorizedWithMultipeScenarious"/>
           <include name="assertTheExteranlJsonToResponseBodyAndStatusCode"/>
-          <include name="badRequestWithMultipeScenarious"/>
         </methods>
-      </class> <!-- v3.Get.api.GetMeasurementDataById -->
-      <class name="v1.Get.api.GetMeasurementDataById">
-        <methods>
-          <include name="badRequestWithMultipeScenarious"/>
-          <include name="assertTheExteranlJsonToResponseBodyAndStatusCode"/>
-          <include name="unauthorizedWithMultipeScenarious"/>
-        </methods>
-      </class> <!-- v1.Get.api.GetMeasurementDataById -->
-      <class name="v2.Get.api.GetMeasurementDataById">
-        <methods>
-          <include name="assertTheExteranlJsonToResponseBodyAndStatusCode"/>
-          <include name="badRequestWithMultipeScenarious"/>
-          <include name="unauthorizedWithMultipeScenarious"/>
-        </methods>
-      </class> <!-- v2.Get.api.GetMeasurementDataById -->
+      </class> <!-- v1.Get.api.GetMeasurementDataBySku -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

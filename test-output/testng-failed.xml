@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="v3.Get.api.DeleteAccessandRefreshToken">
+      <class name="v3.Get.api.LatestMeasurementImage">
         <methods>
-          <include name="deletetoken"/>
+          <include name="Latestmeasurementimage"/>
         </methods>
-      </class> <!-- v3.Get.api.DeleteAccessandRefreshToken -->
+      </class> <!-- v3.Get.api.LatestMeasurementImage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

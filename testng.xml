@@ -6,6 +6,9 @@
       <class name="v3.Get.api.GetMeasurementDataBySku"/>
       <class name="v1.Get.api.GetMeasurementDataBySku"/>
       <class name="v2.Get.api.GetMeasurementDataBySku"/>
+      <class name="v3.Get.api.DeleteAccessandRefreshToken"/>
+      <class name="v3.Get.api.GenerateNewAccessToken"/>
+      <class name="v3.Get.api.GenerateAPIAccessToken"/>
       <class name="v2.Get.api.GetMeasurementDataById"/>
       <class name="v1.Get.api.GetMeasurementDataById"/>
       <class name="v3.Get.api.GetMeasurementDataById"/>

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-17T13:37:39 IST" name="Default suite" finished-at="2023-08-17T13:37:46 IST" duration-ms="6986">
+  <suite started-at="2023-08-17T18:30:04 IST" name="Default suite" finished-at="2023-08-17T18:30:10 IST" duration-ms="5971">
     <groups>
     </groups>
-    <test started-at="2023-08-17T13:37:39 IST" name="Default test" finished-at="2023-08-17T13:37:46 IST" duration-ms="6986">
-      <class name="v3.Get.api.DeleteAccessandRefreshToken">
-        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.DeleteAccessandRefreshToken@1da2cb77]" started-at="2023-08-17T13:37:40 IST" name="Unauthorized" finished-at="2023-08-17T13:37:44 IST" duration-ms="4175" status="PASS">
+    <test started-at="2023-08-17T18:30:04 IST" name="Default test" finished-at="2023-08-17T18:30:10 IST" duration-ms="5971">
+      <class name="v3.Get.api.LatestMeasurementImage">
+        <test-method signature="Latestmeasurementimage()[pri:0, instance:v3.Get.api.LatestMeasurementImage@22bdb1d0]" started-at="2023-08-17T18:30:04 IST" name="Latestmeasurementimage" finished-at="2023-08-17T18:30:08 IST" duration-ms="4517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Latestmeasurementimage -->
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.LatestMeasurementImage@22bdb1d0]" started-at="2023-08-17T18:30:08 IST" name="Unauthorized" finished-at="2023-08-17T18:30:10 IST" duration-ms="1425" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Unauthorized -->
-        <test-method signature="deletetoken()[pri:0, instance:v3.Get.api.DeleteAccessandRefreshToken@1da2cb77]" started-at="2023-08-17T13:37:44 IST" name="deletetoken" finished-at="2023-08-17T13:37:46 IST" duration-ms="2779" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deletetoken -->
-      </class> <!-- v3.Get.api.DeleteAccessandRefreshToken -->
+      </class> <!-- v3.Get.api.LatestMeasurementImage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

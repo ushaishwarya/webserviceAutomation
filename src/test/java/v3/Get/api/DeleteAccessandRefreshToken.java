@@ -1,11 +1,12 @@
 package v3.Get.api;
 
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
 import static io.restassured.RestAssured.given;
 
 import org.json.JSONObject;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
 
 import credentails.Credentails;
 import credentails.PostAuth;
