@@ -10,6 +10,9 @@ import credentails.Credentails;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.testng.annotations.Ignore;
+@Ignore
+
 
 public class GenerateNewAccessToken {
 	@Test

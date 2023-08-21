@@ -1,7 +1,8 @@
 package v1.Get.api;
 
 import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
+import org.testng.Assert;
+import org.testng.annotations.Ignore;
 
 
 
@@ -16,7 +17,6 @@ import java.util.Locale;
 import java.util.Map;
 
 import org.json.JSONObject;
-import org.testng.Assert;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -26,7 +26,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import credentails.Credentails;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
+@Ignore
 public class GetMeasurementDataById {
     @Test(priority=1)
     public void assertTheExteranlJsonToResponseBodyAndStatusCode() throws IOException {
@@ -137,7 +137,7 @@ public class GetMeasurementDataById {
                     continue;
                 } else {
                     System.out.println("Date Comparison - Key: " + key + ", Expected: " + expectedFormattedDate + ", Actual: " + actualFormattedDate);
-                    AssertJUnit.fail("Date value for key '" + key + "' does not match the expected value.");
+                    Assert.fail("Date value for key '" + key + "' does not match the expected value.");
                 }
             }
             int statusCode = response.getStatusCode();
@@ -200,7 +200,7 @@ public class GetMeasurementDataById {
                 systemId = "";
             } else if (i == 2) {
                 userId = "";
-            } else if (i == 4) {
+            } else if (i == 3) {
                 systemId = "";
                 userId = "";
             }

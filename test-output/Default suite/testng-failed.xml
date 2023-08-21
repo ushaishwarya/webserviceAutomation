@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="v3.Get.api.LatestMeasurementImage">
+      <class name="v3.Get.api.GetMeasurementDatabyRange">
         <methods>
-          <include name="Latestmeasurementimage"/>
+          <include name="assertTheIdRange"/>
+          <include name="assertthedaterange"/>
+          <include name="VerifylegacyFormate"/>
+          <include name="Unauthorized"/>
+          <include name="invalidFromOrToValue"/>
+          <include name="invalidRangeValue"/>
+          <include name="VerifyStandardFormate"/>
         </methods>
-      </class> <!-- v3.Get.api.LatestMeasurementImage -->
+      </class> <!-- v3.Get.api.GetMeasurementDatabyRange -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

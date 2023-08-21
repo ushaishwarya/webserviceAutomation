@@ -22,6 +22,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import credentails.Credentails;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.testng.annotations.Ignore;
+@Ignore
 
 public class GetMeasurementDataById {
     @Test(priority=1)

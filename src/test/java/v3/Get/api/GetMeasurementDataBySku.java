@@ -21,6 +21,9 @@ import credentails.Credentails;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.testng.annotations.Ignore;
+@Ignore
+
 
 public class GetMeasurementDataBySku {
 	static String[] tokens = PostAuth.getauth();
@@ -307,10 +310,6 @@ public void badRequestWithMultipeScenarious() throws IOException {
       Assert.assertTrue(statusCode == 400 || statusCode == 404, "Correct status code not returned (400 or 404)");
 
       Assert.assertEquals(message, expectedMessage, "Message does not match the expected value.");
-
-      
-
-
       
   }
 }

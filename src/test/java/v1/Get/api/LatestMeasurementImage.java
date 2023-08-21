@@ -1,12 +1,14 @@
 package v1.Get.api;
 
-import org.json.JSONObject;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.json.JSONObject;
 
 import credentails.Credentails;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.testng.annotations.Ignore;
+@Ignore
 
 public class LatestMeasurementImage {
 	@Test

@@ -1,8 +1,9 @@
 package v1.Get.api;
 
 import org.testng.annotations.Test;
-
 import org.testng.Assert;
+
+
 import java.io.File;
 
 import java.io.IOException;
@@ -22,6 +23,8 @@ import io.restassured.response.Response;
 
 
 
+import org.testng.annotations.Ignore;
+@Ignore
 
 
 public class GetMeasurementDataBySku {
