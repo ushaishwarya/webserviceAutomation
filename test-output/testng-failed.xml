@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [WebServiceTesting]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Regression(failed)">
-    <parameter name="userFromDate" value="2023-07-18"/>
-    <parameter name="ImageId" value="103405"/>
-    <parameter name="userFromId" value="103300"/>
-    <parameter name="InvalidImageId" value="123"/>
-    <parameter name="userToDate" value="2023-07-19"/>
-    <parameter name="userToId" value="103400"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="v3.Get.api.MeasurementImagebyID">
+      <class name="v1.Get.api.ListMeasurementIDandDates">
         <methods>
-          <include name="Unauthorized" invocation-numbers="0"/>
+          <include name="testScanIdListEndpoint"/>
         </methods>
-      </class> <!-- v3.Get.api.MeasurementImagebyID -->
-      <class name="v1.Get.api.MeasurementImagebyID">
-        <methods>
-          <include name="Unauthorized" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- v1.Get.api.MeasurementImagebyID -->
+      </class> <!-- v1.Get.api.ListMeasurementIDandDates -->
     </classes>
-  </test> <!-- Regression(failed) -->
-</suite> <!-- Failed suite [WebServiceTesting] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
