@@ -3,16 +3,22 @@
 <suite name="Failed suite [WebServiceTesting]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Regression(failed)">
     <parameter name="userFromDate" value="2023-07-18"/>
+    <parameter name="ImageId" value="103405"/>
     <parameter name="userFromId" value="103300"/>
+    <parameter name="InvalidImageId" value="123"/>
     <parameter name="userToDate" value="2023-07-19"/>
     <parameter name="userToId" value="103400"/>
     <classes>
-      <class name="v3.Get.api.GetMeasurementDatabyRange">
+      <class name="v3.Get.api.MeasurementImagebyID">
         <methods>
-          <include name="VerifylegacyFormate" invocation-numbers="0"/>
-          <include name="VerifyStandardFormate" invocation-numbers="0"/>
+          <include name="Unauthorized" invocation-numbers="0"/>
         </methods>
-      </class> <!-- v3.Get.api.GetMeasurementDatabyRange -->
+      </class> <!-- v3.Get.api.MeasurementImagebyID -->
+      <class name="v1.Get.api.MeasurementImagebyID">
+        <methods>
+          <include name="Unauthorized" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- v1.Get.api.MeasurementImagebyID -->
     </classes>
   </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [WebServiceTesting] -->

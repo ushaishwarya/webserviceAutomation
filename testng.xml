@@ -6,30 +6,19 @@
         <parameter name="userToDate" value="2023-07-19" />
         <parameter name="userFromId" value="103300" />
         <parameter name="userToId" value="103400" />
+        
+        <parameter name="ImageId" value="103405" />
 
+		<parameter name="InvalidImageId" value="123"/>
+		
         <classes>
             
-            <class name="v3.Get.api.GenerateAPIAccessToken" />
-            <class name="v3.Get.api.GenerateNewAccessToken" />
-            <class name="v3.Get.api.DeleteAccessandRefreshToken" />
+            
+   	         
+            <class name="v1.Get.api.MeasurementImagebyID" />
+            <class name="v2.Get.api.MeasurementImagebyID" />
+            <class name="v3.Get.api.MeasurementImagebyID" />
 
-
-            <class name="v1.Get.api.GetMeasurementDataById" />
-            <class name="v2.Get.api.GetMeasurementDataById" />
-            <class name="v3.Get.api.GetMeasurementDataById" />
-                        
-            <class name="v1.Get.api.GetMeasurementDataBySku" />
-            <class name="v2.Get.api.GetMeasurementDataBySku" />
-            <class name="v3.Get.api.GetMeasurementDataBySku" />
-
-
-            <class name="v1.Get.api.GetMeasurementDatabyRange" />
-            <class name="v2.Get.api.GetMeasurementDatabyRange" />
-             <class name="v3.Get.api.GetMeasurementDatabyRange" />
-             
-            <class name="v1.Get.api.LatestMeasurementImage" />
-            <class name="v2.Get.api.LatestMeasurementImage" />
-            <class name="v3.Get.api.LatestMeasurementImage" />
 
 
 
