@@ -3,22 +3,24 @@
 <suite name="Failed suite [WebServiceTesting]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Regression(failed)">
     <parameter name="userFromDate" value="2023-07-18"/>
-    <parameter name="ImageId" value="103405"/>
+    <parameter name="lessninty" value="2023-01-19"/>
+    <parameter name="systemid" value="1668776078569L2IFEtHqjr-H-KP5TILeo267Zwu"/>
+    <parameter name="endDate" value="2023-07-19"/>
+    <parameter name="secretid" value="3fe4ed66-3cfb-4524-abdb-b0cf777ffe91"/>
     <parameter name="userFromId" value="103300"/>
-    <parameter name="InvalidImageId" value="123"/>
     <parameter name="userToDate" value="2023-07-19"/>
+    <parameter name="userid" value="1673253571738_9w3cqD7Fb7JxJHk8116pkThP1c"/>
+    <parameter name="ImageId" value="103405"/>
+    <parameter name="InvalidImageId" value="123"/>
     <parameter name="userToId" value="103400"/>
+    <parameter name="Sku" value="1q!@"/>
+    <parameter name="startDate" value="2023-07-18"/>
     <classes>
-      <class name="v3.Get.api.MeasurementImagebyID">
+      <class name="v3.Get.api.GetAllMeasurementDatabySKU">
         <methods>
-          <include name="Unauthorized" invocation-numbers="0"/>
+          <include name="unauthorizedWithMultipeScenarious" invocation-numbers="0"/>
         </methods>
-      </class> <!-- v3.Get.api.MeasurementImagebyID -->
-      <class name="v1.Get.api.MeasurementImagebyID">
-        <methods>
-          <include name="Unauthorized" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- v1.Get.api.MeasurementImagebyID -->
+      </class> <!-- v3.Get.api.GetAllMeasurementDatabySKU -->
     </classes>
   </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [WebServiceTesting] -->

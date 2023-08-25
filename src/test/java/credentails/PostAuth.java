@@ -4,6 +4,10 @@ package credentails;
 
 import static io.restassured.RestAssured.given;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -17,7 +21,16 @@ public class PostAuth {
 	   
 	    	
 	        RestAssured.baseURI =Credentails.v3;
-           String jsonBody = String.format("{\"user_id\":\"%s\",\"secret_id\":\"%s\"}", Credentails.userid, Credentails.secretid);
+	        // Create a Map to represent the dynamic payload
+	        Map<String, Object> requestBody = new HashMap<>();
+	        requestBody.put("user_id", Credentails.userid);
+	        requestBody.put("secret_id",Credentails.secretid);
+
+
+	        // Convert the Map to JSON using Gson
+	        Gson gson = new Gson();
+	        String jsonBody = gson.toJson(requestBody);
+	        
 
 	        Response response = given()
 	        		

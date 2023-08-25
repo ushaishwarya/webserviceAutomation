@@ -1,8 +1,14 @@
 package v3.Get.api;
 
 import org.testng.annotations.Test;
+
+import com.google.gson.Gson;
+
 import org.testng.Assert;
 import static io.restassured.RestAssured.given;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import org.json.JSONObject;
 
@@ -10,8 +16,6 @@ import credentails.Credentails;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.annotations.Ignore;
-@Ignore
 
 
 public class GenerateAPIAccessToken {
@@ -23,7 +27,17 @@ public class GenerateAPIAccessToken {
 	   
 	    	
 	        RestAssured.baseURI =Credentails.v3;
-           String jsonBody = String.format("{\"user_id\":\"%s\",\"secret_id\":\"%s\"}", Credentails.userid, Credentails.secretid);
+	        // Create a Map to represent the dynamic payload
+	        Map<String, Object> requestBody = new HashMap<>();
+	        requestBody.put("user_id", Credentails.userid);
+	        requestBody.put("secret_id",Credentails.secretid);
+
+
+	        // Convert the Map to JSON using Gson
+	        Gson gson = new Gson();
+	        String jsonBody = gson.toJson(requestBody);
+	        
+
 
 	        Response response = given()
 	        		
@@ -32,10 +46,12 @@ public class GenerateAPIAccessToken {
 	            
             
 	           .when()
-	            .post("auth")
+	            .post("/auth")
 	            .then()
 	            .extract()
 	            .response();
+	        
+	        System.out.println(response.asPrettyString());
 	            
 	            int statuscode=response.getStatusCode();
 	            
