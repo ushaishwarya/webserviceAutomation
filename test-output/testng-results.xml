@@ -1,196 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-25T16:22:30 IST" name="WebServiceTesting" finished-at="2023-08-25T16:22:45 IST" duration-ms="14810">
+  <suite started-at="2023-08-30T14:16:33 IST" name="Default suite" finished-at="2023-08-30T14:16:39 IST" duration-ms="5489">
     <groups>
     </groups>
-    <test started-at="2023-08-25T16:22:30 IST" name="Regression" finished-at="2023-08-25T16:22:45 IST" duration-ms="14810">
-      <class name="v3.Get.api.GetAllMeasurementDatabySKU">
-        <test-method signature="SkipFailureIsFalse(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:30 IST" name="SkipFailureIsFalse" finished-at="2023-08-25T16:22:32 IST" duration-ms="1681" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2023-07-18]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2023-07-19]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2023-08-30T14:16:33 IST" name="Default test" finished-at="2023-08-30T14:16:39 IST" duration-ms="5489">
+      <class name="v3.Get.api.LiveMeasurementCheck">
+        <test-method signature="testNoImageFound()[pri:0, instance:v3.Get.api.LiveMeasurementCheck@1980a3f]" started-at="2023-08-30T14:16:33 IST" name="testNoImageFound" finished-at="2023-08-30T14:16:39 IST" duration-ms="5463" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [23.5] but found [23.0]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [23.5] but found [23.0]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:765)
+at org.testng.Assert.assertEquals(Assert.java:785)
+at v3.Get.api.LiveMeasurementCheck.testNoImageFound(LiveMeasurementCheck.java:67)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SkipFailureIsFalse -->
-        <test-method signature="SkipFailureIsTrue(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:32 IST" name="SkipFailureIsTrue" finished-at="2023-08-25T16:22:33 IST" duration-ms="1435" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2023-07-18]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2023-07-19]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SkipFailureIsTrue -->
-        <test-method signature="badRequestmultiplescenario()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:33 IST" name="badRequestmultiplescenario" finished-at="2023-08-25T16:22:34 IST" duration-ms="1369" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- badRequestmultiplescenario -->
-        <test-method signature="badRequestmultiplescenario(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:34 IST" name="badRequestmultiplescenario" finished-at="2023-08-25T16:22:36 IST" duration-ms="1540" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2023-07-19]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2023-01-19]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- badRequestmultiplescenario -->
-        <test-method signature="lessThanStartDate(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:36 IST" name="lessThanStartDate" finished-at="2023-08-25T16:22:37 IST" duration-ms="1310" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2023-07-18]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2023-07-19]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- lessThanStartDate -->
-        <test-method signature="noMeasurement(java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:37 IST" name="noMeasurement" finished-at="2023-08-25T16:22:39 IST" duration-ms="1448" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- noMeasurement -->
-        <test-method signature="unauthorizedWithMultipeScenarious(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:39 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-08-25T16:22:40 IST" duration-ms="1532" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2023-07-18]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2023-07-19]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unauthorizedWithMultipeScenarious -->
-        <test-method signature="verifySkuId(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:40 IST" name="verifySkuId" finished-at="2023-08-25T16:22:42 IST" duration-ms="1547" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2023-07-18]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2023-07-19]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySkuId -->
-        <test-method signature="verifylegacyFormat(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:42 IST" name="verifylegacyFormat" finished-at="2023-08-25T16:22:43 IST" duration-ms="1446" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2023-07-18]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2023-07-19]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifylegacyFormat -->
-        <test-method signature="verifystandardFormat(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@74b86971]" started-at="2023-08-25T16:22:43 IST" name="verifystandardFormat" finished-at="2023-08-25T16:22:45 IST" duration-ms="1453" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1q!@]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2023-07-18]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2023-07-19]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifystandardFormat -->
-      </class> <!-- v3.Get.api.GetAllMeasurementDatabySKU -->
-    </test> <!-- Regression -->
-  </suite> <!-- WebServiceTesting -->
+        </test-method> <!-- testNoImageFound -->
+      </class> <!-- v3.Get.api.LiveMeasurementCheck -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -353,17 +353,18 @@ public class GetAllMeasurementDatabySKU {
 		}
 	
 	@Test
-	@Parameters("Sku")
-	public void noMeasurement(String sku) throws IOException {
+	@Parameters("invalidSku")
+	public void noMeasurement(String invalidSku) throws IOException {
 
 		RestAssured.baseURI = Credentails.v3;
 
 
 			Response response = RestAssured.given()
-					.queryParam("sku", sku)
+					.queryParam("sku", invalidSku)
 					.header("Content-Type","application/json")
 					.header("System-Token",Credentails.systemid)
 					.header("Authorization","Bearer "+accessToken)
+
 
 					.when()
 					.get("/find-all-dimensions-by-sku")

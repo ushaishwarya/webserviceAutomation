@@ -183,6 +183,10 @@ public class GetMeasurementDataById {
         keyMapping.put("workflow_data", "workflowmetadata");
         keyMapping.put("status_code", "statusCode");
         keyMapping.put("annotated_image", "annotatedImage");
+        
+        keyMapping.put("volumetric_divisor", "volumetricDivisor");
+        keyMapping.put("volumetric_divisor_name", "volumetricDivisorName");
+
 
 
 

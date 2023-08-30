@@ -16,7 +16,6 @@ import io.restassured.response.Response;
 public class PostAuth {
 	 public static String accessToken;
 	 public static String refreshToken;
-	
 	    public static String[] getauth() {
 	   
 	    	

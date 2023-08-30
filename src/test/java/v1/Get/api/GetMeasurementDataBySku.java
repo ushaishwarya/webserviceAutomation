@@ -22,11 +22,6 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 
-
-import org.testng.annotations.Ignore;
-@Ignore
-
-
 public class GetMeasurementDataBySku {
 	@Test(priority=1)
     public void assertTheExteranlJsonToResponseBodyAndStatusCode() throws IOException {

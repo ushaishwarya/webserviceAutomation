@@ -1,8 +1,9 @@
 package v1.Get.api;
 
 import org.testng.annotations.Test;
+
+
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 
 
 
@@ -26,7 +27,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import credentails.Credentails;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-@Ignore
 public class GetMeasurementDataById {
     @Test(priority=1)
     public void assertTheExteranlJsonToResponseBodyAndStatusCode() throws IOException {
@@ -47,7 +47,7 @@ public class GetMeasurementDataById {
             
 
             
-            Response response = callApiV2(id);
+            Response response = callApi(id);
             long responseTime = response.getTime();
             
             
@@ -57,7 +57,7 @@ public class GetMeasurementDataById {
             totalResponseTime += responseTime;
             
             compareResponseWithExternalData(response, jsonData);
-        }
+        } 
 
         int numberOfCalls = jsonDataList.size();
         long averageResponseTime = totalResponseTime / numberOfCalls;
@@ -68,7 +68,7 @@ public class GetMeasurementDataById {
         System.out.println("Maximum Response Time in milliseconds: " + maxResponseTime);
     }
     
-    public static Response callApiV2(String id) {
+    public static Response callApi(String id) {
         RestAssured.baseURI = Credentails.v1;
 
         Response response = RestAssured.given()
@@ -152,7 +152,7 @@ public class GetMeasurementDataById {
         
         }
     
-
+//
     private String getMappedKey(String key) {
         Map<String, String> keyMapping = new HashMap<>();
         keyMapping.put("id", "id");
@@ -174,9 +174,11 @@ public class GetMeasurementDataById {
         keyMapping.put("workflow_data", "workflowmetadata");
         keyMapping.put("status_code", "statusCode");
         keyMapping.put("annotated_image", "annotatedImage");
+        
+        keyMapping.put("volumetric_divisor", "volumetricDivisor");
+        keyMapping.put("volumetric_divisor_name", "volumetricDivisorName");
 
-
-
+    
         return keyMapping.getOrDefault(key, key);
     }
     @Test(priority=2)
