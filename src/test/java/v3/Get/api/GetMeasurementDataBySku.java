@@ -1,14 +1,12 @@
 package v3.Get.api;
 
 import org.testng.annotations.Test;
+
 import org.testng.Assert;
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -18,14 +16,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import credentails.Credentails;
+import credentails.CommonMethods;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.testng.annotations.Ignore;
-@Ignore
 
 
-public class GetMeasurementDataBySku {
+public class GetMeasurementDataBySku extends CommonMethods{
 	static String[] tokens = PostAuth.getauth();
 	static String accessToken = tokens[0];
 
@@ -119,28 +116,7 @@ public class GetMeasurementDataBySku {
                             .extract()
                             .response();
 
-                    List<Map<String, Object>> responseData = response.jsonPath().getList("$");
-                    for (Map<String, Object> data : responseData) {
-                        String actualDimensionUnitFormat = data.get("dimensionUnit").toString();
-                        String actualWeightUnitFormat = data.get("weightUnit").toString();
-                        String actualDateUnitFormat = data.get("scannedOn").toString();
-
-                        // Your assertions here
-                        Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("in")
-                                || actualDimensionUnitFormat.equalsIgnoreCase("cm"),
-                                "Response dimension unit format is not 'in' or 'cm'.");
-
-                        Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("kg")
-                                || actualWeightUnitFormat.equalsIgnoreCase("g")
-                                || actualWeightUnitFormat.equalsIgnoreCase("lb"),
-                                "Response weight unit format is not one of 'kg', 'g', or 'lb'.");
-
-                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                        LocalDateTime inputDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-                        LocalDateTime desiredDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-
-                        Assert.assertEquals(inputDateTime, desiredDateTime, "Dates do not match.");
-                }
+                Standard(response);
                 }
 
             } catch (IOException e) {
@@ -187,29 +163,9 @@ public void verifylegacyFormate() throws IOException {
                     .then()
                     .extract()
                     .response();
+            
+            legacy(response);
 
-            List<Map<String, Object>> responseData = response.jsonPath().getList("$");
-            for (Map<String, Object> data : responseData) {
-                String actualDimensionUnitFormat = data.get("dimensionUnit").toString();
-                String actualWeightUnitFormat = data.get("weightUnit").toString();
-                String actualDateUnitFormat = data.get("scannedOn").toString();
-
-                // Your assertions here
-                Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("Inch")
-                        || actualDimensionUnitFormat.equalsIgnoreCase("Centimeter"),
-                        "Response dimension unit format is not 'Inch' or 'Centimeter'.");
-
-                Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("Kilogram")
-                        || actualWeightUnitFormat.equalsIgnoreCase("gram")
-                        || actualWeightUnitFormat.equalsIgnoreCase("pound"),
-                        "Response weight unit format is not one of 'Kilogram', 'gram', or 'pound'.");
-                
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM d, yyyy h:mm:ss a", Locale.ENGLISH);
-                LocalDateTime inputDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-                LocalDateTime desiredDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-
-                Assert.assertEquals(inputDateTime, desiredDateTime, "Dates do not match.");
-        }
         }
 
     } catch (IOException e) {
@@ -254,17 +210,8 @@ public void unauthorizedWithMultipeScenarious() throws IOException {
         .then()
         .extract()
         .response();
-      JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-      
-      String message = jsonResponse.getString("message");
-      
-      String excepted_message="Unauthorized!";
-      
-      Assert.assertEquals(message, excepted_message,"Unauthorized message is not matched");
-      int statusCode = response.getStatusCode();
 
-      Assert.assertEquals(statusCode, 401 , "Correct status code not returned");
-
+	    assertMessageAndStatuscode(response, "Unauthorized!", 401);
 
       
   }

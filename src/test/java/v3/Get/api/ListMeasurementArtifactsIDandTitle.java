@@ -33,8 +33,6 @@ public class ListMeasurementArtifactsIDandTitle {
             .extract()
             .response();
 
-        System.out.println(response.asPrettyString());
-
         List<Integer> additional_image_id = response.jsonPath().getList("additional_image_id");
 
         int loopLimit = Math.min(10, additional_image_id.size()); // Avoid going beyond list length

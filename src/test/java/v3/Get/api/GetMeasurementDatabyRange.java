@@ -2,40 +2,35 @@ package v3.Get.api;
 
 import java.text.ParseException;
 
+
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 import credentails.Credentails;
+import credentails.CommonMethods;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-import org.json.JSONObject;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.lowagie.text.List;
 
-public class GetMeasurementDatabyRange {  
+
+public class GetMeasurementDatabyRange extends CommonMethods{  
 	static String[] tokens = PostAuth.getauth();
 	static String accessToken = tokens[0];
 
 @Test(priority = 1)
-@Parameters({ "userFromDate", "userToDate" })
-  public  void assertthedaterange(String userFromDate, String userToDate) {
+  public  void assertthedaterange() {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
-            Date fromDate = dateFormat.parse(userFromDate);
-            Date toDate = dateFormat.parse(userToDate);
+            Date fromDate = dateFormat.parse(Credentails.userFromDate);
+            Date toDate = dateFormat.parse(Credentails.userToDate);
 
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(fromDate);
@@ -54,8 +49,8 @@ public class GetMeasurementDatabyRange {
             calendar.set(Calendar.SECOND, 59);
             Date validToDate = calendar.getTime();
 
-            Date fromDate1 = dateFormat.parse(userFromDate);
-            Date toDate1 = dateFormat.parse(userToDate);
+            Date fromDate1 = dateFormat.parse(Credentails.userFromDate);
+            Date toDate1 = dateFormat.parse(Credentails.userToDate);
 
             if (isValidDateRange(fromDate1, toDate1, validFromDate, validToDate)) {
                 System.out.println("Date range is valid.");
@@ -68,8 +63,8 @@ public class GetMeasurementDatabyRange {
             			.header("System-Token",Credentails.systemid)
             			.header("Authorization","Bearer "+accessToken)
                         .queryParam("range", "Date")
-                        .queryParam("from", userFromDate)
-                        .queryParam("to", userToDate)
+                        .queryParam("from", Credentails.userFromDate)
+                        .queryParam("to", Credentails.userToDate)
                         .when()
                         .get("/dimension")
                         .then()
@@ -127,17 +122,10 @@ public class GetMeasurementDatabyRange {
                 fromDate.compareTo(validToDate) <= 0 && toDate.compareTo(validToDate) <= 0;
     }
     @Test(priority=2)
-    @Parameters({ "userFromId", "userToId" })
-
-	  public  void assertTheIdRange(String userFromIdInput, String userToIdInput) {
-    	int userFromId;
-    	int userToId;
+	  public  void assertTheIdRange() {
 
     	try {
-    	    userFromId = Integer.parseInt(userFromIdInput);
-    	    userToId = Integer.parseInt(userToIdInput);
     	    
-	                // API Request using RestAssured
 	                RestAssured.baseURI = Credentails.v3;
 
 	                Response response = RestAssured.given()
@@ -145,8 +133,8 @@ public class GetMeasurementDatabyRange {
 	            			.header("System-Token",Credentails.systemid)
 	            			.header("Authorization","Bearer "+accessToken)
 	                        .queryParam("range", "id")
-	                        .queryParam("from", userFromId)
-	                        .queryParam("to", userToId)
+	                        .queryParam("from", Credentails.userFromId)
+	                        .queryParam("to", Credentails.userToId)
 	                        .when()
 	                        .get("/dimension")
 	                        .then()
@@ -163,7 +151,7 @@ public class GetMeasurementDatabyRange {
 
 	                // Compare the IDs with the entered ID range
 	                for (Integer measurementId : measurementIds) {
-	                    if (!isValidIdRange(measurementId, userFromId, userToId)) {
+	                    if (!isValidIdRange(measurementId, Credentails.userFromId, Credentails.userToId)) {
 	                    	allmeasurementidValid = false;
 	                        break; // No need to continue checking if any scanned date is invalid
 	                    }
@@ -189,9 +177,7 @@ public class GetMeasurementDatabyRange {
         return idToCheck >= fromId && idToCheck <= toId;
     }
   @Test(priority=3)
-  @Parameters({ "userFromId", "userToId" })
-
-	  public  void invalidRangeValue(String userFromIdInput, String userToIdInput) {
+	  public  void invalidRangeValue() {
       RestAssured.baseURI = Credentails.v3;
 
       Response response = RestAssured.given()
@@ -200,46 +186,41 @@ public class GetMeasurementDatabyRange {
   				.header("Authorization","Bearer "+accessToken)
 
               .queryParam("range", "2eefe")
-              .queryParam("from",userFromIdInput)
-              .queryParam("to", userToIdInput)
+              .queryParam("from",Credentails.userFromId)
+              .queryParam("to", Credentails.userToId)
               .when()
               .get("/dimension")
               .then()
               .extract()
               .response();
       
-
-   // Parse the JSON response and get the IDs
-      String message = response.jsonPath().getString("message");
-      
-      Assert.assertEquals(message, "Invalid Range value");
-      
-        int statuscode=response.getStatusCode();
         
-        Assert.assertEquals(statuscode, 400);
+        assertMessageAndStatuscode(response, "Invalid Range value", 400);
+
 		  
 	  }
   
   @Test(priority=4)
-  @Parameters({ "userFromId", "userToId" })
-
-	  public  void invalidFromOrToValue(String userFromIdInput, String userToIdInput) {
+	  public  void invalidFromOrToValue() {
       int numIterations = 4;
       for (int i = 1; i <= numIterations; i++) {
     	  String range="Date";
-          String from = userFromIdInput;
-          String to = userToIdInput;
+          Integer from = Credentails.userFromId;
+          Integer to = Credentails.userToId;
           
+          String userfrom=Integer.toString(from);
+          String userto=Integer.toString(to);
+
 
           if (i == 1) {
               range = "Date";
           } else if (i == 2) {
-              from = "eww";
+        	  userfrom = "eww";
           } else if (i == 3) {
-              to = "3433";
+        	  userto = "3433";
           }else if (i == 4) {
-              from = "103300"; // Using a valid date format
-              to = "103400";   // Using a valid date format
+        	  userfrom = "103300"; 
+        	  userto = "103400";   
 
       }
 
@@ -251,32 +232,23 @@ public class GetMeasurementDatabyRange {
   			  .header("System-Token",Credentails.systemid)
   			  .header("Authorization","Bearer "+accessToken)
               .queryParam("range", range)
-              .queryParam("from",from)
-              .queryParam("to", to)
+              .queryParam("from",userfrom)
+              .queryParam("to", userto)
               .when()
               .get("/dimension")
               .then()
               .extract()
               .response();
       
-//      System.out.println(response.asPrettyString());
-
-      String message = response.jsonPath().getString("message");
-      
-      Assert.assertEquals(message, "Either FROM or TO Date is invalid.");
-      
-        int statuscode=response.getStatusCode();
         
-        Assert.assertEquals(statuscode, 400);
+        assertMessageAndStatuscode(response, "Either FROM or TO Date is invalid.", 400);
+
 
       }
   
   }
   @Test(priority = 5)
-  @Parameters({ "userFromId", "userToId" })
-  public void Unauthorized(String userFromIdInput, String userToIdInput) {
-      int userFromId;
-      int userToId;
+  public void Unauthorized() {
 
       int numIterations = 3;
 
@@ -296,9 +268,6 @@ public class GetMeasurementDatabyRange {
           }
           
           
-          userFromId = Integer.parseInt(userFromIdInput);
-          userToId = Integer.parseInt(userToIdInput);
-
           RestAssured.baseURI = Credentails.v3;
 
           Response response = RestAssured.given()
@@ -307,38 +276,23 @@ public class GetMeasurementDatabyRange {
       			.header("Authorization","Bearer "+token)
 
                   .queryParam("range", "id")
-                  .queryParam("from", userFromId)
-                  .queryParam("to", userToId)
+                  .queryParam("from", Credentails.userFromId)
+                  .queryParam("to", Credentails.userToId)
                   .when()
                   .get("/dimension")
                   .then()
                   .extract()
                   .response();
 
-          JSONObject jsonResponse = new JSONObject(response.getBody().asString());
+          
+          assertMessageAndStatuscode(response, "Unauthorized!", 401);
 
-          String message = jsonResponse.getString("message");
-
-          String expectedMessage = "Unauthorized!";
-
-          Assert.assertEquals(message, expectedMessage, "Unauthorized message is not matched");
-          int statusCode = response.getStatusCode();
-
-          Assert.assertEquals(statusCode, 401, "Correct status code not returned");
       }
   }
   
   @Test(priority = 6)
-  @Parameters({ "userFromId", "userToId" })
-  public void VerifyStandardFormate(String userFromIdInput, String userToIdInput) {
-      int userFromId;
-      int userToId;
-
+  public void VerifyStandardFormate() {
       try {
-          userFromId = Integer.parseInt(userFromIdInput);
-          userToId = Integer.parseInt(userToIdInput);
-
-          
           RestAssured.baseURI = Credentails.v3;
           
           Response response = RestAssured.given()
@@ -346,8 +300,8 @@ public class GetMeasurementDatabyRange {
                   .header("System-Token", Credentails.systemid)
                   .header("Authorization", "Bearer " + accessToken)
                   .queryParam("range", "id")
-                  .queryParam("from", userFromId)
-                  .queryParam("to", userToId)
+                  .queryParam("from", Credentails.userFromId)
+                  .queryParam("to", Credentails.userToId)
                   .queryParam("isStandardDateFormat", "true")
                   .queryParam("isStandardDimensionUnitFormat", "true")
                   .queryParam("isStandardWeightUnitFormat", "true")
@@ -356,44 +310,15 @@ public class GetMeasurementDatabyRange {
                   .then()
                   .extract()
                   .response();
+          Standard(response);
           
-//          System.out.println(response.asPrettyString());
-
-          List<Map<String, Object>> responseData = response.jsonPath().getList("$");
-          for (Map<String, Object> data : responseData) {
-              String actualDimensionUnitFormat = data.get("dimensionUnit").toString();
-              String actualWeightUnitFormat = data.get("weightUnit").toString();
-              String actualDateUnitFormat = data.get("scannedOn").toString();
-
-              // Your assertions here
-              Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("in")
-                      || actualDimensionUnitFormat.equalsIgnoreCase("cm"),
-                      "Response dimension unit format is not 'in' or 'cm'.");
-
-              Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("kg")
-                      || actualWeightUnitFormat.equalsIgnoreCase("g")
-                      || actualWeightUnitFormat.equalsIgnoreCase("lb"),
-                      "Response weight unit format is not one of 'kg', 'g', or 'lb'.");
-
-              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-              LocalDateTime inputDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-              LocalDateTime desiredDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-
-              Assert.assertEquals(inputDateTime, desiredDateTime, "Dates do not match.");
-          }
       } catch (NumberFormatException e) {
           System.out.println("Invalid ID format. Please enter valid integer IDs.");
       }
   }
   @Test(priority = 7)
-  @Parameters({ "userFromId", "userToId" })
-  public void VerifylegacyFormate(String userFromIdInput, String userToIdInput) {
-      int userFromId;
-      int userToId;
-
+  public void VerifylegacyFormate() {
       try {
-          userFromId = Integer.parseInt(userFromIdInput);
-          userToId = Integer.parseInt(userToIdInput);          
           RestAssured.baseURI = Credentails.v3;
           
           Response response = RestAssured.given()
@@ -401,8 +326,8 @@ public class GetMeasurementDatabyRange {
                   .header("System-Token", Credentails.systemid)
                   .header("Authorization", "Bearer " + accessToken)
                   .queryParam("range", "id")
-                  .queryParam("from", userFromId)
-                  .queryParam("to", userToId)
+                  .queryParam("from",Credentails.userFromId)
+                  .queryParam("to", Credentails.userToId)
                   .queryParam("isStandardDateFormat", "false")
                   .queryParam("isStandardDimensionUnitFormat", "false")
                   .queryParam("isStandardWeightUnitFormat", "false")
@@ -412,31 +337,8 @@ public class GetMeasurementDatabyRange {
                   .extract()
                   .response();
 
-
-//          System.out.println(response.asPrettyString());
-
-          List<Map<String, Object>> responseData = response.jsonPath().getList("$");
-          for (Map<String, Object> data : responseData) {
-              String actualDimensionUnitFormat = data.get("dimensionUnit").toString();
-              String actualWeightUnitFormat = data.get("weightUnit").toString();
-              String actualDateUnitFormat = data.get("scannedOn").toString();
-
-              // Your assertions here
-              Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("Inch")
-                      || actualDimensionUnitFormat.equalsIgnoreCase("Centimeter"),
-                      "Response dimension unit format is not 'Inch' or 'Centimeter'.");
-
-              Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("Kilogram")
-                      || actualWeightUnitFormat.equalsIgnoreCase("gram")
-                      || actualWeightUnitFormat.equalsIgnoreCase("pound"),
-                      "Response weight unit format is not one of 'Kilogram', 'gram', or 'pound'.");
-              
-              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM d, yyyy h:mm:ss a", Locale.ENGLISH);
-              LocalDateTime inputDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-              LocalDateTime desiredDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-
-              Assert.assertEquals(inputDateTime, desiredDateTime, "Dates do not match.");
-          }
+          	legacy(response);
+          
       } catch (NumberFormatException e) {
           System.out.println("Invalid ID format. Please enter valid integer IDs.");
       }

@@ -14,13 +14,14 @@ import org.json.JSONObject;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import credentails.CommonMethods;
 import credentails.Credentails;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.Ignore;
 @Ignore
 
-public class GetMeasurementDataBySku {
+public class GetMeasurementDataBySku extends CommonMethods {
 	@Test
     public void assertTheExteranlJsonToResponseBodyAndStatusCode() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -102,17 +103,8 @@ public class GetMeasurementDataBySku {
             .then()
             .extract()
             .response();
-          JSONObject jsonResponse = new JSONObject(response.getBody().asString());
           
-          String message = jsonResponse.getString("message");
-          
-          String excepted_message="Unauthorized!";
-          
-          Assert.assertEquals(message, excepted_message,"Unauthorized message is not matched");
-          int statusCode = response.getStatusCode();
-
-          Assert.assertEquals(statusCode, 401 , "Correct status code not returned");
-
+          assertMessageAndStatuscode(response, "Unauthorized!", 401);
 
           
       }
@@ -158,10 +150,6 @@ public class GetMeasurementDataBySku {
           Assert.assertTrue(statusCode == 400 || statusCode == 404, "Correct status code not returned (400 or 404)");
 
           Assert.assertEquals(message, expectedMessage, "Message does not match the expected value.");
-
-          
-
-
           
       }
  }

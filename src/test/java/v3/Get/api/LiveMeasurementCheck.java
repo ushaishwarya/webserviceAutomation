@@ -22,7 +22,7 @@ public class LiveMeasurementCheck {
 	static String accessToken = tokens[0];
 
 	@Test
-    public void testNoImageFound() {
+    public void liveMeasurementCheck200status() {
 
 	
     RestAssured.baseURI =Credentails.v3;
@@ -60,7 +60,7 @@ public class LiveMeasurementCheck {
     String weightUnit=jsonPath.getString("weightUni");
     double actualWeight=jsonPath.getDouble("actualWeight");
     
-    Assert.assertEquals(sku, Credentails.sku);
+    Assert.assertEquals(sku, Credentails.Sku);
     Assert.assertEquals(status, Credentails.status);
     Assert.assertEquals(statusCode, Credentails.statusCode);
     Assert.assertEquals(additionalInfo, Credentails.additionalInfo);

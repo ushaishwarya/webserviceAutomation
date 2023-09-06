@@ -2,29 +2,25 @@ package v3.Get.api;
 
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
-import org.json.JSONObject;
+
+import java.util.List;
+
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import credentails.Credentails;
+import credentails.CommonMethods;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class GetAllMeasurementDatabySKU {
+public class GetAllMeasurementDatabySKU extends CommonMethods{
 	String[] tokens = PostAuth.getauth();
 	String accessToken = tokens[0];
 
 	@Test
-	@Parameters({"Sku","startDate","endDate"})
-	public void verifySkuId(String sku,String startDate,String endDate) {
+	public void verifySkuId() {
 
 		RestAssured.baseURI=Credentails.v3;
 
@@ -33,9 +29,9 @@ public class GetAllMeasurementDatabySKU {
 				.header("Content-Type","application/json")
 				.header("System-Token",Credentails.systemid)
 				.header("Authorization","Bearer "+accessToken)
-				.queryParam("sku", sku)
-				.queryParam("start_date", startDate)
-				.queryParam("end_date", endDate)
+				.queryParam("sku", Credentails.Sku)
+				.queryParam("start_date", Credentails.startDate)
+				.queryParam("end_date", Credentails.endDate)
 
 				.when()
 				.get("/find-all-dimensions-by-sku")
@@ -48,7 +44,7 @@ public class GetAllMeasurementDatabySKU {
 
 
 		for (String exceptedsku : skuList) {
-			Assert.assertEquals(exceptedsku,sku, "Barcode does not match the expected value.");
+			Assert.assertEquals(exceptedsku,Credentails.Sku, "Barcode does not match the expected value.");
 
 		}
 
@@ -56,8 +52,7 @@ public class GetAllMeasurementDatabySKU {
 	}
 
 	@Test
-	@Parameters({"Sku","startDate","endDate"})
-	public void SkipFailureIsTrue(String sku,String startDate,String endDate) {
+	public void SkipFailureIsTrue() {
 
 		RestAssured.baseURI=Credentails.v3;
 
@@ -66,9 +61,9 @@ public class GetAllMeasurementDatabySKU {
 				.header("Content-Type","application/json")
 				.header("System-Token",Credentails.systemid)
 				.header("Authorization","Bearer "+accessToken)
-				.queryParam("sku", sku)
-				.queryParam("start_date", startDate)
-				.queryParam("end_date", endDate)
+				.queryParam("sku", Credentails.Sku)
+				.queryParam("start_date", Credentails.startDate)
+				.queryParam("end_date", Credentails.endDate)
 				.queryParam("skip_failure", true)
 
 				.when()
@@ -91,8 +86,7 @@ public class GetAllMeasurementDatabySKU {
 		}
 	}
 	@Test
-	@Parameters({"Sku","startDate","endDate"})
-	public void SkipFailureIsFalse(String sku,String startDate,String endDate) {
+	public void SkipFailureIsFalse() {
 
 		RestAssured.baseURI=Credentails.v3;
 
@@ -101,9 +95,9 @@ public class GetAllMeasurementDatabySKU {
 				.header("Content-Type","application/json")
 				.header("System-Token",Credentails.systemid)
 				.header("Authorization","Bearer "+accessToken)
-				.queryParam("sku", sku)
-				.queryParam("start_date", startDate)
-				.queryParam("end_date", endDate)
+				.queryParam("sku", Credentails.Sku)
+				.queryParam("start_date", Credentails.startDate)
+				.queryParam("end_date", Credentails.endDate)
 				.queryParam("skip_failure", false)
 
 				.when()
@@ -136,8 +130,7 @@ public class GetAllMeasurementDatabySKU {
 	}
 
 	@Test
-	@Parameters({"Sku","startDate","endDate"})
-	public void verifylegacyFormat(String sku,String startDate,String endDate) {
+	public void verifylegacyFormat() {
 		RestAssured.baseURI=Credentails.v3;
 
 		Response response = RestAssured.given()
@@ -145,9 +138,9 @@ public class GetAllMeasurementDatabySKU {
 				.header("Content-Type","application/json")
 				.header("System-Token",Credentails.systemid)
 				.header("Authorization","Bearer "+accessToken)
-				.queryParam("sku", sku)
-				.queryParam("start_date", startDate)
-				.queryParam("end_date", endDate)
+				.queryParam("sku", Credentails.Sku)
+				.queryParam("start_date", Credentails.startDate)
+				.queryParam("end_date", Credentails.endDate)
 				.queryParam("isStandardDateFormat", "false")
 				.queryParam("isStandardDimensionUnitFormat", "false")
 				.queryParam("isStandardWeightUnitFormat", "false")
@@ -159,34 +152,12 @@ public class GetAllMeasurementDatabySKU {
 				.extract()
 				.response();
 
-		List<Map<String, Object>> responseData = response.jsonPath().getList("$");
-		for (Map<String, Object> data : responseData) {
-			String actualDimensionUnitFormat = data.get("dimensionUnit").toString();
-			String actualWeightUnitFormat = data.get("weightUnit").toString();
-			String actualDateUnitFormat = data.get("scannedOn").toString();
+			legacy(response);
 
-			// Your assertions here
-			Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("Inch")
-					|| actualDimensionUnitFormat.equalsIgnoreCase("Centimeter"),
-					"Response dimension unit format is not 'Inch' or 'Centimeter'.");
-
-			Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("Kilogram")
-					|| actualWeightUnitFormat.equalsIgnoreCase("gram")
-					|| actualWeightUnitFormat.equalsIgnoreCase("pound"),
-					"Response weight unit format is not one of 'Kilogram', 'gram', or 'pound'.");
-
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM d, yyyy h:mm:ss a", Locale.ENGLISH);
-			LocalDateTime inputDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-			LocalDateTime desiredDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-
-			Assert.assertEquals(inputDateTime, desiredDateTime, "Dates do not match.");
-
-
-		}
+		
 	}
 	@Test
-	@Parameters({"Sku","startDate","endDate"})
-	public void verifystandardFormat(String sku,String startDate,String endDate) {
+	public void verifystandardFormat() {
 		RestAssured.baseURI=Credentails.v3;
 
 		Response response = RestAssured.given()
@@ -194,9 +165,9 @@ public class GetAllMeasurementDatabySKU {
 				.header("Content-Type","application/json")
 				.header("System-Token",Credentails.systemid)
 				.header("Authorization","Bearer "+accessToken)
-				.queryParam("sku", sku)
-				.queryParam("start_date", startDate)
-				.queryParam("end_date", endDate)
+				.queryParam("sku", Credentails.Sku)
+				.queryParam("start_date", Credentails.startDate)
+				.queryParam("end_date", Credentails.endDate)
 				.queryParam("isStandardDateFormat", "true")
 				.queryParam("isStandardDimensionUnitFormat", "true")
 				.queryParam("isStandardWeightUnitFormat", "true")
@@ -207,31 +178,11 @@ public class GetAllMeasurementDatabySKU {
 				.then()
 				.extract()
 				.response();
-		List<Map<String, Object>> responseData = response.jsonPath().getList("$");
-		for (Map<String, Object> data : responseData) {
-			String actualDimensionUnitFormat = data.get("dimensionUnit").toString();
-			String actualWeightUnitFormat = data.get("weightUnit").toString();
-			String actualDateUnitFormat = data.get("scannedOn").toString();
-
-			// Your assertions here
-			Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("in")
-					|| actualDimensionUnitFormat.equalsIgnoreCase("cm"),
-					"Response dimension unit format is not 'in' or 'cm'.");
-
-			Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("kg")
-					|| actualWeightUnitFormat.equalsIgnoreCase("g")
-					|| actualWeightUnitFormat.equalsIgnoreCase("lb"),
-					"Response weight unit format is not one of 'kg', 'g', or 'lb'.");
-
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-			LocalDateTime inputDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-			LocalDateTime desiredDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-
-			Assert.assertEquals(inputDateTime, desiredDateTime, "Dates do not match.");
-
+		
+		Standard(response);
 
 		}
-	}
+	
 
 	@Test
 	public void badRequestmultiplescenario() {
@@ -251,18 +202,13 @@ public class GetAllMeasurementDatabySKU {
 				.extract()
 				.response();
 
-		JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-		String message = jsonResponse.getString("message");
-		int statusCode = response.getStatusCode();
+		
+	    assertMessageAndStatuscode(response, "\"sku\" is not allowed to be empty", 400);
 
-		Assert.assertEquals(message, "\"sku\" is not allowed to be empty");
-
-		Assert.assertEquals(statusCode ,400, "Correct status code not returned 400");
 	}
 
 	@Test
-	@Parameters({"Sku","startDate","endDate"})
-	public void  lessThanStartDate(String sku,String startDate,String endDate) {
+	public void  lessThanStartDate() {
 		RestAssured.baseURI=Credentails.v3;
 
 
@@ -271,9 +217,9 @@ public class GetAllMeasurementDatabySKU {
 				.header("Content-Type","application/json")
 				.header("System-Token",Credentails.systemid)
 				.header("Authorization","Bearer "+accessToken)
-				.queryParam("sku", sku)
-				.queryParam("start_date",endDate )
-				.queryParam("end_date", startDate)
+				.queryParam("sku", Credentails.Sku)
+				.queryParam("start_date",Credentails.endDate )
+				.queryParam("end_date", Credentails.startDate)
 
 				.when()
 				.get("/find-all-dimensions-by-sku")
@@ -282,19 +228,14 @@ public class GetAllMeasurementDatabySKU {
 				.extract()
 				.response();
 
-		JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-		String message = jsonResponse.getString("message");
-		int statusCode = response.getStatusCode();
+		
+	    assertMessageAndStatuscode(response, "end date cannot be less than the start date", 400);
 
-		Assert.assertEquals(message, "end date cannot be less than the start date");
-
-		Assert.assertEquals(statusCode ,400, "Correct status code not returned 400");
 
 
 	}
 	@Test
-	@Parameters({"Sku","endDate","lessninty"})
-	public void badRequestmultiplescenario(String sku ,String endDate,String lessninty) {
+	public void badRequestmultiplescenario1() {
 		RestAssured.baseURI=Credentails.v3;
 
 
@@ -303,9 +244,9 @@ public class GetAllMeasurementDatabySKU {
 				.header("Content-Type","application/json")
 				.header("System-Token",Credentails.systemid)
 				.header("Authorization","Bearer "+accessToken)
-				.queryParam("sku", sku)
-				.queryParam("start_date", lessninty)
-				.queryParam("end_date", endDate)
+				.queryParam("sku", Credentails.Sku)
+				.queryParam("start_date", Credentails.lessninty)
+				.queryParam("end_date", Credentails.endDate)
 
 				.when()
 				.get("/find-all-dimensions-by-sku")
@@ -314,24 +255,19 @@ public class GetAllMeasurementDatabySKU {
 				.extract()
 				.response();
 
-		JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-		String message = jsonResponse.getString("message");
-		int statusCode = response.getStatusCode();
+		
+	    assertMessageAndStatuscode(response, "start date cannot be less than 92 days from today", 400);
 
-		Assert.assertEquals(message, "start date cannot be less than 92 days from today");
-
-		Assert.assertEquals(statusCode ,400, "Correct status code not returned 400");
 
 
 	}
 	@Test
-	@Parameters({"Sku","startDate","endDate"})
-	public void unauthorizedWithMultipeScenarious(String sku,String startDate,String endDate) throws IOException {
+	public void unauthorizedWithMultipeScenarious() throws IOException {
 
 		RestAssured.baseURI = Credentails.v3;
 
 			Response response = RestAssured.given()
-					.queryParam("sku", sku)
+					.queryParam("sku", Credentails.Sku)
 					.header("Content-Type","application/json")
 					.header("System-Token","")
 					.header("Authorization","Bearer "+"")
@@ -340,27 +276,17 @@ public class GetAllMeasurementDatabySKU {
 					.then()
 					.extract()
 					.response();
-			JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-
-			String message = jsonResponse.getString("message");
-
-			String excepted_message="Unauthorized!";
-
-			Assert.assertEquals(message, excepted_message,"Unauthorized message is not matched");
-			int statusCode = response.getStatusCode();
-
-			Assert.assertEquals(statusCode, 401 , "Correct status code not returned");
+		    assertMessageAndStatuscode(response, "Unauthorized!", 401);
 		}
 	
 	@Test
-	@Parameters("invalidSku")
 	public void noMeasurement(String invalidSku) throws IOException {
 
 		RestAssured.baseURI = Credentails.v3;
 
 
 			Response response = RestAssured.given()
-					.queryParam("sku", invalidSku)
+					.queryParam("sku", Credentails.invalidSku)
 					.header("Content-Type","application/json")
 					.header("System-Token",Credentails.systemid)
 					.header("Authorization","Bearer "+accessToken)
@@ -371,16 +297,9 @@ public class GetAllMeasurementDatabySKU {
 					.then()
 					.extract()
 					.response();
-			JSONObject jsonResponse = new JSONObject(response.getBody().asString());
+			
+		    assertMessageAndStatuscode(response, "No Measurement available for the given barcode", 404);
 
-			String message = jsonResponse.getString("message");
-
-			String excepted_message="No Measurement available for the given barcode";
-
-			Assert.assertEquals(message, excepted_message,"Unauthorized message is not matched");
-			int statusCode = response.getStatusCode();
-
-			Assert.assertEquals(statusCode, 404 , "Correct status code not returned");
 		}
 	}
 

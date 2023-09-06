@@ -17,7 +17,7 @@ public class PostAuth {
 	 public static String accessToken;
 	 public static String refreshToken;
 	    public static String[] getauth() {
-	   
+		   
 	    	
 	        RestAssured.baseURI =Credentails.v3;
 	        // Create a Map to represent the dynamic payload
@@ -42,10 +42,8 @@ public class PostAuth {
 
 	        accessToken = response.jsonPath().getString("access_token");
 	        refreshToken = response.jsonPath().getString("refresh_token");
-	        
-	       
+	      	       
 			return new String[] {accessToken, refreshToken};
-	       
 			
 	    }
 

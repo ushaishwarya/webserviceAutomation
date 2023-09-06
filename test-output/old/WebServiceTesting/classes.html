@@ -4,6 +4,58 @@
 <th>Method name</th>
 <th>Groups</th>
 </tr><tr>
+<td>v2.Get.api.GetMeasurementDataById</td>
+<td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@Test</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifybadRequest</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>assertJsonfileToResponseBody</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifyunauthorized</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@BeforeClass</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterClass</td>
+</tr>
+<tr>
+<td>v3.Get.api.DownloadMeasurementArtifactImages</td>
+<td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@Test</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Download_Measurement_Artifact_Images_v3</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@BeforeClass</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterClass</td>
+</tr>
+<tr>
 <td>v3.Get.api.ListMeasurementIDandDates</td>
 <td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr>
@@ -45,11 +97,11 @@
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>Unauthorized</td>
+<td>assertTheIdRange</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>assertTheIdRange</td>
+<td>Unauthorized</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
@@ -79,15 +131,37 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>testScanIdListEndpoint</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
 <td>Unauthorized</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
+<td>ScanIdList</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
 <td>Notfound</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@BeforeClass</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterClass</td>
+</tr>
+<tr>
+<td>v3.Get.api.GetMeasurementArtifactImage</td>
+<td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@Test</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Get_Measurement_Artifact_Image_v3</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -109,15 +183,15 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>VeridyTheIdByImage</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>testNoImageFound</td>
+<td>NoImageFound</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
 <td>Unauthorized</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>idByImage</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -169,15 +243,15 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>VeridyTheIdByImage</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
 <td>testNoImageFound</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
 <td>Unauthorized</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>VeridyTheIdByImage</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -203,7 +277,27 @@
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
+<td>badRequestmultiplescenario1</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifystandardFormat</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
 <td>unauthorizedWithMultipeScenarious</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>noMeasurement</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifylegacyFormat</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>SkipFailureIsTrue</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
@@ -215,27 +309,7 @@
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>verifylegacyFormat</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>noMeasurement</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
 <td>badRequestmultiplescenario</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>SkipFailureIsTrue</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>badRequestmultiplescenario</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>verifystandardFormat</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -257,11 +331,15 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
+<td>Latestmeasurementimage</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
 <td>Unauthorized</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>Latestmeasurementimage</td>
+<td>notFound</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -283,15 +361,15 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>badRequestWithMultipeScenarious</td>
+<td>assertJsonfileWithResponseBody</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>assertTheExteranlJsonToResponseBodyAndStatusCode</td>
+<td>verifybadRequest</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>unauthorizedWithMultipeScenarious</td>
+<td>verifyunauthorized</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -317,11 +395,11 @@
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>Unauthorized</td>
+<td>assertTheIdRange</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>assertTheIdRange</td>
+<td>Unauthorized</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
@@ -344,18 +422,30 @@
 <td align='center' colspan='3'>@AfterClass</td>
 </tr>
 <tr>
-<td>v3.Get.api.LatestMeasurementImage</td>
+<td>v3.Get.api.GetMeasurementDataBySku</td>
 <td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@Test</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>Unauthorized</td>
+<td>badRequestWithMultipeScenarious</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>Latestmeasurementimage</td>
+<td>verifystandardFormate</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>assertTheExteranlJsonToResponseBodyAndStatusCode</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>unauthorizedWithMultipeScenarious</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifylegacyFormate</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -370,14 +460,14 @@
 <td align='center' colspan='3'>@AfterClass</td>
 </tr>
 <tr>
-<td>v3.Get.api.GenerateAPIAccessToken</td>
+<td>v3.Get.api.LatestMeasurementImage</td>
 <td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@Test</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>accesstokenandrefereshtoken</td>
+<td>Latestmeasurementimage</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
@@ -403,10 +493,6 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>VerifylegacyFormate</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
 <td>invalidRangeValue</td>
 <td>&nbsp;</td></tr>
 <tr>
@@ -415,15 +501,19 @@
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>Unauthorized</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
 <td>assertTheIdRange</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
+<td>Unauthorized</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
 <td>assertthedaterange</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>VerifylegacyFormate</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
@@ -449,11 +539,15 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
+<td>Latestmeasurementimage</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
 <td>Unauthorized</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>Latestmeasurementimage</td>
+<td>notFound</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -475,15 +569,15 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>VeridyTheIdByImage</td>
+<td>Unauthorized</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>idByImage</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
 <td>testNoImageFound</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>Unauthorized</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -505,7 +599,7 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>testScanIdListEndpoint</td>
+<td>ScanIdListEndpoint</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>

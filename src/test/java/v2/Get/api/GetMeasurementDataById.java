@@ -1,7 +1,13 @@
 package v2.Get.api;
 
 import org.testng.annotations.Test;
+
+
+
 import org.testng.Assert;
+
+
+
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -20,17 +26,16 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import credentails.Credentails;
+import credentails.CommonMethods;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.testng.annotations.Ignore;
-@Ignore
-
-public class GetMeasurementDataById {
+public class GetMeasurementDataById extends CommonMethods{
     @Test(priority=1)
-    public void assertTheExteranlJsonToResponseBodyAndStatusCode() throws IOException {
-        String externalJsonFilePath = Credentails.filepath;
+    public void assertJsonfileToResponseBody() throws IOException {
+    	
+       String externalJsonFilePath = Credentails.filepath;
 
-        List<Map<String, Object>> jsonDataList = readJsonFile(externalJsonFilePath);
+       List<Map<String, Object>> jsonDataList = readJsonFile(externalJsonFilePath);
 
         int totalResponseTime = 0;
         long minResponseTime = Long.MAX_VALUE;
@@ -41,7 +46,7 @@ public class GetMeasurementDataById {
             
 
             
-            Response response = callApiV2(id);
+            Response response = callApi(id);
             long responseTime = response.getTime();
             
             
@@ -51,7 +56,7 @@ public class GetMeasurementDataById {
             totalResponseTime += responseTime;
             
             compareResponseWithExternalData(response, jsonData);
-        }
+        } 
 
         int numberOfCalls = jsonDataList.size();
         long averageResponseTime = totalResponseTime / numberOfCalls;
@@ -61,19 +66,23 @@ public class GetMeasurementDataById {
         System.out.println("Minimum Response Time in milliseconds: " + minResponseTime);
         System.out.println("Maximum Response Time in milliseconds: " + maxResponseTime);
     }
-    // To Made a request
-    public static Response callApiV2(String id) {
+    
+    public static Response callApi(String id) {
         RestAssured.baseURI = Credentails.v2;
 
         Response response = RestAssured.given()
+        		
                 .pathParam("id", id)
-                .header("systemid", Credentails.systemid)
-                .header("userid", Credentails.userid)
+                
+                		.header("systemid", Credentails.systemid)
+                		.header("userid", Credentails.userid)
+                		
                 .when()
-                .get("/dimension/{id}")
+                	.get("/dimension/{id}")
+                	
                 .then()
-                .extract()
-                .response();
+                	.extract()
+                	.response();
 
         
 
@@ -113,9 +122,7 @@ public class GetMeasurementDataById {
                 continue; 
             }
             if (expectedValue.equals("NA") && (actualValue.equals("null") || actualValue.isEmpty())) {
-                continue; 
-            }
-            
+                continue;             }
             if (key.equals("scanned_time")) {
                 DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("MMM d yyyy, hh:mm:ss a", Locale.ENGLISH);
                 DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("EEE MMM d, yyyy h:mm:ss a", Locale.ENGLISH);
@@ -126,7 +133,7 @@ public class GetMeasurementDataById {
                 String actualFormattedDate = jsonResponse.has(mappedKey) ? jsonResponse.path(mappedKey).asText().trim() : "null";
                 
                 if (actualFormattedDate.equals(expectedFormattedDate)) {
-                    continue; // Dates match, skip the assertion
+                    continue;
                 } else {
                     System.out.println("Date Comparison - Key: " + key + ", Expected: " + expectedFormattedDate + ", Actual: " + actualFormattedDate);
                     Assert.fail("Date value for key '" + key + "' does not match the expected value.");
@@ -144,7 +151,7 @@ public class GetMeasurementDataById {
         
         }
     
-
+//
     private String getMappedKey(String key) {
         Map<String, String> keyMapping = new HashMap<>();
         keyMapping.put("id", "id");
@@ -170,69 +177,12 @@ public class GetMeasurementDataById {
         keyMapping.put("volumetric_divisor", "volumetricDivisor");
         keyMapping.put("volumetric_divisor_name", "volumetricDivisorName");
 
-
-
-
+    
         return keyMapping.getOrDefault(key, key);
     }
+
     @Test(priority=2)
-    public void unauthorizedWithMultipeScenarious() throws IOException {
-
-        RestAssured.baseURI = Credentails.v2;
-
-        int numIterations = 3;       
-        List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
-        
-        Object idValue = jsonDataList.get(0).get("id");
-
-        String id = (idValue != null) ? idValue.toString() : null;
-
-
-        for (int i = 1; i < numIterations; i++) {
-            String systemId = Credentails.systemid;
-            String userId = Credentails.userid;
-
-            if (i == 1) {
-                systemId = "";
-            } else if (i == 2) {
-                userId = "";
-            } else if (i == 3) {
-                systemId = "";
-                userId = "";
-            }
-
-            Response response = RestAssured.given()
-                    .pathParam("id", id)
-                    .header("systemid", systemId)
-                    .header("userid", userId)
-                .when()
-                    .get("/dimension/{id}")
-              .then()
-              .extract()
-              .response();
-            JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-            
-            String message = jsonResponse.getString("message");
-            
-            String excepted_message="Unauthorized!";
-            
-            Assert.assertEquals(message, excepted_message,"Unauthorized message is not matched");
-            int statusCode = response.getStatusCode();
-
-            Assert.assertEquals(statusCode, 401 , "Correct status code not returned");
-
-
-            
-        }
-        
-   }
-    public static List<Map<String, Object>> readJsonFile1(String filePath) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(new File(filePath), objectMapper.getTypeFactory().constructCollectionType(List.class, Map.class));
-    }
-
-    @Test(priority=3)
-    public void badRequestWithMultipeScenarious() throws IOException {
+    public void verifybadRequest() throws IOException {
 
         RestAssured.baseURI = Credentails.v2;
         int numIterations = 2;
@@ -272,6 +222,53 @@ public class GetMeasurementDataById {
 
             
         }
+        
    }
+    @Test(priority=3)
+    public void verifyunauthorized() throws IOException {
 
-}
+        RestAssured.baseURI = Credentails.v2;
+
+        int numIterations = 3;         
+        List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
+        
+        Object idValue = jsonDataList.get(0).get("id");
+
+        String id = (idValue != null) ? idValue.toString() : null;
+
+
+        for (int i = 1; i < numIterations; i++) {
+            String systemId = Credentails.systemid;
+            String userId = Credentails.userid;
+
+            if (i == 1) {
+                systemId = "";
+            } else if (i == 2) {
+                userId = "";
+            } else if (i == 3) {
+                systemId = "";
+                userId = "";
+            }
+
+            Response response = RestAssured.given()
+                    .pathParam("id", id)
+                    .header("systemid", systemId)
+                    .header("userid", userId)
+                .when()
+                    .get("/dimension/{id}")
+              .then()
+              .extract()
+              .response();
+
+            assertMessageAndStatuscode(response, "Unauthorized!", 401);
+
+        }
+        
+   }
+    public static List<Map<String, Object>> readJsonFile1(String filePath) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(new File(filePath), objectMapper.getTypeFactory().constructCollectionType(List.class, Map.class));
+    }
+  
+    }
+

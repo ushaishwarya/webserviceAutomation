@@ -22,7 +22,7 @@ public class GetMeasurementArtifactImage extends ListMeasurementArtifactsIDandTi
 		
         List<Integer> responses = List_Measurement_Artifacts_ID_and_Title_200status();
         
-
+System.out.println(responses);
 		
 		String[] tokens = PostAuth.getauth();
 		String accessToken = tokens[0];

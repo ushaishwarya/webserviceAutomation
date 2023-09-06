@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="WebServiceTesting">
-	     <parameter name="userFromDate" value="2023-08-21" />
-        <parameter name="userToDate" value="2023-08-29" />
-        <parameter name="userFromId" value="6368" />
-        <parameter name="userToId" value="6390" />
-        
-        <parameter name="ImageId" value="6397" />
-
-		<parameter name="InvalidImageId" value="123"/>
-		
-		<parameter name="Sku" value="vmeasure"/>
-		<parameter name="invalidSku" value="abc"/>
-
-		
-		
-		<parameter name="startDate" value="2023-08-22"/>
-		<parameter name="endDate" value="2023-08-29"/>
-		<parameter name="lessninty" value="2023-01-19"/>	
-		<parameter name="artifactid" value=""/>
-		<parameter name="artifactimageid" value=""/>
-
-		<parameter name="heightPref" value="1.5"/>
-		<parameter name="envelopeMod" value="false"/>
-
-<!-- live device details-->
-		<parameter name="systemid" value="1665583342135BAZGyd9TTiGExWAAUEszYZUckZH"/>
-		<parameter name="userid" value="1673253571738_9w3cqD7Fb7JxJHk8116pkThP1c"/>
-		<parameter name="secretid" value="3fe4ed66-3cfb-4524-abdb-b0cf777ffe91"/>
-		
-
+<suite name="WebServiceTesting">		
+	
     <test name="API Tests - Version 1">
 		
         <classes>
@@ -58,9 +30,6 @@
 		
         <classes>
 			
-			<class name="v3.Get.api.GenerateAPIAccessToken" />
-			<class name="v3.Get.api.GenerateNewAccessToken" />
-			<class name="v3.Get.api.DeleteAccessandRefreshToken" />
 			<class name="v3.Get.api.GetAllMeasurementDatabySKU" />
             <class name="v3.Get.api.GetMeasurementDataById" />
             <class name="v3.Get.api.GetMeasurementDatabyRange" />
@@ -68,6 +37,11 @@
             <class name="v3.Get.api.LatestMeasurementImage" />
             <class name="v3.Get.api.ListMeasurementIDandDates" />
             <class name="v3.Get.api.MeasurementImagebyID" />
+             <class name="v3.Get.api.GetMeasurementArtifactImage" />
+             <class name="v3.Get.api.DownloadMeasurementArtifactImages" />
+
+
+            
 			</classes>
 		</test>
 		

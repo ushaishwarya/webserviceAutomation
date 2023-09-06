@@ -8,47 +8,139 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">5,489</td><td></td><td></td></tr>
+<tr><th colspan="8">WebServiceTesting</th></tr>
+<tr><td><a href="#t0">API Tests - Version 1</a></td><td class="num">17</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">43,710</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">API Tests - Version 2</a></td><td class="num">13</td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">32,439</td><td></td><td></td></tr>
+<tr><td><a href="#t2">API Tests - Version 3</a></td><td class="num">25</td><td class="num">0</td><td class="num">0</td><td class="num attn">7</td><td class="num">61,609</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">55</th><th class="num">0</th><th class="num">0</th><th class="num attn">14</th><th class="num">137,758</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">v3.Get.api.LiveMeasurementCheck</td><td><a href="#m0">testNoImageFound</a></td><td rowspan="1">1693385193856</td><td rowspan="1">5463</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">WebServiceTesting</th></tr></tbody><tbody id="t0"><tr><th colspan="4">API Tests - Version 1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">v1.Get.api.GetMeasurementDataById</td><td><a href="#m0">assertJsonfileWithResponseBody</a></td><td rowspan="1">1693986274015</td><td rowspan="1">1489</td></tr><tr class="failedodd"><td rowspan="1">v1.Get.api.GetMeasurementDatabyRange</td><td><a href="#m1">assertTheIdRange</a></td><td rowspan="1">1693986283010</td><td rowspan="1">1482</td></tr><tr class="failedeven"><td rowspan="1">v1.Get.api.MeasurementImagebyID</td><td><a href="#m2">idByImage</a></td><td rowspan="1">1693986313147</td><td rowspan="1">1481</td></tr><tr><th colspan="4">API Tests - Version 1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">v1.Get.api.GetMeasurementDataById</td><td><a href="#m3">verifybadRequest</a></td><td rowspan="1">1693986275507</td><td rowspan="1">3034</td></tr><tr class="passedeven"><td><a href="#m4">verifyunauthorized</a></td><td rowspan="1">1693986278543</td><td rowspan="1">2993</td></tr><tr class="passedodd"><td rowspan="3">v1.Get.api.GetMeasurementDataBySku</td><td><a href="#m5">assertTheExteranlJsonToResponseBodyAndStatusCode</a></td><td rowspan="1">1693986295380</td><td rowspan="1">3026</td></tr><tr class="passedodd"><td><a href="#m6">badRequestWithMultipeScenarious</a></td><td rowspan="1">1693986301058</td><td rowspan="1">3044</td></tr><tr class="passedodd"><td><a href="#m7">unauthorizedWithMultipeScenarious</a></td><td rowspan="1">1693986298407</td><td rowspan="1">2650</td></tr><tr class="passedeven"><td rowspan="4">v1.Get.api.GetMeasurementDatabyRange</td><td><a href="#m8">Unauthorized</a></td><td rowspan="1">1693986292274</td><td rowspan="1">3105</td></tr><tr class="passedeven"><td><a href="#m9">assertthedaterange</a></td><td rowspan="1">1693986281539</td><td rowspan="1">1470</td></tr><tr class="passedeven"><td><a href="#m10">invalidFromOrToValue</a></td><td rowspan="1">1693986286045</td><td rowspan="1">6227</td></tr><tr class="passedeven"><td><a href="#m11">invalidRangeValue</a></td><td rowspan="1">1693986284493</td><td rowspan="1">1551</td></tr><tr class="passedodd"><td rowspan="3">v1.Get.api.LatestMeasurementImage</td><td><a href="#m12">Latestmeasurementimage</a></td><td rowspan="1">1693986304104</td><td rowspan="1">1867</td></tr><tr class="passedodd"><td><a href="#m13">Unauthorized</a></td><td rowspan="1">1693986305973</td><td rowspan="1">1388</td></tr><tr class="passedodd"><td><a href="#m14">notFound</a></td><td rowspan="1">1693986307363</td><td rowspan="1">1401</td></tr><tr class="passedeven"><td rowspan="3">v1.Get.api.ListMeasurementIDandDates</td><td><a href="#m15">Notfound</a></td><td rowspan="1">1693986308766</td><td rowspan="1">1462</td></tr><tr class="passedeven"><td><a href="#m16">ScanIdListEndpoint</a></td><td rowspan="1">1693986310230</td><td rowspan="1">1487</td></tr><tr class="passedeven"><td><a href="#m17">Unauthorized</a></td><td rowspan="1">1693986311718</td><td rowspan="1">1427</td></tr><tr class="passedodd"><td rowspan="2">v1.Get.api.MeasurementImagebyID</td><td><a href="#m18">NoImageFound</a></td><td rowspan="1">1693986314631</td><td rowspan="1">1501</td></tr><tr class="passedodd"><td><a href="#m19">Unauthorized</a></td><td rowspan="1">1693986316133</td><td rowspan="1">1567</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">API Tests - Version 2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">v2.Get.api.GetMeasurementDataById</td><td><a href="#m20">assertJsonfileToResponseBody</a></td><td rowspan="1">1693986317726</td><td rowspan="1">1313</td></tr><tr class="failedodd"><td rowspan="1">v2.Get.api.GetMeasurementDatabyRange</td><td><a href="#m21">assertTheIdRange</a></td><td rowspan="1">1693986326498</td><td rowspan="1">1515</td></tr><tr class="failedeven"><td rowspan="2">v2.Get.api.MeasurementImagebyID</td><td><a href="#m22">VeridyTheIdByImage</a></td><td rowspan="1">1693986347054</td><td rowspan="1">1518</td></tr><tr class="failedeven"><td><a href="#m23">testNoImageFound</a></td><td rowspan="1">1693986348582</td><td rowspan="1">0</td></tr><tr><th colspan="4">API Tests - Version 2 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">v2.Get.api.GetMeasurementDataById</td><td><a href="#m24">verifybadRequest</a></td><td rowspan="1">1693986319042</td><td rowspan="1">3018</td></tr><tr class="passedeven"><td><a href="#m25">verifyunauthorized</a></td><td rowspan="1">1693986322061</td><td rowspan="1">2861</td></tr><tr class="passedodd"><td rowspan="4">v2.Get.api.GetMeasurementDatabyRange</td><td><a href="#m26">Unauthorized</a></td><td rowspan="1">1693986335165</td><td rowspan="1">2763</td></tr><tr class="passedodd"><td><a href="#m27">assertthedaterange</a></td><td rowspan="1">1693986324924</td><td rowspan="1">1572</td></tr><tr class="passedodd"><td><a href="#m28">invalidFromOrToValue</a></td><td rowspan="1">1693986329445</td><td rowspan="1">5718</td></tr><tr class="passedodd"><td><a href="#m29">invalidRangeValue</a></td><td rowspan="1">1693986328015</td><td rowspan="1">1428</td></tr><tr class="passedeven"><td rowspan="3">v2.Get.api.LatestMeasurementImage</td><td><a href="#m30">Latestmeasurementimage</a></td><td rowspan="1">1693986337930</td><td rowspan="1">1993</td></tr><tr class="passedeven"><td><a href="#m31">Unauthorized</a></td><td rowspan="1">1693986339925</td><td rowspan="1">1585</td></tr><tr class="passedeven"><td><a href="#m32">notFound</a></td><td rowspan="1">1693986341512</td><td rowspan="1">1423</td></tr><tr class="passedodd"><td rowspan="3">v2.Get.api.ListMeasurementIDandDates</td><td><a href="#m33">Notfound</a></td><td rowspan="1">1693986342938</td><td rowspan="1">1278</td></tr><tr class="passedodd"><td><a href="#m34">ScanIdList</a></td><td rowspan="1">1693986344217</td><td rowspan="1">1398</td></tr><tr class="passedodd"><td><a href="#m35">Unauthorized</a></td><td rowspan="1">1693986345616</td><td rowspan="1">1436</td></tr><tr class="passedeven"><td rowspan="1">v2.Get.api.MeasurementImagebyID</td><td><a href="#m36">Unauthorized</a></td><td rowspan="1">1693986348585</td><td rowspan="1">1578</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">API Tests - Version 3 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">v3.Get.api.GetAllMeasurementDatabySKU</td><td><a href="#m37">noMeasurement</a></td><td rowspan="1">1693986357282</td><td rowspan="1">0</td></tr><tr class="failedodd"><td rowspan="1">v3.Get.api.GetMeasurementArtifactImage</td><td><a href="#m38">Get_Measurement_Artifact_Image_v3</a></td><td rowspan="1">1693986406075</td><td rowspan="1">2849</td></tr><tr class="failedeven"><td rowspan="3">v3.Get.api.GetMeasurementDatabyRange</td><td><a href="#m39">VerifyStandardFormate</a></td><td rowspan="1">1693986376222</td><td rowspan="1">1430</td></tr><tr class="failedeven"><td><a href="#m40">VerifylegacyFormate</a></td><td rowspan="1">1693986377654</td><td rowspan="1">1447</td></tr><tr class="failedeven"><td><a href="#m41">assertTheIdRange</a></td><td rowspan="1">1693986364588</td><td rowspan="1">1431</td></tr><tr class="failedodd"><td rowspan="1">v3.Get.api.ListMeasurementIDandDates</td><td><a href="#m42">Notfound</a></td><td rowspan="1">1693986396964</td><td rowspan="1">1492</td></tr><tr class="failedeven"><td rowspan="1">v3.Get.api.MeasurementImagebyID</td><td><a href="#m43">idByImage</a></td><td rowspan="1">1693986401448</td><td rowspan="1">1655</td></tr><tr><th colspan="4">API Tests - Version 3 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">v3.Get.api.DownloadMeasurementArtifactImages</td><td><a href="#m44">Download_Measurement_Artifact_Images_v3</a></td><td rowspan="1">1693986408925</td><td rowspan="1">2855</td></tr><tr class="passedodd"><td rowspan="9">v3.Get.api.GetAllMeasurementDatabySKU</td><td><a href="#m45">SkipFailureIsFalse</a></td><td rowspan="1">1693986350174</td><td rowspan="1">1395</td></tr><tr class="passedodd"><td><a href="#m46">SkipFailureIsTrue</a></td><td rowspan="1">1693986351570</td><td rowspan="1">1419</td></tr><tr class="passedodd"><td><a href="#m47">badRequestmultiplescenario</a></td><td rowspan="1">1693986352990</td><td rowspan="1">1432</td></tr><tr class="passedodd"><td><a href="#m48">badRequestmultiplescenario1</a></td><td rowspan="1">1693986354424</td><td rowspan="1">1418</td></tr><tr class="passedodd"><td><a href="#m49">lessThanStartDate</a></td><td rowspan="1">1693986355843</td><td rowspan="1">1437</td></tr><tr class="passedodd"><td><a href="#m50">unauthorizedWithMultipeScenarious</a></td><td rowspan="1">1693986357285</td><td rowspan="1">1322</td></tr><tr class="passedodd"><td><a href="#m51">verifySkuId</a></td><td rowspan="1">1693986358609</td><td rowspan="1">1411</td></tr><tr class="passedodd"><td><a href="#m52">verifylegacyFormat</a></td><td rowspan="1">1693986360021</td><td rowspan="1">1496</td></tr><tr class="passedodd"><td><a href="#m53">verifystandardFormat</a></td><td rowspan="1">1693986361518</td><td rowspan="1">1505</td></tr><tr class="passedeven"><td rowspan="5">v3.Get.api.GetMeasurementDataBySku</td><td><a href="#m54">assertTheExteranlJsonToResponseBodyAndStatusCode</a></td><td rowspan="1">1693986379102</td><td rowspan="1">2881</td></tr><tr class="passedeven"><td><a href="#m55">badRequestWithMultipeScenarious</a></td><td rowspan="1">1693986390714</td><td rowspan="1">2867</td></tr><tr class="passedeven"><td><a href="#m56">unauthorizedWithMultipeScenarious</a></td><td rowspan="1">1693986387957</td><td rowspan="1">2756</td></tr><tr class="passedeven"><td><a href="#m57">verifylegacyFormate</a></td><td rowspan="1">1693986384943</td><td rowspan="1">3013</td></tr><tr class="passedeven"><td><a href="#m58">verifystandardFormate</a></td><td rowspan="1">1693986381985</td><td rowspan="1">2956</td></tr><tr class="passedodd"><td rowspan="4">v3.Get.api.GetMeasurementDatabyRange</td><td><a href="#m59">Unauthorized</a></td><td rowspan="1">1693986373374</td><td rowspan="1">2846</td></tr><tr class="passedodd"><td><a href="#m60">assertthedaterange</a></td><td rowspan="1">1693986363024</td><td rowspan="1">1563</td></tr><tr class="passedodd"><td><a href="#m61">invalidFromOrToValue</a></td><td rowspan="1">1693986367436</td><td rowspan="1">5936</td></tr><tr class="passedodd"><td><a href="#m62">invalidRangeValue</a></td><td rowspan="1">1693986366020</td><td rowspan="1">1415</td></tr><tr class="passedeven"><td rowspan="2">v3.Get.api.LatestMeasurementImage</td><td><a href="#m63">Latestmeasurementimage</a></td><td rowspan="1">1693986393582</td><td rowspan="1">1818</td></tr><tr class="passedeven"><td><a href="#m64">Unauthorized</a></td><td rowspan="1">1693986395401</td><td rowspan="1">1561</td></tr><tr class="passedodd"><td rowspan="2">v3.Get.api.ListMeasurementIDandDates</td><td><a href="#m65">Unauthorized</a></td><td rowspan="1">1693986398458</td><td rowspan="1">1508</td></tr><tr class="passedodd"><td><a href="#m66">testScanIdListEndpoint</a></td><td rowspan="1">1693986399968</td><td rowspan="1">1479</td></tr><tr class="passedeven"><td rowspan="2">v3.Get.api.MeasurementImagebyID</td><td><a href="#m67">Unauthorized</a></td><td rowspan="1">1693986404543</td><td rowspan="1">1531</td></tr><tr class="passedeven"><td><a href="#m68">testNoImageFound</a></td><td rowspan="1">1693986403104</td><td rowspan="1">1438</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">v3.Get.api.LiveMeasurementCheck#testNoImageFound</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [23.5] but found [23.0]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:765)
-	at org.testng.Assert.assertEquals(Assert.java:785)
-	at v3.Get.api.LiveMeasurementCheck.testNoImageFound(LiveMeasurementCheck.java:67)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+<h2>API Tests - Version 1</h2><h3 id="m0">v1.Get.api.GetMeasurementDataById#assertJsonfileWithResponseBody</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Date value for key &apos;scanned_time&apos; does not match the expected value.
+	at v1.Get.api.GetMeasurementDataById.compareResponseWithExternalData(GetMeasurementDataById.java:139)
+	at v1.Get.api.GetMeasurementDataById.assertJsonfileWithResponseBody(GetMeasurementDataById.java:58)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">v1.Get.api.GetMeasurementDatabyRange#assertTheIdRange</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [200] but found [404]
+	at v1.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:159)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">v1.Get.api.MeasurementImagebyID#idByImage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [200] but found [404]
+	at credentails.CommonMethods.extractValuesFromImage(CommonMethods.java:95)
+	at v1.Get.api.MeasurementImagebyID.idByImage(MeasurementImagebyID.java:28)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">v1.Get.api.GetMeasurementDataById#verifybadRequest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">v1.Get.api.GetMeasurementDataById#verifyunauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">v1.Get.api.GetMeasurementDataBySku#assertTheExteranlJsonToResponseBodyAndStatusCode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">v1.Get.api.GetMeasurementDataBySku#badRequestWithMultipeScenarious</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">v1.Get.api.GetMeasurementDataBySku#unauthorizedWithMultipeScenarious</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">v1.Get.api.GetMeasurementDatabyRange#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">v1.Get.api.GetMeasurementDatabyRange#assertthedaterange</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">v1.Get.api.GetMeasurementDatabyRange#invalidFromOrToValue</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">v1.Get.api.GetMeasurementDatabyRange#invalidRangeValue</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">v1.Get.api.LatestMeasurementImage#Latestmeasurementimage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">v1.Get.api.LatestMeasurementImage#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">v1.Get.api.LatestMeasurementImage#notFound</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">v1.Get.api.ListMeasurementIDandDates#Notfound</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">v1.Get.api.ListMeasurementIDandDates#ScanIdListEndpoint</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">v1.Get.api.ListMeasurementIDandDates#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">v1.Get.api.MeasurementImagebyID#NoImageFound</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m19">v1.Get.api.MeasurementImagebyID#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>API Tests - Version 2</h2><h3 id="m20">v2.Get.api.GetMeasurementDataById#assertJsonfileToResponseBody</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Date value for key &apos;scanned_time&apos; does not match the expected value.
+	at v2.Get.api.GetMeasurementDataById.compareResponseWithExternalData(GetMeasurementDataById.java:139)
+	at v2.Get.api.GetMeasurementDataById.assertJsonfileToResponseBody(GetMeasurementDataById.java:58)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m21">v2.Get.api.GetMeasurementDatabyRange#assertTheIdRange</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [200] but found [404]
+	at v2.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:149)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m22">v2.Get.api.MeasurementImagebyID#VeridyTheIdByImage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [200] but found [404]
+	at credentails.CommonMethods.extractValuesFromImage(CommonMethods.java:95)
+	at v2.Get.api.MeasurementImagebyID.VeridyTheIdByImage(MeasurementImagebyID.java:29)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m23">v2.Get.api.MeasurementImagebyID#testNoImageFound</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Parameter &apos;InvalidImageId&apos; is required by @Test on method testNoImageFound but has not been marked @Optional or defined
+in /home/usha/Music/WebserviceAutomation/testng.xml
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m24">v2.Get.api.GetMeasurementDataById#verifybadRequest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m25">v2.Get.api.GetMeasurementDataById#verifyunauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m26">v2.Get.api.GetMeasurementDatabyRange#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m27">v2.Get.api.GetMeasurementDatabyRange#assertthedaterange</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m28">v2.Get.api.GetMeasurementDatabyRange#invalidFromOrToValue</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m29">v2.Get.api.GetMeasurementDatabyRange#invalidRangeValue</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m30">v2.Get.api.LatestMeasurementImage#Latestmeasurementimage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m31">v2.Get.api.LatestMeasurementImage#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m32">v2.Get.api.LatestMeasurementImage#notFound</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m33">v2.Get.api.ListMeasurementIDandDates#Notfound</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m34">v2.Get.api.ListMeasurementIDandDates#ScanIdList</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m35">v2.Get.api.ListMeasurementIDandDates#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m36">v2.Get.api.MeasurementImagebyID#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>API Tests - Version 3</h2><h3 id="m37">v3.Get.api.GetAllMeasurementDatabySKU#noMeasurement</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Cannot inject @Test annotated Method [noMeasurement] with [class java.lang.String].
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m38">v3.Get.api.GetMeasurementArtifactImage#Get_Measurement_Artifact_Image_v3</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.size()&quot; because &quot;additional_image_id&quot; is null
+	at v3.Get.api.ListMeasurementArtifactsIDandTitle.List_Measurement_Artifacts_ID_and_Title_200status(ListMeasurementArtifactsIDandTitle.java:38)
+	at v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3(GetMeasurementArtifactImage.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m39">v3.Get.api.GetMeasurementDatabyRange#VerifyStandardFormate</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader &apos;bootstrap&apos;)
+	at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
+	at credentails.CommonMethods.Standard(CommonMethods.java:68)
+	at v3.Get.api.GetMeasurementDatabyRange.VerifyStandardFormate(GetMeasurementDatabyRange.java:313)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m40">v3.Get.api.GetMeasurementDatabyRange#VerifylegacyFormate</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader &apos;bootstrap&apos;)
+	at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
+	at credentails.CommonMethods.legacy(CommonMethods.java:39)
+	at v3.Get.api.GetMeasurementDatabyRange.VerifylegacyFormate(GetMeasurementDatabyRange.java:340)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m41">v3.Get.api.GetMeasurementDatabyRange#assertTheIdRange</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [200] but found [404]
+	at v3.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:167)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m42">v3.Get.api.ListMeasurementIDandDates#Notfound</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Correct status code not returned expected [401] but found [404]
+	at credentails.CommonMethods.assertMessageAndStatuscode(CommonMethods.java:34)
+	at v3.Get.api.ListMeasurementIDandDates.Notfound(ListMeasurementIDandDates.java:67)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m43">v3.Get.api.MeasurementImagebyID#idByImage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [200] but found [404]
+	at credentails.CommonMethods.extractValuesFromImage(CommonMethods.java:95)
+	at v3.Get.api.MeasurementImagebyID.idByImage(MeasurementImagebyID.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m44">v3.Get.api.DownloadMeasurementArtifactImages#Download_Measurement_Artifact_Images_v3</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m45">v3.Get.api.GetAllMeasurementDatabySKU#SkipFailureIsFalse</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m46">v3.Get.api.GetAllMeasurementDatabySKU#SkipFailureIsTrue</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m47">v3.Get.api.GetAllMeasurementDatabySKU#badRequestmultiplescenario</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m48">v3.Get.api.GetAllMeasurementDatabySKU#badRequestmultiplescenario1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m49">v3.Get.api.GetAllMeasurementDatabySKU#lessThanStartDate</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m50">v3.Get.api.GetAllMeasurementDatabySKU#unauthorizedWithMultipeScenarious</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m51">v3.Get.api.GetAllMeasurementDatabySKU#verifySkuId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m52">v3.Get.api.GetAllMeasurementDatabySKU#verifylegacyFormat</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m53">v3.Get.api.GetAllMeasurementDatabySKU#verifystandardFormat</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m54">v3.Get.api.GetMeasurementDataBySku#assertTheExteranlJsonToResponseBodyAndStatusCode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m55">v3.Get.api.GetMeasurementDataBySku#badRequestWithMultipeScenarious</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m56">v3.Get.api.GetMeasurementDataBySku#unauthorizedWithMultipeScenarious</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m57">v3.Get.api.GetMeasurementDataBySku#verifylegacyFormate</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m58">v3.Get.api.GetMeasurementDataBySku#verifystandardFormate</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m59">v3.Get.api.GetMeasurementDatabyRange#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m60">v3.Get.api.GetMeasurementDatabyRange#assertthedaterange</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m61">v3.Get.api.GetMeasurementDatabyRange#invalidFromOrToValue</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m62">v3.Get.api.GetMeasurementDatabyRange#invalidRangeValue</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m63">v3.Get.api.LatestMeasurementImage#Latestmeasurementimage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m64">v3.Get.api.LatestMeasurementImage#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m65">v3.Get.api.ListMeasurementIDandDates#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m66">v3.Get.api.ListMeasurementIDandDates#testScanIdListEndpoint</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m67">v3.Get.api.MeasurementImagebyID#Unauthorized</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m68">v3.Get.api.MeasurementImagebyID#testNoImageFound</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -1,34 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [WebServiceTesting]" guice-stage="DEVELOPMENT">
-  <parameter name="userFromDate" value="2023-08-21"/>
-  <parameter name="lessninty" value="2023-01-19"/>
-  <parameter name="systemid" value="1665583342135BAZGyd9TTiGExWAAUEszYZUckZH"/>
-  <parameter name="endDate" value="2023-08-29"/>
-  <parameter name="userFromId" value="6368"/>
-  <parameter name="invalidSku" value="abc"/>
-  <parameter name="secretid" value="3fe4ed66-3cfb-4524-abdb-b0cf777ffe91"/>
-  <parameter name="userToDate" value="2023-08-29"/>
-  <parameter name="userid" value="1673253571738_9w3cqD7Fb7JxJHk8116pkThP1c"/>
-  <parameter name="ImageId" value="6397"/>
-  <parameter name="InvalidImageId" value="123"/>
-  <parameter name="heightPref" value="1.5"/>
-  <parameter name="userToId" value="6390"/>
-  <parameter name="Sku" value="vmeasure"/>
-  <parameter name="envelopeMod" value="false"/>
-  <parameter name="startDate" value="2023-08-22"/>
-  <test thread-count="5" name="Live api(failed)">
+  <test thread-count="5" name="API Tests - Version 1(failed)">
     <classes>
-      <class name="v1.Get.api.LiveMeasurement">
+      <class name="v1.Get.api.MeasurementImagebyID">
         <methods>
-          <include name="measurements"/>
+          <include name="idByImage"/>
         </methods>
-      </class> <!-- v1.Get.api.LiveMeasurement -->
-      <class name="v1.Get.api.LiveCalibration">
+      </class> <!-- v1.Get.api.MeasurementImagebyID -->
+      <class name="v1.Get.api.GetMeasurementDatabyRange">
         <methods>
-          <include name="CalibratedSuccessfully" invocation-numbers="0"/>
+          <include name="assertTheIdRange"/>
         </methods>
-      </class> <!-- v1.Get.api.LiveCalibration -->
+      </class> <!-- v1.Get.api.GetMeasurementDatabyRange -->
+      <class name="v1.Get.api.GetMeasurementDataById">
+        <methods>
+          <include name="assertJsonfileWithResponseBody"/>
+        </methods>
+      </class> <!-- v1.Get.api.GetMeasurementDataById -->
     </classes>
-  </test> <!-- Live api(failed) -->
+  </test> <!-- API Tests - Version 1(failed) -->
+  <test thread-count="5" name="API Tests - Version 2(failed)">
+    <classes>
+      <class name="v2.Get.api.MeasurementImagebyID">
+        <methods>
+          <include name="VeridyTheIdByImage"/>
+          <include name="testNoImageFound"/>
+        </methods>
+      </class> <!-- v2.Get.api.MeasurementImagebyID -->
+      <class name="v2.Get.api.GetMeasurementDatabyRange">
+        <methods>
+          <include name="assertTheIdRange"/>
+        </methods>
+      </class> <!-- v2.Get.api.GetMeasurementDatabyRange -->
+      <class name="v2.Get.api.GetMeasurementDataById">
+        <methods>
+          <include name="assertJsonfileToResponseBody"/>
+        </methods>
+      </class> <!-- v2.Get.api.GetMeasurementDataById -->
+    </classes>
+  </test> <!-- API Tests - Version 2(failed) -->
+  <test thread-count="5" name="API Tests - Version 3(failed)">
+    <classes>
+      <class name="v3.Get.api.ListMeasurementIDandDates">
+        <methods>
+          <include name="Notfound"/>
+        </methods>
+      </class> <!-- v3.Get.api.ListMeasurementIDandDates -->
+      <class name="v3.Get.api.GetMeasurementArtifactImage">
+        <methods>
+          <include name="Get_Measurement_Artifact_Image_v3"/>
+        </methods>
+      </class> <!-- v3.Get.api.GetMeasurementArtifactImage -->
+      <class name="v3.Get.api.MeasurementImagebyID">
+        <methods>
+          <include name="idByImage"/>
+        </methods>
+      </class> <!-- v3.Get.api.MeasurementImagebyID -->
+      <class name="v3.Get.api.GetAllMeasurementDatabySKU">
+        <methods>
+          <include name="noMeasurement"/>
+        </methods>
+      </class> <!-- v3.Get.api.GetAllMeasurementDatabySKU -->
+      <class name="v3.Get.api.GetMeasurementDatabyRange">
+        <methods>
+          <include name="assertTheIdRange"/>
+          <include name="VerifylegacyFormate"/>
+          <include name="VerifyStandardFormate"/>
+        </methods>
+      </class> <!-- v3.Get.api.GetMeasurementDatabyRange -->
+    </classes>
+  </test> <!-- API Tests - Version 3(failed) -->
 </suite> <!-- Failed suite [WebServiceTesting] -->

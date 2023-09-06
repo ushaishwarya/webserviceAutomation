@@ -3,31 +3,31 @@ package v1.Get.api;
 import java.text.ParseException;
 
 
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import org.json.JSONObject;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+
 import credentails.Credentails;
+import credentails.CommonMethods;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class GetMeasurementDatabyRange {
+public class GetMeasurementDatabyRange extends CommonMethods{
     @Test(priority = 1)
-    @Parameters({ "userFromDate", "userToDate" })
-	  public  void assertthedaterange(String userFromDate, String userToDate) {
+	  public  void assertthedaterange() {
 
 	        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 	        try {
-	            Date fromDate = dateFormat.parse(userFromDate);
-	            Date toDate = dateFormat.parse(userToDate);
+	            Date fromDate = dateFormat.parse(Credentails.userFromDate);
+	            Date toDate = dateFormat.parse(Credentails.userToDate);
 
 	            Calendar calendar = Calendar.getInstance();
 	            calendar.setTime(fromDate);
@@ -46,21 +46,19 @@ public class GetMeasurementDatabyRange {
 	            calendar.set(Calendar.SECOND, 59);
 	            Date validToDate = calendar.getTime();
 
-	            Date fromDate1 = dateFormat.parse(userFromDate);
-	            Date toDate1 = dateFormat.parse(userToDate);
+	            Date fromDate1 = dateFormat.parse(Credentails.userFromDate);
+	            Date toDate1 = dateFormat.parse(Credentails.userToDate);
 
 	            if (isValidDateRange(fromDate1, toDate1, validFromDate, validToDate)) {
-	                System.out.println("Date range is valid.");
 
-	                // API Request using RestAssured
 	                RestAssured.baseURI = Credentails.v1;
 
 	                Response response = RestAssured.given()
 	                        .header("systemid", Credentails.systemid)
 	                        .header("userid", Credentails.userid)
 	                        .queryParam("range", "Date")
-	                        .queryParam("from", userFromDate)
-	                        .queryParam("to", userToDate)
+	                        .queryParam("from", Credentails.userFromDate)
+	                        .queryParam("to", Credentails.userToDate)
 	                        .when()
 	                        .get("/dimension")
 	                        .then()
@@ -74,14 +72,11 @@ public class GetMeasurementDatabyRange {
 	                	System.out.println(response.asPrettyString());
 	                }
 	                
-//	                System.out.println(scannedOnTimes);
 
-	             // Inside the for loop where you parse scannedOnTimes
 	                List<Date> scannedDates = new ArrayList<>();
 	                for (String scannedTime : scannedOnTimes) {
 	                    Date scannedDate = new SimpleDateFormat("E MMM dd, yyyy hh:mm:ss a").parse(scannedTime);
-	                    String formattedScannedDate = dateFormat.format(scannedDate); // Format the scanned date using dateFormat
-//	                    System.out.println(formattedScannedDate); // Debug print to check the formatted date
+	                    String formattedScannedDate = dateFormat.format(scannedDate); 
 	                    scannedDates.add(dateFormat.parse(formattedScannedDate)); // Parse the formatted date back to Date
 	                }
 	                
@@ -118,33 +113,24 @@ public class GetMeasurementDatabyRange {
 	                fromDate.compareTo(validToDate) <= 0 && toDate.compareTo(validToDate) <= 0;
 	    }
 	    @Test(priority=2)
-	    @Parameters({ "userFromId", "userToId" })
 
-		  public  void assertTheIdRange(String userFromIdInput, String userToIdInput) {
-	    	int userFromId;
-	    	int userToId;
+		  public  void assertTheIdRange() {
 
 	    	try {
-	    	    userFromId = Integer.parseInt(userFromIdInput);
-	    	    userToId = Integer.parseInt(userToIdInput);
-	    	    
-	    	    System.out.println("ID range is valid.");
-		                // API Request using RestAssured
 		                RestAssured.baseURI = Credentails.v1;
 
 		                Response response = RestAssured.given()
 		                        .header("systemid", Credentails.systemid)
 		                        .header("userid", Credentails.userid)
 		                        .queryParam("range", "id")
-		                        .queryParam("from", userFromId)
-		                        .queryParam("to", userToId)
+		                        .queryParam("from", Credentails.userFromId)
+		                        .queryParam("to", Credentails.userToId)
 		                        .when()
 		                        .get("/dimension")
 		                        .then()
 		                        .extract()
 		                        .response();
 
-		             // Parse the JSON response and get the IDs
 		                List<Integer> measurementIds = response.jsonPath().getList("id", Integer.class);
 		                
 		                if(measurementIds==null) {
@@ -152,15 +138,14 @@ public class GetMeasurementDatabyRange {
 		                }
 
 		                
-//		                System.out.println(measurementIds);
 		                
-		                boolean allmeasurementidValid = true; // Flag to track validity of all scanned dates
+		                boolean allmeasurementidValid = true; 
 
 		                // Compare the IDs with the entered ID range
 		                for (Integer measurementId : measurementIds) {
-		                    if (!isValidIdRange(measurementId, userFromId, userToId)) {
+		                    if (!isValidIdRange(measurementId, Credentails.userFromId, Credentails.userToId)) {
 		                    	allmeasurementidValid = false;
-		                        break; // No need to continue checking if any scanned date is invalid
+		                        break;
 		                    }
 		                }
 
@@ -184,55 +169,50 @@ public class GetMeasurementDatabyRange {
             return idToCheck >= fromId && idToCheck <= toId;
         }
       @Test(priority=3)
-	  @Parameters({ "userFromId", "userToId" })
 
-  	  public  void invalidRangeValue(String userFromIdInput, String userToIdInput) {
+  	  public  void invalidRangeValue() {
           RestAssured.baseURI = Credentails.v1;
 
           Response response = RestAssured.given()
                   .header("systemid", Credentails.systemid)
                   .header("userid", Credentails.userid)
                   .queryParam("range", "2eefe")
-                  .queryParam("from",userFromIdInput)
-                  .queryParam("to", userToIdInput)
+                  .queryParam("from",Credentails.userFromDate)
+                  .queryParam("to", Credentails.userToDate)
                   .when()
                   .get("/dimension")
                   .then()
                   .extract()
                   .response();
           
-
-       // Parse the JSON response and get the IDs
-          String message = response.jsonPath().getString("message");
-          
-          Assert.assertEquals(message, "Invalid Range value");
-          
-	        int statuscode=response.getStatusCode();
-	        
-	        Assert.assertEquals(statuscode, 400);
+          assertMessageAndStatuscode(response, "Invalid Range value", 400);
   		  
   	  }
       
       @Test(priority=4)
-	  @Parameters({ "userFromId", "userToId" })
-
-  	  public  void invalidFromOrToValue(String userFromIdInput, String userToIdInput) {
+  	  public  void invalidFromOrToValue() {
           int numIterations = 4;
           for (int i = 1; i <= numIterations; i++) {
         	  String range="Date";
-              String from = userFromIdInput;
-              String to = userToIdInput;
+              Integer from = Credentails.userToId;
+              Integer to = Credentails.userToId;
+              
+              String userfrom = Integer.toString(from);
+              String userto = Integer.toString(to);
+
+              
+
               
 
               if (i == 1) {
                   range = "Date";
               } else if (i == 2) {
-                  from = "eww";
+            	  userfrom = "eww";
               } else if (i == 3) {
-                  to = "3433";
+                  userto = "3433";
               }else if (i == 4) {
-                  from = "103300"; // Using a valid date format
-                  to = "103400";   // Using a valid date format
+                  userfrom = "103300"; 
+                  userto = "103400";   
 
           }
 
@@ -243,33 +223,23 @@ public class GetMeasurementDatabyRange {
                   .header("systemid", Credentails.systemid)
                   .header("userid", Credentails.userid)
                   .queryParam("range", range)
-                  .queryParam("from",from)
-                  .queryParam("to", to)
+                  .queryParam("from",userfrom)
+                  .queryParam("to", userto)
                   .when()
                   .get("/dimension")
                   .then()
                   .extract()
                   .response();
           
-//          System.out.println(response.asPrettyString());
-
-          String message = response.jsonPath().getString("message");
-          
-          Assert.assertEquals(message, "Either FROM or TO Date is invalid.");
-          
-	        int statuscode=response.getStatusCode();
 	        
-	        Assert.assertEquals(statuscode, 400);
+	        assertMessageAndStatuscode(response, "Either FROM or TO Date is invalid.", 400);
+
 
           }
       
       }
       @Test(priority = 5)
-      @Parameters({ "userFromId", "userToId" })
-      public void Unauthorized(String userFromIdInput, String userToIdInput) {
-          int userFromId;
-          int userToId;
-
+      public void Unauthorized() {
           int numIterations = 3;
 
           for (int i = 1; i < numIterations; i++) {
@@ -285,8 +255,6 @@ public class GetMeasurementDatabyRange {
                   userId = "";
               }
               
-              userFromId = Integer.parseInt(userFromIdInput);
-              userToId = Integer.parseInt(userToIdInput);
 
               RestAssured.baseURI = Credentails.v1;
 
@@ -294,24 +262,15 @@ public class GetMeasurementDatabyRange {
                       .header("systemid", systemId)
                       .header("userid", userId)
                       .queryParam("range", "id")
-                      .queryParam("from", userFromId)
-                      .queryParam("to", userToId)
+                      .queryParam("from", Credentails.userFromId)
+                      .queryParam("to", Credentails.userToId)
                       .when()
                       .get("/dimension")
                       .then()
                       .extract()
                       .response();
 
-              JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-
-              String message = jsonResponse.getString("message");
-
-              String expectedMessage = "Unauthorized!";
-
-              Assert.assertEquals(message, expectedMessage, "Unauthorized message is not matched");
-              int statusCode = response.getStatusCode();
-
-              Assert.assertEquals(statusCode, 401, "Correct status code not returned");
+              assertMessageAndStatuscode(response, "Unauthorized!", 401);
           }
       }
 }

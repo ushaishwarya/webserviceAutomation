@@ -3,6 +3,7 @@ package v1.Get.api;
 import org.testng.annotations.Test;
 
 
+
 import org.testng.Assert;
 
 
@@ -25,19 +26,17 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import credentails.Credentails;
+import credentails.CommonMethods;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-public class GetMeasurementDataById {
+public class GetMeasurementDataById extends CommonMethods{
     @Test(priority=1)
-    public void assertTheExteranlJsonToResponseBodyAndStatusCode() throws IOException {
+    public void assertJsonfileWithResponseBody() throws IOException {
     	
-    	//To Specify the external file
        String externalJsonFilePath = Credentails.filepath;
 
-       //Reading data from an external JSON file and storing it in a list of maps
        List<Map<String, Object>> jsonDataList = readJsonFile(externalJsonFilePath);
 
-       //Initializes a variable
         int totalResponseTime = 0;
         long minResponseTime = Long.MAX_VALUE;
         long maxResponseTime = Long.MIN_VALUE;
@@ -181,64 +180,9 @@ public class GetMeasurementDataById {
     
         return keyMapping.getOrDefault(key, key);
     }
+
     @Test(priority=2)
-    public void unauthorizedWithMultipeScenarious() throws IOException {
-
-        RestAssured.baseURI = Credentails.v1;
-
-        int numIterations = 3;         
-        List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
-        
-        Object idValue = jsonDataList.get(0).get("id");
-
-     String id = (idValue != null) ? idValue.toString() : null;
-
-
-        for (int i = 1; i < numIterations; i++) {
-            String systemId = Credentails.systemid;
-            String userId = Credentails.userid;
-
-            if (i == 1) {
-                systemId = "";
-            } else if (i == 2) {
-                userId = "";
-            } else if (i == 3) {
-                systemId = "";
-                userId = "";
-            }
-
-            Response response = RestAssured.given()
-                    .pathParam("id", id)
-                    .header("systemid", systemId)
-                    .header("userid", userId)
-                .when()
-                    .get("/dimension/{id}")
-              .then()
-              .extract()
-              .response();
-            JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-            
-            String message = jsonResponse.getString("message");
-            
-            String excepted_message="Unauthorized!";
-            
-            Assert.assertEquals(message, excepted_message,"Unauthorized message is not matched");
-            int statusCode = response.getStatusCode();
-
-            Assert.assertEquals(statusCode, 401 , "Correct status code not returned");
-
-
-            
-        }
-        
-   }
-    public static List<Map<String, Object>> readJsonFile1(String filePath) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(new File(filePath), objectMapper.getTypeFactory().constructCollectionType(List.class, Map.class));
-    }
-
-    @Test(priority=3)
-    public void badRequestWithMultipeScenarious() throws IOException {
+    public void verifybadRequest() throws IOException {
 
         RestAssured.baseURI = Credentails.v1;
         int numIterations = 2;
@@ -278,10 +222,53 @@ public class GetMeasurementDataById {
 
             
         }
+        
    }
+    @Test(priority=3)
+    public void verifyunauthorized() throws IOException {
+
+        RestAssured.baseURI = Credentails.v1;
+
+        int numIterations = 3;         
+        List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
+        
+        Object idValue = jsonDataList.get(0).get("id");
+
+        String id = (idValue != null) ? idValue.toString() : null;
 
 
-    
+        for (int i = 1; i < numIterations; i++) {
+            String systemId = Credentails.systemid;
+            String userId = Credentails.userid;
 
+            if (i == 1) {
+                systemId = "";
+            } else if (i == 2) {
+                userId = "";
+            } else if (i == 3) {
+                systemId = "";
+                userId = "";
+            }
 
-}
+            Response response = RestAssured.given()
+                    .pathParam("id", id)
+                    .header("systemid", systemId)
+                    .header("userid", userId)
+                .when()
+                    .get("/dimension/{id}")
+              .then()
+              .extract()
+              .response();
+
+            assertMessageAndStatuscode(response, "Unauthorized!", 401);
+
+        }
+        
+   }
+    public static List<Map<String, Object>> readJsonFile1(String filePath) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(new File(filePath), objectMapper.getTypeFactory().constructCollectionType(List.class, Map.class));
+    }
+  
+    }
+

@@ -1,12 +1,12 @@
 package v3.Get.api;
 
 import java.awt.Desktop;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import credentails.Credentails;
@@ -17,8 +17,7 @@ import io.restassured.response.Response;
 public class DownloadMeasurementArtifactImages {
 	
 	@Test
-	@Parameters("ar")
-    public static void Download_Measurement_Artifact_Images_v3() throws FileNotFoundException, IOException {
+    public static void Download_Measurement_Artifact_Images_v3() {
 
         String[] tokens = PostAuth.getauth();
         String accessToken = tokens[0];
@@ -26,7 +25,7 @@ public class DownloadMeasurementArtifactImages {
         RestAssured.baseURI = Credentails.v3;
 
         Response response = RestAssured.given()
-                .pathParam("id", "6295")
+                .pathParam("id", Credentails.artifactid)
                 .header("Content-Type", "application/json")
                 .header("System-Token", Credentails.systemid)
                 .header("Authorization", "Bearer " + accessToken)
@@ -36,7 +35,6 @@ public class DownloadMeasurementArtifactImages {
                 .extract()
                 .response();
 
-        // Verify if the request was successful
         if (response.getStatusCode() == 200) {
             // Extract the file name from the response headers
             String fileName = response.getHeader("Content-Disposition")
@@ -45,10 +43,21 @@ public class DownloadMeasurementArtifactImages {
             // Download the zip file
             try (FileOutputStream fos = new FileOutputStream(fileName)) {
                 response.getBody().asInputStream().transferTo(fos);
-            }
+            } catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
             System.out.println("Zip file downloaded successfully: " + fileName);
-            openFile(fileName);
+            try {
+				openFile(fileName);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 
         } else {

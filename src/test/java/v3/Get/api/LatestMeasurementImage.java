@@ -2,17 +2,18 @@ package v3.Get.api;
 
 import org.testng.annotations.Test;
 
+
 import org.testng.Assert;
-import org.json.JSONObject;
 
 
 import credentails.Credentails;
+import credentails.CommonMethods;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 
-public class LatestMeasurementImage {
+public class LatestMeasurementImage extends CommonMethods{
 	static String[] tokens = PostAuth.getauth();
 	static String accessToken = tokens[0];
 
@@ -51,13 +52,8 @@ public class LatestMeasurementImage {
         .extract()
         .response();
     
-    int statuscode=response.getStatusCode();
-    Assert.assertEquals(statuscode, 401);
     
-    JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-    String message = jsonResponse.getString("message");
-    String excepted_message="Unauthorized!";
-    Assert.assertEquals(excepted_message, message);
+    assertMessageAndStatuscode(response, "Unauthorized!", 401);
 
 	}
 

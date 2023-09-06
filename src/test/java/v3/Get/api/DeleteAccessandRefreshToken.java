@@ -2,13 +2,12 @@ package v3.Get.api;
 
 
 import org.testng.annotations.Test;
-import org.testng.Assert;
 import static io.restassured.RestAssured.given;
 
-import org.json.JSONObject;
 
 
 import credentails.Credentails;
+import credentails.CommonMethods;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -16,7 +15,7 @@ import io.restassured.response.Response;
 import org.testng.annotations.Ignore;
 @Ignore
 
-public class DeleteAccessandRefreshToken {
+public class DeleteAccessandRefreshToken extends CommonMethods {
 	@Test
 	public void deletetoken() {
 	String[] tokens = PostAuth.getauth();
@@ -36,17 +35,9 @@ public class DeleteAccessandRefreshToken {
 		.extract()
 		.response();
     
-    int statuscode=response.getStatusCode();
     
-    Assert.assertEquals(statuscode, 200);
-    
-    JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-    
-    String message = jsonResponse.getString("message");
-    
-    String excepted_Message="Successfully Deleted.";
-    
-    Assert.assertEquals(excepted_Message, message);
+    assertMessageAndStatuscode(response, "Successfully Deleted.", 200);
+
 }
 	@Test
 	public void Unauthorized() {
@@ -67,17 +58,9 @@ public class DeleteAccessandRefreshToken {
 		.extract()
 		.response();
     
-    int statuscode=response.getStatusCode();
+    assertMessageAndStatuscode(response, "Unauthorized!", 401);
+
     
-    Assert.assertEquals(statuscode, 401);
-    
-    JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-    
-    String message = jsonResponse.getString("message");
-    
-    String excepted_Message="Unauthorized!";
-    
-    Assert.assertEquals(excepted_Message, message);
 }
 
 	

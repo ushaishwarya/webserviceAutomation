@@ -22,6 +22,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import credentails.Credentails;
+import credentails.CommonMethods;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -29,9 +30,10 @@ import org.testng.annotations.Ignore;
 @Ignore
 
 
-public class GetMeasurementDataById {
+public class GetMeasurementDataById extends CommonMethods {
 	static String[] tokens = PostAuth.getauth();
 	static String accessToken = tokens[0];
+
 	
 	public static String id;
 
@@ -51,7 +53,7 @@ public class GetMeasurementDataById {
             
 
             
-            Response response = callApiV2(id);
+            Response response = callApiv3(id);
             long responseTime = response.getTime();
             
             
@@ -72,7 +74,7 @@ public class GetMeasurementDataById {
         System.out.println("Minimum Response Time in milliseconds: " + minResponseTime);
         System.out.println("Maximum Response Time in milliseconds: " + maxResponseTime);
     }
-    public static Response callApiV2(String id) {
+    public static Response callApiv3(String id) {
         RestAssured.baseURI = Credentails.v3;
 
         Response response = RestAssured.given()
@@ -193,68 +195,7 @@ public class GetMeasurementDataById {
         return keyMapping.getOrDefault(key, key);
     }
     @Test(priority=2)
-    public void unauthorizedWithMultipeScenarious() throws IOException {
-
-        RestAssured.baseURI = Credentails.v3;
-
-        int numIterations = 2; 
-        List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
-        
-        Object idValue = jsonDataList.get(0).get("id");
-
-     // Convert the idValue to a string
-     String id = (idValue != null) ? idValue.toString() : null;
-
-
-        for (int i = 1; i < numIterations; i++) {
-            String systemId = Credentails.systemid;
-            String token = accessToken;
-
-
-            if (i == 1) {
-                systemId = "";
-            } else if (i == 2) {
-            	token = "";
-            } else if (i == 3) {
-                systemId = "";
-                token = "";
-
-            }
-            
-
-            Response response = RestAssured.given()
-                    .pathParam("id", id)
-        			.header("Content-Type","application/json")
-        			.header("System-Token",systemId)
-        			.header("Authorization","Bearer "+token)
-                .when()
-                    .get("/dimension/{id}")
-              .then()
-              .extract()
-              .response();
-            JSONObject jsonResponse = new JSONObject(response.getBody().asString());
-            
-            String message = jsonResponse.getString("message");
-            
-            String excepted_message="Unauthorized!";
-            
-            Assert.assertEquals(message, excepted_message,"Unauthorized message is not matched");
-            int statusCode = response.getStatusCode();
-
-            Assert.assertEquals(statusCode, 401 , "Correct status code not returned");
-
-
-            
-        }
-        
-   }
-    public static List<Map<String, Object>> readJsonFile1(String filePath) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(new File(filePath), objectMapper.getTypeFactory().constructCollectionType(List.class, Map.class));
-    }
-
-    @Test(priority=3)
-    public void badRequestWithMultipeScenarious() throws IOException {
+    public void verifybadRequest() throws IOException {
 
         RestAssured.baseURI = Credentails.v3;
         int numIterations = 2;
@@ -272,9 +213,8 @@ public class GetMeasurementDataById {
 
             Response response = RestAssured.given()
                     .pathParam("id", id)
-        			.header("Content-Type","application/json")
-        			.header("System-Token",Credentails.systemid)
-        			.header("Authorization","Bearer "+accessToken)
+                    .header("systemid", Credentails.systemid)
+                    .header("userid", Credentails.userid)
                 .when()
                     .get("/dimension/{id}")
                 .then()
@@ -290,8 +230,78 @@ public class GetMeasurementDataById {
 
             Assert.assertEquals(message, expectedMessage, "Message does not match the expected value.");
 
+            
+
+
+            
+        }
+        
+   }
+    @Test(priority=3)
+    public void verifyunauthorized() throws IOException {
+
+        RestAssured.baseURI = Credentails.v3;
+
+        int numIterations = 3;         
+        List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
+        
+        Object idValue = jsonDataList.get(0).get("id");
+
+        String id = (idValue != null) ? idValue.toString() : null;
+
+
+        for (int i = 1; i < numIterations; i++) {
+            String systemId = Credentails.systemid;
+            String userId = Credentails.userid;
+
+            if (i == 1) {
+                systemId = "";
+            } else if (i == 2) {
+                userId = "";
+            } else if (i == 3) {
+                systemId = "";
+                userId = "";
             }
+
+            Response response = RestAssured.given()
+                    .pathParam("id", id)
+                    .header("systemid", systemId)
+                    .header("userid", userId)
+                .when()
+                    .get("/dimension/{id}")
+              .then()
+              .extract()
+              .response();
+
+            assertMessageAndStatuscode(response, "Unauthorized!", 401);
+
+        }
+        
+   }
+    public static List<Map<String, Object>> readJsonFile1(String filePath) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(new File(filePath), objectMapper.getTypeFactory().constructCollectionType(List.class, Map.class));
     }
+  
+    @Test(priority=4)
+    public void verifNotFound(){
+
+        RestAssured.baseURI = Credentails.v3;
+
+
+            Response response = RestAssured.given()
+                    .pathParam("id", "121")
+                    .header("systemid", Credentails.systemid)
+                    .header("userid",Credentails.userid )
+                .when()
+                    .get("/dimension/{id}")
+              .then()
+              .extract()
+              .response();
+
+            assertMessageAndStatuscode(response, "No Measurement available for the given ID", 400);
+
+        }
     @Test
         public void verifyStandardFormate() throws IOException {
 
@@ -317,29 +327,8 @@ public class GetMeasurementDataById {
                     .then()
                     .extract()
                     .response();
-
-            String actualId = response.jsonPath().getString("id");
-            String actualDimensionUnitFormat = response.jsonPath().getString("dimensionUnit");
-            String actualWeightUnitFormat = response.jsonPath().getString("weightUnit");
-            String actualDateUnitFormat = response.jsonPath().getString("scannedOn");
-
-
-            Assert.assertEquals(actualId, id, "Response id does not match the expected id.");
-
-            Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("in")
-                    || actualDimensionUnitFormat.equalsIgnoreCase("cm"),
-                    "Response dimension unit format is not 'in' or 'cm'.");
-
-            Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("kg")
-                    || actualWeightUnitFormat.equalsIgnoreCase("g")
-                    || actualWeightUnitFormat.equalsIgnoreCase("lb"),
-                    "Response weight unit format is not one of 'kg', 'g', or 'lb'.");
             
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            LocalDateTime inputDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-            LocalDateTime desiredDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-
-            Assert.assertEquals(inputDateTime, desiredDateTime, "Dates do not match.");
+            Standard(response);
 
         }
     @Test
@@ -347,50 +336,30 @@ public class GetMeasurementDataById {
 
         List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
 
-        Object idValue = jsonDataList.get(0).get("id");
-        String id = (idValue != null) ? idValue.toString() : null;
+        	Object idValue = jsonDataList.get(0).get("id");
+        		String id = (idValue != null) ? idValue.toString() : null;
 
-        RestAssured.baseURI = Credentails.v3;
-        String[] tokens = PostAuth.getauth();
-        String accessToken = tokens[0];
+        		RestAssured.baseURI = Credentails.v3;
 
-        Response response = RestAssured.given()
+        	Response response = RestAssured.given()
+        		
                 .pathParam("id", id) 
-                .header("Content-Type", "application/json")
-                .header("System-Token", Credentails.systemid)
-                .header("Authorization", "Bearer " + accessToken)
+                	.header("Content-Type", "application/json")
+                		.header("System-Token", Credentails.systemid)
+                			.header("Authorization", "Bearer " + accessToken)
+                			
                 .queryParam("isStandardDateFormat", "false")
-                .queryParam("isStandardDimensionUnitFormat", "false")
-                .queryParam("isStandardWeightUnitFormat", "false")
+                	.queryParam("isStandardDimensionUnitFormat", "false")
+                .			queryParam("isStandardWeightUnitFormat", "false")
+                
                 .when()
-                .get("/dimension/{id}")
+                	.get("/dimension/{id}")
+                	
                 .then()
-                .extract()
-                .response();
+                	.extract()
+                		.response();
 
-        String actualId = response.jsonPath().getString("id");
-        String actualDimensionUnitFormat = response.jsonPath().getString("dimensionUnit");
-        String actualWeightUnitFormat = response.jsonPath().getString("weightUnit");
-        String actualDateUnitFormat = response.jsonPath().getString("scannedOn");
-
-
-        Assert.assertEquals(actualId, id, "Response id does not match the expected id.");
-
-        Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("Inch")
-                || actualDimensionUnitFormat.equalsIgnoreCase("Centimeter"),
-                "Response dimension unit format is not 'Inch' or 'Centimeter'.");
-
-        Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("Kilogram")
-                || actualWeightUnitFormat.equalsIgnoreCase("gram")
-                || actualWeightUnitFormat.equalsIgnoreCase("pound"),
-                "Response weight unit format is not one of 'Kilogram', 'gram', or 'pound'.");
-        
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM d, yyyy h:mm:ss a", Locale.ENGLISH);
-        LocalDateTime inputDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-        LocalDateTime desiredDateTime = LocalDateTime.parse(actualDateUnitFormat, formatter);
-
-        Assert.assertEquals(inputDateTime, desiredDateTime, "Dates do not match.");
-
+        			legacy(response);
     }
 
 
