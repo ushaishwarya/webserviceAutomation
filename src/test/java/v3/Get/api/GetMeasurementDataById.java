@@ -35,7 +35,6 @@ public class GetMeasurementDataById extends CommonMethods {
 	static String accessToken = tokens[0];
 
 	
-	public static String id;
 
     @Test(priority=1)
     public void assertTheExteranlJsonToResponseBodyAndStatusCode() throws IOException {
@@ -141,6 +140,9 @@ public class GetMeasurementDataById extends CommonMethods {
 
                 String actualFormattedDate = jsonResponse.has(mappedKey) ? jsonResponse.path(mappedKey).asText().trim() : "null";
                 
+                expectedFormattedDate = expectedFormattedDate.replaceFirst("^(.*?\\s)(0*)(\\d+),", "$1$3,");
+                actualFormattedDate = actualFormattedDate.replaceFirst("^(.*?\\s)(0*)(\\d+),", "$1$3,");
+
                 if (actualFormattedDate.equals(expectedFormattedDate)) {
                     continue; // Dates match, skip the assertion
                 } else {

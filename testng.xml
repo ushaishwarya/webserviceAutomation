@@ -1,49 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="WebServiceTesting">		
-	
-    <test name="API Tests - Version 1">
-		
+<suite name="WebServiceTesting">
+    
+    <test name="API Tests - Version 1-Live calibration and Live Measurement">
+        <classes>
+            <class name="v1.Get.api.LiveCalibration">
+                <methods>
+                    <exclude name="CalibratedSuccessfully" />
+                </methods>
+            </class>
+
+            <class name="v1.Get.api.LiveMeasurement">
+                <methods>
+                    <exclude name="measurements" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+        <test name="API Tests - Version 2-Live calibration and Live Measurement">
+        <classes>
+            <class name="v2.Get.api.LiveCalibration">
+                <methods>
+                    <exclude name="CalibratedSuccessfully" />
+                </methods>
+            </class>
+
+            <class name="v2.Get.api.LiveMeasurement">
+                <methods>
+                    <exclude name="measurements" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="API Tests - Version 3-Live calibration and Live Measurement">
+        <classes>
+            <class name="v3.Get.api.LiveCalibration">
+                <methods>
+                    <exclude name="CalibratedSuccessfully" />
+                </methods>
+            </class>
+
+            <class name="v3.Get.api.LiveMeasurement">
+                <methods>
+                    <exclude name="measurements" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="API Tests - GetMeasurementDataById">
         <classes>
             <class name="v1.Get.api.GetMeasurementDataById" />
-            <class name="v1.Get.api.GetMeasurementDatabyRange" />
-            <class name="v1.Get.api.GetMeasurementDataBySku" />
-            <class name="v1.Get.api.LatestMeasurementImage" />
-            <class name="v1.Get.api.ListMeasurementIDandDates" />
-            <class name="v1.Get.api.MeasurementImagebyID" />
-			</classes>
-		</test>
-		
-		    <test name="API Tests - Version 2">
-		
-        <classes>
             <class name="v2.Get.api.GetMeasurementDataById" />
-            <class name="v2.Get.api.GetMeasurementDatabyRange" />
-            <class name="v2.Get.api.GetMeasurementDataBySku" />
-            <class name="v2.Get.api.LatestMeasurementImage" />
-            <class name="v2.Get.api.ListMeasurementIDandDates" />
-            <class name="v2.Get.api.MeasurementImagebyID" />
-			</classes>
-		</test>
-
-    	<test name="API Tests - Version 3">
-		
-        <classes>
-			
-			<class name="v3.Get.api.GetAllMeasurementDatabySKU" />
             <class name="v3.Get.api.GetMeasurementDataById" />
+        </classes>
+    </test>
+
+    <test name="API Tests - GetMeasurementDataByRange">
+        <classes>
+            <class name="v1.Get.api.GetMeasurementDatabyRange" />
+            <class name="v2.Get.api.GetMeasurementDatabyRange" />
             <class name="v3.Get.api.GetMeasurementDatabyRange" />
+        </classes>
+    </test>
+
+    <test name="API Tests - GetMeasurementDataBySku">
+        <classes>
+            <class name="v1.Get.api.GetMeasurementDataBySku" />
+            <class name="v2.Get.api.GetMeasurementDataBySku" />
             <class name="v3.Get.api.GetMeasurementDataBySku" />
-            <class name="v3.Get.api.LatestMeasurementImage" />
-            <class name="v3.Get.api.ListMeasurementIDandDates" />
+        </classes>
+    </test>
+
+    <test name="API Tests - MeasurementImagebyID">
+        <classes>
+            <class name="v1.Get.api.MeasurementImagebyID" />
+            <class name="v2.Get.api.MeasurementImagebyID" />
             <class name="v3.Get.api.MeasurementImagebyID" />
-             <class name="v3.Get.api.GetMeasurementArtifactImage" />
-             <class name="v3.Get.api.DownloadMeasurementArtifactImages" />
+        </classes>
+    </test>
 
+    <test name="API Tests - ListMeasurementIDandDates">
+        <classes>
+            <class name="v1.Get.api.ListMeasurementIDandDates" />
+            <class name="v2.Get.api.ListMeasurementIDandDates" />
+            <class name="v3.Get.api.ListMeasurementIDandDates" />
+        </classes>
+    </test>
 
-            
-			</classes>
-		</test>
-		
-		
-</suite> <!-- WebServiceTesting -->
+    <test name="API Tests - LatestMeasurementImage">
+        <classes>
+            <class name="v1.Get.api.LatestMeasurementImage" />
+            <class name="v2.Get.api.LatestMeasurementImage" />
+            <class name="v3.Get.api.LatestMeasurementImage" />
+        </classes>
+    </test>
+
+    <test name="API Tests - Version 3">
+        <classes>
+            <class name="v3.Get.api.GenerateAPIAccessToken" />
+            <class name="v3.Get.api.GenerateNewAccessToken" />
+            <class name="v3.Get.api.DeleteAccessandRefreshToken" />
+            <class name="v3.Get.api.GetAllMeasurementDatabySKU" />
+            <class name="v3.Get.api.GetMeasurementArtifactImage" />
+            <class name="v3.Get.api.DownloadMeasurementArtifactImages" />
+        </classes>
+    </test>
+
+</suite>

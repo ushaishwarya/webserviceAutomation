@@ -63,7 +63,7 @@ public class addMeasurementDetails {
                         .multiPart("additionalInfo", "Object Measured Successfully")
                         .multiPart("MacId", macid)
                         .multiPart("volumetricWeight", "36")
-                        .multiPart("scannedOn", current_Time)
+                        .multiPart("scannedOn", "2022-02-02 10:00:PM")//current_Time
                         .multiPart("scannedTimeZone", "Asia/Kolkata")
                         .when()
                         .post("/add-measurement-details");
@@ -71,7 +71,7 @@ public class addMeasurementDetails {
                 JSONObject jsonResponse = new JSONObject(response.getBody().asPrettyString());
                 String message = jsonResponse.getString("message");
 
-                System.out.println( "measurementid"+i+ ":" + message);
+                System.out.println( "Id"+"----"+i+ "-------------"+ message);
             }
         }
     }

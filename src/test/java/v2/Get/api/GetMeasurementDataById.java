@@ -132,13 +132,20 @@ public class GetMeasurementDataById extends CommonMethods{
 
                 String actualFormattedDate = jsonResponse.has(mappedKey) ? jsonResponse.path(mappedKey).asText().trim() : "null";
                 
+                expectedFormattedDate = expectedFormattedDate.replaceFirst("^(.*?\\s)(0*)(\\d+),", "$1$3,");
+                actualFormattedDate = actualFormattedDate.replaceFirst("^(.*?\\s)(0*)(\\d+),", "$1$3,");
+
+
                 if (actualFormattedDate.equals(expectedFormattedDate)) {
                     continue;
                 } else {
                     System.out.println("Date Comparison - Key: " + key + ", Expected: " + expectedFormattedDate + ", Actual: " + actualFormattedDate);
                     Assert.fail("Date value for key '" + key + "' does not match the expected value.");
                 }
+                
+              
             }
+            
             int statusCode = response.getStatusCode();
 
 

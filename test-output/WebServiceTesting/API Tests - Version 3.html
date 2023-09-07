@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>API Tests - Version 3</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>25/7/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>12/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 06 13:15:50 IST 2023</td>
+<td>Started on:</td><td>Thu Sep 07 18:42:17 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>61 seconds (61609 ms)</td>
+<tr><td>Total time:</td><td>37 seconds (37068 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,21 +76,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='v3.Get.api.ListMeasurementIDandDates.Notfound()'><b>Notfound</b><br>Test class: v3.Get.api.ListMeasurementIDandDates</td>
-<td><div><pre>java.lang.AssertionError: Correct status code not returned expected [401] but found [404]
-	at credentails.CommonMethods.assertMessageAndStatuscode(CommonMethods.java:34)
-	at v3.Get.api.ListMeasurementIDandDates.Notfound(ListMeasurementIDandDates.java:67)
+<td title='v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3()'><b>Get_Measurement_Artifact_Image_v3</b><br>Test class: v3.Get.api.GetMeasurementArtifactImage</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.size()&quot; because &quot;additional_image_id&quot; is null
+	at v3.Get.api.ListMeasurementArtifactsIDandTitle.List_Measurement_Artifacts_ID_and_Title_200status(ListMeasurementArtifactsIDandTitle.java:38)
+	at v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3(GetMeasurementArtifactImage.java:23)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace778097908", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace778097908'><pre>java.lang.AssertionError: Correct status code not returned expected [401] but found [404]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at credentails.CommonMethods.assertMessageAndStatuscode(CommonMethods.java:34)
-	at v3.Get.api.ListMeasurementIDandDates.Notfound(ListMeasurementIDandDates.java:67)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1448156890", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1448156890'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.size()&quot; because &quot;additional_image_id&quot; is null
+	at v3.Get.api.ListMeasurementArtifactsIDandTitle.List_Measurement_Artifacts_ID_and_Title_200status(ListMeasurementArtifactsIDandTitle.java:38)
+	at v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3(GetMeasurementArtifactImage.java:23)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -120,16 +114,16 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>1</td>
-<td>v3.Get.api.ListMeasurementIDandDates@7926352f</td></tr>
+<td>6</td>
+<td>v3.Get.api.GetMeasurementArtifactImage@d2708a7</td></tr>
 <tr>
 <td title='v3.Get.api.GetAllMeasurementDatabySKU.noMeasurement()'><b>noMeasurement</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
 <td><div><pre>org.testng.TestNGException: 
 Cannot inject @Test annotated Method [noMeasurement] with [class java.lang.String].
 For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1275854494", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1275854494'><pre>org.testng.TestNGException: 
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace216800482", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace216800482'><pre>org.testng.TestNGException: 
 Cannot inject @Test annotated Method [noMeasurement] with [class java.lang.String].
 For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
 	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:436)
@@ -161,228 +155,7 @@ For more information on native dependency injection please refer to https://test
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDatabyRange.assertTheIdRange()'><b>assertTheIdRange</b><br>Test class: v3.Get.api.GetMeasurementDatabyRange</td>
-<td><div><pre>java.lang.AssertionError: expected [200] but found [404]
-	at v3.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:167)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1007717381", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1007717381'><pre>java.lang.AssertionError: expected [200] but found [404]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at org.testng.Assert.assertEquals(Assert.java:1429)
-	at v3.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:167)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>1</td>
-<td>v3.Get.api.GetMeasurementDatabyRange@1953bc95</td></tr>
-<tr>
-<td title='v3.Get.api.MeasurementImagebyID.idByImage()'><b>idByImage</b><br>Test class: v3.Get.api.MeasurementImagebyID</td>
-<td><div><pre>java.lang.AssertionError: expected [200] but found [404]
-	at credentails.CommonMethods.extractValuesFromImage(CommonMethods.java:95)
-	at v3.Get.api.MeasurementImagebyID.idByImage(MeasurementImagebyID.java:34)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace238381376", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace238381376'><pre>java.lang.AssertionError: expected [200] but found [404]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at org.testng.Assert.assertEquals(Assert.java:1429)
-	at credentails.CommonMethods.extractValuesFromImage(CommonMethods.java:95)
-	at v3.Get.api.MeasurementImagebyID.idByImage(MeasurementImagebyID.java:34)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>1</td>
-<td>v3.Get.api.MeasurementImagebyID@35145874</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDatabyRange.VerifylegacyFormate()'><b>VerifylegacyFormate</b><br>Test class: v3.Get.api.GetMeasurementDatabyRange</td>
-<td><div><pre>java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader &apos;bootstrap&apos;)
-	at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
-	at credentails.CommonMethods.legacy(CommonMethods.java:39)
-	at v3.Get.api.GetMeasurementDatabyRange.VerifylegacyFormate(GetMeasurementDatabyRange.java:340)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1736800365", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1736800365'><pre>java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader &apos;bootstrap&apos;)
-	at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
-	at credentails.CommonMethods.legacy(CommonMethods.java:39)
-	at v3.Get.api.GetMeasurementDatabyRange.VerifylegacyFormate(GetMeasurementDatabyRange.java:340)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>1</td>
-<td>v3.Get.api.GetMeasurementDatabyRange@1953bc95</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDatabyRange.VerifyStandardFormate()'><b>VerifyStandardFormate</b><br>Test class: v3.Get.api.GetMeasurementDatabyRange</td>
-<td><div><pre>java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader &apos;bootstrap&apos;)
-	at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
-	at credentails.CommonMethods.Standard(CommonMethods.java:68)
-	at v3.Get.api.GetMeasurementDatabyRange.VerifyStandardFormate(GetMeasurementDatabyRange.java:313)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace73706477", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace73706477'><pre>java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader &apos;bootstrap&apos;)
-	at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
-	at credentails.CommonMethods.Standard(CommonMethods.java:68)
-	at v3.Get.api.GetMeasurementDatabyRange.VerifyStandardFormate(GetMeasurementDatabyRange.java:313)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>1</td>
-<td>v3.Get.api.GetMeasurementDatabyRange@1953bc95</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3()'><b>Get_Measurement_Artifact_Image_v3</b><br>Test class: v3.Get.api.GetMeasurementArtifactImage</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.size()&quot; because &quot;additional_image_id&quot; is null
-	at v3.Get.api.ListMeasurementArtifactsIDandTitle.List_Measurement_Artifacts_ID_and_Title_200status(ListMeasurementArtifactsIDandTitle.java:38)
-	at v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3(GetMeasurementArtifactImage.java:23)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace222334045", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace222334045'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.size()&quot; because &quot;additional_image_id&quot; is null
-	at v3.Get.api.ListMeasurementArtifactsIDandTitle.List_Measurement_Artifacts_ID_and_Title_200status(ListMeasurementArtifactsIDandTitle.java:38)
-	at v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3(GetMeasurementArtifactImage.java:23)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>2</td>
-<td>v3.Get.api.GetMeasurementArtifactImage@77524ca7</td></tr>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -393,130 +166,65 @@ For more information on native dependency injection please refer to https://test
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='v3.Get.api.GetAllMeasurementDatabySKU.verifystandardFormat()'><b>verifystandardFormat</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
+<td></td>
+<td>5</td>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
+<tr>
 <td title='v3.Get.api.GetAllMeasurementDatabySKU.verifySkuId()'><b>verifySkuId</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
 <td></td>
-<td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
-<tr>
-<td title='v3.Get.api.GetAllMeasurementDatabySKU.badRequestmultiplescenario()'><b>badRequestmultiplescenario</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDataBySku.unauthorizedWithMultipeScenarious()'><b>unauthorizedWithMultipeScenarious</b><br>Test class: v3.Get.api.GetMeasurementDataBySku</td>
-<td></td>
 <td>2</td>
-<td>v3.Get.api.GetMeasurementDataBySku@64518270</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDataBySku.verifystandardFormate()'><b>verifystandardFormate</b><br>Test class: v3.Get.api.GetMeasurementDataBySku</td>
-<td></td>
-<td>2</td>
-<td>v3.Get.api.GetMeasurementDataBySku@64518270</td></tr>
-<tr>
-<td title='v3.Get.api.LatestMeasurementImage.Latestmeasurementimage()'><b>Latestmeasurementimage</b><br>Test class: v3.Get.api.LatestMeasurementImage</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.LatestMeasurementImage@6ee88e21</td></tr>
-<tr>
-<td title='v3.Get.api.GetAllMeasurementDatabySKU.lessThanStartDate()'><b>lessThanStartDate</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
-<tr>
-<td title='v3.Get.api.ListMeasurementIDandDates.testScanIdListEndpoint()'><b>testScanIdListEndpoint</b><br>Test class: v3.Get.api.ListMeasurementIDandDates</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.ListMeasurementIDandDates@7926352f</td></tr>
-<tr>
-<td title='v3.Get.api.DownloadMeasurementArtifactImages.Download_Measurement_Artifact_Images_v3()'><b>Download_Measurement_Artifact_Images_v3</b><br>Test class: v3.Get.api.DownloadMeasurementArtifactImages</td>
-<td></td>
-<td>2</td>
-<td>v3.Get.api.DownloadMeasurementArtifactImages@11df2829</td></tr>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
 <tr>
 <td title='v3.Get.api.GetAllMeasurementDatabySKU.SkipFailureIsTrue()'><b>SkipFailureIsTrue</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
 <td></td>
 <td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
+<tr>
+<td title='v3.Get.api.GenerateAPIAccessToken.Unauthorized()'><b>Unauthorized</b><br>Test class: v3.Get.api.GenerateAPIAccessToken</td>
+<td></td>
+<td>1</td>
+<td>v3.Get.api.GenerateAPIAccessToken@6d5f4900</td></tr>
+<tr>
+<td title='v3.Get.api.GenerateAPIAccessToken.accesstokenandrefereshtoken()'><b>accesstokenandrefereshtoken</b><br>Test class: v3.Get.api.GenerateAPIAccessToken</td>
+<td></td>
+<td>3</td>
+<td>v3.Get.api.GenerateAPIAccessToken@6d5f4900</td></tr>
+<tr>
+<td title='v3.Get.api.GetAllMeasurementDatabySKU.SkipFailureIsFalse()'><b>SkipFailureIsFalse</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
+<td></td>
+<td>2</td>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
 <tr>
 <td title='v3.Get.api.GetAllMeasurementDatabySKU.verifylegacyFormat()'><b>verifylegacyFormat</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
 <td></td>
-<td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
-<tr>
-<td title='v3.Get.api.GetAllMeasurementDatabySKU.unauthorizedWithMultipeScenarious()'><b>unauthorizedWithMultipeScenarious</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDataBySku.badRequestWithMultipeScenarious()'><b>badRequestWithMultipeScenarious</b><br>Test class: v3.Get.api.GetMeasurementDataBySku</td>
-<td></td>
-<td>2</td>
-<td>v3.Get.api.GetMeasurementDataBySku@64518270</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDatabyRange.invalidRangeValue()'><b>invalidRangeValue</b><br>Test class: v3.Get.api.GetMeasurementDatabyRange</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.GetMeasurementDatabyRange@1953bc95</td></tr>
-<tr>
-<td title='v3.Get.api.ListMeasurementIDandDates.Unauthorized()'><b>Unauthorized</b><br>Test class: v3.Get.api.ListMeasurementIDandDates</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.ListMeasurementIDandDates@7926352f</td></tr>
-<tr>
-<td title='v3.Get.api.MeasurementImagebyID.testNoImageFound()'><b>testNoImageFound</b><br>Test class: v3.Get.api.MeasurementImagebyID</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.MeasurementImagebyID@35145874</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDataBySku.verifylegacyFormate()'><b>verifylegacyFormate</b><br>Test class: v3.Get.api.GetMeasurementDataBySku</td>
-<td></td>
-<td>3</td>
-<td>v3.Get.api.GetMeasurementDataBySku@64518270</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDatabyRange.invalidFromOrToValue()'><b>invalidFromOrToValue</b><br>Test class: v3.Get.api.GetMeasurementDatabyRange</td>
-<td></td>
 <td>5</td>
-<td>v3.Get.api.GetMeasurementDatabyRange@1953bc95</td></tr>
-<tr>
-<td title='v3.Get.api.MeasurementImagebyID.Unauthorized()'><b>Unauthorized</b><br>Test class: v3.Get.api.MeasurementImagebyID</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.MeasurementImagebyID@35145874</td></tr>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
 <tr>
 <td title='v3.Get.api.GetAllMeasurementDatabySKU.badRequestmultiplescenario1()'><b>badRequestmultiplescenario1</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
 <td></td>
 <td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
 <tr>
-<td title='v3.Get.api.LatestMeasurementImage.Unauthorized()'><b>Unauthorized</b><br>Test class: v3.Get.api.LatestMeasurementImage</td>
+<td title='v3.Get.api.GetAllMeasurementDatabySKU.unauthorizedWithMultipeScenarious()'><b>unauthorizedWithMultipeScenarious</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
 <td></td>
 <td>1</td>
-<td>v3.Get.api.LatestMeasurementImage@6ee88e21</td></tr>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
 <tr>
-<td title='v3.Get.api.GetMeasurementDatabyRange.assertthedaterange()'><b>assertthedaterange</b><br>Test class: v3.Get.api.GetMeasurementDatabyRange</td>
+<td title='v3.Get.api.DownloadMeasurementArtifactImages.Download_Measurement_Artifact_Images_v3()'><b>Download_Measurement_Artifact_Images_v3</b><br>Test class: v3.Get.api.DownloadMeasurementArtifactImages</td>
+<td></td>
+<td>3</td>
+<td>v3.Get.api.DownloadMeasurementArtifactImages@508ad266</td></tr>
+<tr>
+<td title='v3.Get.api.GetAllMeasurementDatabySKU.badRequestmultiplescenario()'><b>badRequestmultiplescenario</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
 <td></td>
 <td>1</td>
-<td>v3.Get.api.GetMeasurementDatabyRange@1953bc95</td></tr>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
 <tr>
-<td title='v3.Get.api.GetAllMeasurementDatabySKU.SkipFailureIsFalse()'><b>SkipFailureIsFalse</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
-<tr>
-<td title='v3.Get.api.GetAllMeasurementDatabySKU.verifystandardFormat()'><b>verifystandardFormat</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
-<td></td>
-<td>1</td>
-<td>v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDataBySku.assertTheExteranlJsonToResponseBodyAndStatusCode()'><b>assertTheExteranlJsonToResponseBodyAndStatusCode</b><br>Test class: v3.Get.api.GetMeasurementDataBySku</td>
+<td title='v3.Get.api.GetAllMeasurementDatabySKU.lessThanStartDate()'><b>lessThanStartDate</b><br>Test class: v3.Get.api.GetAllMeasurementDatabySKU</td>
 <td></td>
 <td>2</td>
-<td>v3.Get.api.GetMeasurementDataBySku@64518270</td></tr>
-<tr>
-<td title='v3.Get.api.GetMeasurementDatabyRange.Unauthorized()'><b>Unauthorized</b><br>Test class: v3.Get.api.GetMeasurementDatabyRange</td>
-<td></td>
-<td>2</td>
-<td>v3.Get.api.GetMeasurementDatabyRange@1953bc95</td></tr>
+<td>v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e</td></tr>
 </table><p>
 </body>
 </html>

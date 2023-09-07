@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>API Tests - Version 1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>17/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>18/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 06 13:14:33 IST 2023</td>
+<td>Started on:</td><td>Thu Sep 07 17:36:00 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>43 seconds (43710 ms)</td>
+<tr><td>Total time:</td><td>51 seconds (51978 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -80,8 +80,8 @@ function toggleAllBoxes() {
 <td><div><pre>java.lang.AssertionError: expected [200] but found [404]
 	at v1.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:159)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace719699252", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace719699252'><pre>java.lang.AssertionError: expected [200] but found [404]
+... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace889260651", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace889260651'><pre>java.lang.AssertionError: expected [200] but found [404]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
@@ -120,15 +120,15 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>1</td>
-<td>v1.Get.api.GetMeasurementDatabyRange@508dec2b</td></tr>
+<td>v1.Get.api.GetMeasurementDatabyRange@1e4f4a5c</td></tr>
 <tr>
 <td title='v1.Get.api.MeasurementImagebyID.idByImage()'><b>idByImage</b><br>Test class: v1.Get.api.MeasurementImagebyID</td>
 <td><div><pre>java.lang.AssertionError: expected [200] but found [404]
 	at credentails.CommonMethods.extractValuesFromImage(CommonMethods.java:95)
 	at v1.Get.api.MeasurementImagebyID.idByImage(MeasurementImagebyID.java:28)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1214850053", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1214850053'><pre>java.lang.AssertionError: expected [200] but found [404]
+... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace75340801", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace75340801'><pre>java.lang.AssertionError: expected [200] but found [404]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
@@ -168,49 +168,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>1</td>
-<td>v1.Get.api.MeasurementImagebyID@798162bc</td></tr>
-<tr>
-<td title='v1.Get.api.GetMeasurementDataById.assertJsonfileWithResponseBody()'><b>assertJsonfileWithResponseBody</b><br>Test class: v1.Get.api.GetMeasurementDataById</td>
-<td><div><pre>java.lang.AssertionError: Date value for key &apos;scanned_time&apos; does not match the expected value.
-	at v1.Get.api.GetMeasurementDataById.compareResponseWithExternalData(GetMeasurementDataById.java:139)
-	at v1.Get.api.GetMeasurementDataById.assertJsonfileWithResponseBody(GetMeasurementDataById.java:58)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1455466014", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1455466014'><pre>java.lang.AssertionError: Date value for key &apos;scanned_time&apos; does not match the expected value.
-	at org.testng.Assert.fail(Assert.java:111)
-	at v1.Get.api.GetMeasurementDataById.compareResponseWithExternalData(GetMeasurementDataById.java:139)
-	at v1.Get.api.GetMeasurementDataById.assertJsonfileWithResponseBody(GetMeasurementDataById.java:58)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>1</td>
-<td>v1.Get.api.GetMeasurementDataById@169bb4dd</td></tr>
+<td>v1.Get.api.MeasurementImagebyID@1df8da7a</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -221,90 +179,95 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='v1.Get.api.ListMeasurementIDandDates.ScanIdListEndpoint()'><b>ScanIdListEndpoint</b><br>Test class: v1.Get.api.ListMeasurementIDandDates</td>
-<td></td>
-<td>1</td>
-<td>v1.Get.api.ListMeasurementIDandDates@465232e9</td></tr>
-<tr>
-<td title='v1.Get.api.GetMeasurementDataBySku.unauthorizedWithMultipeScenarious()'><b>unauthorizedWithMultipeScenarious</b><br>Test class: v1.Get.api.GetMeasurementDataBySku</td>
+<td title='v1.Get.api.GetMeasurementDataBySku.badRequestWithMultipeScenarious()'><b>badRequestWithMultipeScenarious</b><br>Test class: v1.Get.api.GetMeasurementDataBySku</td>
 <td></td>
 <td>2</td>
-<td>v1.Get.api.GetMeasurementDataBySku@1e4f4a5c</td></tr>
-<tr>
-<td title='v1.Get.api.ListMeasurementIDandDates.Notfound()'><b>Notfound</b><br>Test class: v1.Get.api.ListMeasurementIDandDates</td>
-<td></td>
-<td>1</td>
-<td>v1.Get.api.ListMeasurementIDandDates@465232e9</td></tr>
-<tr>
-<td title='v1.Get.api.ListMeasurementIDandDates.Unauthorized()'><b>Unauthorized</b><br>Test class: v1.Get.api.ListMeasurementIDandDates</td>
-<td></td>
-<td>1</td>
-<td>v1.Get.api.ListMeasurementIDandDates@465232e9</td></tr>
-<tr>
-<td title='v1.Get.api.GetMeasurementDataBySku.assertTheExteranlJsonToResponseBodyAndStatusCode()'><b>assertTheExteranlJsonToResponseBodyAndStatusCode</b><br>Test class: v1.Get.api.GetMeasurementDataBySku</td>
-<td></td>
-<td>3</td>
-<td>v1.Get.api.GetMeasurementDataBySku@1e4f4a5c</td></tr>
-<tr>
-<td title='v1.Get.api.LatestMeasurementImage.notFound()'><b>notFound</b><br>Test class: v1.Get.api.LatestMeasurementImage</td>
-<td></td>
-<td>1</td>
-<td>v1.Get.api.LatestMeasurementImage@37313c65</td></tr>
-<tr>
-<td title='v1.Get.api.LatestMeasurementImage.Unauthorized()'><b>Unauthorized</b><br>Test class: v1.Get.api.LatestMeasurementImage</td>
-<td></td>
-<td>1</td>
-<td>v1.Get.api.LatestMeasurementImage@37313c65</td></tr>
-<tr>
-<td title='v1.Get.api.GetMeasurementDataById.verifyunauthorized()'><b>verifyunauthorized</b><br>Test class: v1.Get.api.GetMeasurementDataById</td>
-<td></td>
-<td>2</td>
-<td>v1.Get.api.GetMeasurementDataById@169bb4dd</td></tr>
+<td>v1.Get.api.GetMeasurementDataBySku@37313c65</td></tr>
 <tr>
 <td title='v1.Get.api.GetMeasurementDatabyRange.invalidRangeValue()'><b>invalidRangeValue</b><br>Test class: v1.Get.api.GetMeasurementDatabyRange</td>
 <td></td>
 <td>1</td>
-<td>v1.Get.api.GetMeasurementDatabyRange@508dec2b</td></tr>
+<td>v1.Get.api.GetMeasurementDatabyRange@1e4f4a5c</td></tr>
 <tr>
-<td title='v1.Get.api.GetMeasurementDataById.verifybadRequest()'><b>verifybadRequest</b><br>Test class: v1.Get.api.GetMeasurementDataById</td>
+<td title='v1.Get.api.GetMeasurementDataBySku.assertTheExteranlJsonToResponseBodyAndStatusCode()'><b>assertTheExteranlJsonToResponseBodyAndStatusCode</b><br>Test class: v1.Get.api.GetMeasurementDataBySku</td>
 <td></td>
 <td>3</td>
-<td>v1.Get.api.GetMeasurementDataById@169bb4dd</td></tr>
-<tr>
-<td title='v1.Get.api.GetMeasurementDatabyRange.assertthedaterange()'><b>assertthedaterange</b><br>Test class: v1.Get.api.GetMeasurementDatabyRange</td>
-<td></td>
-<td>1</td>
-<td>v1.Get.api.GetMeasurementDatabyRange@508dec2b</td></tr>
-<tr>
-<td title='v1.Get.api.MeasurementImagebyID.NoImageFound()'><b>NoImageFound</b><br>Test class: v1.Get.api.MeasurementImagebyID</td>
-<td></td>
-<td>1</td>
-<td>v1.Get.api.MeasurementImagebyID@798162bc</td></tr>
-<tr>
-<td title='v1.Get.api.GetMeasurementDatabyRange.Unauthorized()'><b>Unauthorized</b><br>Test class: v1.Get.api.GetMeasurementDatabyRange</td>
-<td></td>
-<td>3</td>
-<td>v1.Get.api.GetMeasurementDatabyRange@508dec2b</td></tr>
+<td>v1.Get.api.GetMeasurementDataBySku@37313c65</td></tr>
 <tr>
 <td title='v1.Get.api.LatestMeasurementImage.Latestmeasurementimage()'><b>Latestmeasurementimage</b><br>Test class: v1.Get.api.LatestMeasurementImage</td>
 <td></td>
-<td>1</td>
-<td>v1.Get.api.LatestMeasurementImage@37313c65</td></tr>
-<tr>
-<td title='v1.Get.api.GetMeasurementDatabyRange.invalidFromOrToValue()'><b>invalidFromOrToValue</b><br>Test class: v1.Get.api.GetMeasurementDatabyRange</td>
-<td></td>
-<td>6</td>
-<td>v1.Get.api.GetMeasurementDatabyRange@508dec2b</td></tr>
+<td>2</td>
+<td>v1.Get.api.LatestMeasurementImage@465232e9</td></tr>
 <tr>
 <td title='v1.Get.api.MeasurementImagebyID.Unauthorized()'><b>Unauthorized</b><br>Test class: v1.Get.api.MeasurementImagebyID</td>
 <td></td>
 <td>1</td>
-<td>v1.Get.api.MeasurementImagebyID@798162bc</td></tr>
+<td>v1.Get.api.MeasurementImagebyID@1df8da7a</td></tr>
 <tr>
-<td title='v1.Get.api.GetMeasurementDataBySku.badRequestWithMultipeScenarious()'><b>badRequestWithMultipeScenarious</b><br>Test class: v1.Get.api.GetMeasurementDataBySku</td>
+<td title='v1.Get.api.GetMeasurementDatabyRange.invalidFromOrToValue()'><b>invalidFromOrToValue</b><br>Test class: v1.Get.api.GetMeasurementDatabyRange</td>
+<td></td>
+<td>6</td>
+<td>v1.Get.api.GetMeasurementDatabyRange@1e4f4a5c</td></tr>
+<tr>
+<td title='v1.Get.api.ListMeasurementIDandDates.Unauthorized()'><b>Unauthorized</b><br>Test class: v1.Get.api.ListMeasurementIDandDates</td>
+<td></td>
+<td>1</td>
+<td>v1.Get.api.ListMeasurementIDandDates@798162bc</td></tr>
+<tr>
+<td title='v1.Get.api.ListMeasurementIDandDates.ScanIdListEndpoint()'><b>ScanIdListEndpoint</b><br>Test class: v1.Get.api.ListMeasurementIDandDates</td>
+<td></td>
+<td>1</td>
+<td>v1.Get.api.ListMeasurementIDandDates@798162bc</td></tr>
+<tr>
+<td title='v1.Get.api.GetMeasurementDataById.assertJsonfileWithResponseBody()'><b>assertJsonfileWithResponseBody</b><br>Test class: v1.Get.api.GetMeasurementDataById</td>
+<td></td>
+<td>9</td>
+<td>v1.Get.api.GetMeasurementDataById@1f9e9475</td></tr>
+<tr>
+<td title='v1.Get.api.LatestMeasurementImage.notFound()'><b>notFound</b><br>Test class: v1.Get.api.LatestMeasurementImage</td>
+<td></td>
+<td>1</td>
+<td>v1.Get.api.LatestMeasurementImage@465232e9</td></tr>
+<tr>
+<td title='v1.Get.api.MeasurementImagebyID.NoImageFound()'><b>NoImageFound</b><br>Test class: v1.Get.api.MeasurementImagebyID</td>
+<td></td>
+<td>1</td>
+<td>v1.Get.api.MeasurementImagebyID@1df8da7a</td></tr>
+<tr>
+<td title='v1.Get.api.GetMeasurementDatabyRange.assertthedaterange()'><b>assertthedaterange</b><br>Test class: v1.Get.api.GetMeasurementDatabyRange</td>
+<td></td>
+<td>1</td>
+<td>v1.Get.api.GetMeasurementDatabyRange@1e4f4a5c</td></tr>
+<tr>
+<td title='v1.Get.api.ListMeasurementIDandDates.Notfound()'><b>Notfound</b><br>Test class: v1.Get.api.ListMeasurementIDandDates</td>
+<td></td>
+<td>1</td>
+<td>v1.Get.api.ListMeasurementIDandDates@798162bc</td></tr>
+<tr>
+<td title='v1.Get.api.GetMeasurementDataById.verifyunauthorized()'><b>verifyunauthorized</b><br>Test class: v1.Get.api.GetMeasurementDataById</td>
+<td></td>
+<td>2</td>
+<td>v1.Get.api.GetMeasurementDataById@1f9e9475</td></tr>
+<tr>
+<td title='v1.Get.api.GetMeasurementDatabyRange.Unauthorized()'><b>Unauthorized</b><br>Test class: v1.Get.api.GetMeasurementDatabyRange</td>
 <td></td>
 <td>3</td>
-<td>v1.Get.api.GetMeasurementDataBySku@1e4f4a5c</td></tr>
+<td>v1.Get.api.GetMeasurementDatabyRange@1e4f4a5c</td></tr>
+<tr>
+<td title='v1.Get.api.LatestMeasurementImage.Unauthorized()'><b>Unauthorized</b><br>Test class: v1.Get.api.LatestMeasurementImage</td>
+<td></td>
+<td>1</td>
+<td>v1.Get.api.LatestMeasurementImage@465232e9</td></tr>
+<tr>
+<td title='v1.Get.api.GetMeasurementDataBySku.unauthorizedWithMultipeScenarious()'><b>unauthorizedWithMultipeScenarious</b><br>Test class: v1.Get.api.GetMeasurementDataBySku</td>
+<td></td>
+<td>3</td>
+<td>v1.Get.api.GetMeasurementDataBySku@37313c65</td></tr>
+<tr>
+<td title='v1.Get.api.GetMeasurementDataById.verifybadRequest()'><b>verifybadRequest</b><br>Test class: v1.Get.api.GetMeasurementDataById</td>
+<td></td>
+<td>3</td>
+<td>v1.Get.api.GetMeasurementDataById@1f9e9475</td></tr>
 </table><p>
 </body>
 </html>

@@ -1,22 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="69" passed="55" failed="14" skipped="0">
+<testng-results ignored="0" total="81" passed="70" failed="11" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-06T13:14:33 IST" name="WebServiceTesting" finished-at="2023-09-06T13:16:51 IST" duration-ms="137790">
+  <suite started-at="2023-09-07T18:38:51 IST" name="WebServiceTesting" finished-at="2023-09-07T18:42:54 IST" duration-ms="242386">
     <groups>
     </groups>
-    <test started-at="2023-09-06T13:14:33 IST" name="API Tests - Version 1" finished-at="2023-09-06T13:15:17 IST" duration-ms="43710">
+    <test started-at="2023-09-07T18:38:51 IST" name="API Tests - Version 1-Live calibration and Live Measurement" finished-at="2023-09-07T18:38:56 IST" duration-ms="4403">
+      <class name="v1.Get.api.LiveMeasurement">
+        <test-method signature="Unauthorized()[pri:0, instance:v1.Get.api.LiveMeasurement@7139992f]" started-at="2023-09-07T18:38:54 IST" name="Unauthorized" finished-at="2023-09-07T18:38:56 IST" duration-ms="1425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v1.Get.api.LiveMeasurement -->
+      <class name="v1.Get.api.LiveCalibration">
+        <test-method signature="badrequest()[pri:0, instance:v1.Get.api.LiveCalibration@4b520ea8]" started-at="2023-09-07T18:38:51 IST" name="badrequest" finished-at="2023-09-07T18:38:53 IST" duration-ms="1505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badrequest -->
+        <test-method signature="invalidheight()[pri:0, instance:v1.Get.api.LiveCalibration@4b520ea8]" started-at="2023-09-07T18:38:53 IST" name="invalidheight" finished-at="2023-09-07T18:38:54 IST" duration-ms="1446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidheight -->
+      </class> <!-- v1.Get.api.LiveCalibration -->
+    </test> <!-- API Tests - Version 1-Live calibration and Live Measurement -->
+    <test started-at="2023-09-07T18:38:56 IST" name="API Tests - Version 2-Live calibration and Live Measurement" finished-at="2023-09-07T18:39:00 IST" duration-ms="4338">
+      <class name="v2.Get.api.LiveMeasurement">
+        <test-method signature="Unauthorized()[pri:0, instance:v2.Get.api.LiveMeasurement@3e78b6a5]" started-at="2023-09-07T18:38:58 IST" name="Unauthorized" finished-at="2023-09-07T18:39:00 IST" duration-ms="1536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v2.Get.api.LiveMeasurement -->
+      <class name="v2.Get.api.LiveCalibration">
+        <test-method signature="badrequest()[pri:0, instance:v2.Get.api.LiveCalibration@60db1c0e]" started-at="2023-09-07T18:38:56 IST" name="badrequest" finished-at="2023-09-07T18:38:57 IST" duration-ms="1401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badrequest -->
+        <test-method signature="invalidheight()[pri:0, instance:v2.Get.api.LiveCalibration@60db1c0e]" started-at="2023-09-07T18:38:57 IST" name="invalidheight" finished-at="2023-09-07T18:38:58 IST" duration-ms="1395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidheight -->
+      </class> <!-- v2.Get.api.LiveCalibration -->
+    </test> <!-- API Tests - Version 2-Live calibration and Live Measurement -->
+    <test started-at="2023-09-07T18:39:00 IST" name="API Tests - Version 3-Live calibration and Live Measurement" finished-at="2023-09-07T18:39:10 IST" duration-ms="9759">
+      <class name="v3.Get.api.LiveMeasurement">
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.LiveMeasurement@7573b9ee]" started-at="2023-09-07T18:39:07 IST" name="Unauthorized" finished-at="2023-09-07T18:39:10 IST" duration-ms="2622" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v3.Get.api.LiveMeasurement -->
+      <class name="v3.Get.api.LiveCalibration">
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.LiveCalibration@800d065]" started-at="2023-09-07T18:39:00 IST" name="Unauthorized" finished-at="2023-09-07T18:39:01 IST" duration-ms="1428" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="badrequest()[pri:0, instance:v3.Get.api.LiveCalibration@800d065]" started-at="2023-09-07T18:39:01 IST" name="badrequest" finished-at="2023-09-07T18:39:04 IST" duration-ms="2561" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badrequest -->
+        <test-method signature="invalidheight()[pri:0, instance:v3.Get.api.LiveCalibration@800d065]" started-at="2023-09-07T18:39:04 IST" name="invalidheight" finished-at="2023-09-07T18:39:07 IST" duration-ms="3142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidheight -->
+      </class> <!-- v3.Get.api.LiveCalibration -->
+    </test> <!-- API Tests - Version 3-Live calibration and Live Measurement -->
+    <test started-at="2023-09-07T18:39:10 IST" name="API Tests - GetMeasurementDataById" finished-at="2023-09-07T18:39:54 IST" duration-ms="44332">
+      <class name="v2.Get.api.GetMeasurementDataById">
+        <test-method signature="assertJsonfileToResponseBody()[pri:1, instance:v2.Get.api.GetMeasurementDataById@3292d91a]" started-at="2023-09-07T18:39:30 IST" name="assertJsonfileToResponseBody" finished-at="2023-09-07T18:39:46 IST" duration-ms="15645" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertJsonfileToResponseBody -->
+        <test-method signature="verifybadRequest()[pri:2, instance:v2.Get.api.GetMeasurementDataById@3292d91a]" started-at="2023-09-07T18:39:46 IST" name="verifybadRequest" finished-at="2023-09-07T18:39:51 IST" duration-ms="5012" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifybadRequest -->
+        <test-method signature="verifyunauthorized()[pri:3, instance:v2.Get.api.GetMeasurementDataById@3292d91a]" started-at="2023-09-07T18:39:51 IST" name="verifyunauthorized" finished-at="2023-09-07T18:39:54 IST" duration-ms="2968" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyunauthorized -->
+      </class> <!-- v2.Get.api.GetMeasurementDataById -->
       <class name="v1.Get.api.GetMeasurementDataById">
-        <test-method signature="assertJsonfileWithResponseBody()[pri:1, instance:v1.Get.api.GetMeasurementDataById@169bb4dd]" started-at="2023-09-06T13:14:34 IST" name="assertJsonfileWithResponseBody" finished-at="2023-09-06T13:14:35 IST" duration-ms="1489" status="FAIL">
+        <test-method signature="assertJsonfileWithResponseBody()[pri:1, instance:v1.Get.api.GetMeasurementDataById@420a8042]" started-at="2023-09-07T18:39:10 IST" name="assertJsonfileWithResponseBody" finished-at="2023-09-07T18:39:22 IST" duration-ms="12697" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertJsonfileWithResponseBody -->
+        <test-method signature="verifybadRequest()[pri:2, instance:v1.Get.api.GetMeasurementDataById@420a8042]" started-at="2023-09-07T18:39:22 IST" name="verifybadRequest" finished-at="2023-09-07T18:39:26 IST" duration-ms="3712" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifybadRequest -->
+        <test-method signature="verifyunauthorized()[pri:3, instance:v1.Get.api.GetMeasurementDataById@420a8042]" started-at="2023-09-07T18:39:26 IST" name="verifyunauthorized" finished-at="2023-09-07T18:39:30 IST" duration-ms="4283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyunauthorized -->
+      </class> <!-- v1.Get.api.GetMeasurementDataById -->
+    </test> <!-- API Tests - GetMeasurementDataById -->
+    <test started-at="2023-09-07T18:39:54 IST" name="API Tests - GetMeasurementDataByRange" finished-at="2023-09-07T18:40:52 IST" duration-ms="57956">
+      <class name="v2.Get.api.GetMeasurementDatabyRange">
+        <test-method signature="assertthedaterange()[pri:1, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-09-07T18:40:09 IST" name="assertthedaterange" finished-at="2023-09-07T18:40:12 IST" duration-ms="3111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertthedaterange -->
+        <test-method signature="assertTheIdRange()[pri:2, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-09-07T18:40:12 IST" name="assertTheIdRange" finished-at="2023-09-07T18:40:14 IST" duration-ms="2284" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Date value for key 'scanned_time' does not match the expected value.]]>
+              <![CDATA[expected [200] but found [404]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Date value for key 'scanned_time' does not match the expected value.
+              <![CDATA[java.lang.AssertionError: expected [200] but found [404]
 at org.testng.Assert.fail(Assert.java:111)
-at v1.Get.api.GetMeasurementDataById.compareResponseWithExternalData(GetMeasurementDataById.java:139)
-at v1.Get.api.GetMeasurementDataById.assertJsonfileWithResponseBody(GetMeasurementDataById.java:58)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:1419)
+at org.testng.Assert.assertEquals(Assert.java:1383)
+at org.testng.Assert.assertEquals(Assert.java:1429)
+at v2.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:150)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -50,22 +147,26 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assertJsonfileWithResponseBody -->
-        <test-method signature="verifybadRequest()[pri:2, instance:v1.Get.api.GetMeasurementDataById@169bb4dd]" started-at="2023-09-06T13:14:35 IST" name="verifybadRequest" finished-at="2023-09-06T13:14:38 IST" duration-ms="3034" status="PASS">
+        </test-method> <!-- assertTheIdRange -->
+        <test-method signature="invalidRangeValue()[pri:3, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-09-07T18:40:14 IST" name="invalidRangeValue" finished-at="2023-09-07T18:40:18 IST" duration-ms="3548" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifybadRequest -->
-        <test-method signature="verifyunauthorized()[pri:3, instance:v1.Get.api.GetMeasurementDataById@169bb4dd]" started-at="2023-09-06T13:14:38 IST" name="verifyunauthorized" finished-at="2023-09-06T13:14:41 IST" duration-ms="2993" status="PASS">
+        </test-method> <!-- invalidRangeValue -->
+        <test-method signature="invalidFromOrToValue()[pri:4, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-09-07T18:40:18 IST" name="invalidFromOrToValue" finished-at="2023-09-07T18:40:26 IST" duration-ms="8165" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyunauthorized -->
-      </class> <!-- v1.Get.api.GetMeasurementDataById -->
+        </test-method> <!-- invalidFromOrToValue -->
+        <test-method signature="Unauthorized()[pri:5, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-09-07T18:40:26 IST" name="Unauthorized" finished-at="2023-09-07T18:40:29 IST" duration-ms="3072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v2.Get.api.GetMeasurementDatabyRange -->
       <class name="v1.Get.api.GetMeasurementDatabyRange">
-        <test-method signature="assertthedaterange()[pri:1, instance:v1.Get.api.GetMeasurementDatabyRange@508dec2b]" started-at="2023-09-06T13:14:41 IST" name="assertthedaterange" finished-at="2023-09-06T13:14:43 IST" duration-ms="1470" status="PASS">
+        <test-method signature="assertthedaterange()[pri:1, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-09-07T18:39:54 IST" name="assertthedaterange" finished-at="2023-09-07T18:39:56 IST" duration-ms="1558" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertthedaterange -->
-        <test-method signature="assertTheIdRange()[pri:2, instance:v1.Get.api.GetMeasurementDatabyRange@508dec2b]" started-at="2023-09-06T13:14:43 IST" name="assertTheIdRange" finished-at="2023-09-06T13:14:44 IST" duration-ms="1482" status="FAIL">
+        <test-method signature="assertTheIdRange()[pri:2, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-09-07T18:39:56 IST" name="assertTheIdRange" finished-at="2023-09-07T18:39:58 IST" duration-ms="1893" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [200] but found [404]]]>
@@ -114,21 +215,216 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertTheIdRange -->
-        <test-method signature="invalidRangeValue()[pri:3, instance:v1.Get.api.GetMeasurementDatabyRange@508dec2b]" started-at="2023-09-06T13:14:44 IST" name="invalidRangeValue" finished-at="2023-09-06T13:14:46 IST" duration-ms="1551" status="PASS">
+        <test-method signature="invalidRangeValue()[pri:3, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-09-07T18:39:58 IST" name="invalidRangeValue" finished-at="2023-09-07T18:39:59 IST" duration-ms="1564" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidRangeValue -->
-        <test-method signature="invalidFromOrToValue()[pri:4, instance:v1.Get.api.GetMeasurementDatabyRange@508dec2b]" started-at="2023-09-06T13:14:46 IST" name="invalidFromOrToValue" finished-at="2023-09-06T13:14:52 IST" duration-ms="6227" status="PASS">
+        <test-method signature="invalidFromOrToValue()[pri:4, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-09-07T18:39:59 IST" name="invalidFromOrToValue" finished-at="2023-09-07T18:40:06 IST" duration-ms="6745" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidFromOrToValue -->
-        <test-method signature="Unauthorized()[pri:5, instance:v1.Get.api.GetMeasurementDatabyRange@508dec2b]" started-at="2023-09-06T13:14:52 IST" name="Unauthorized" finished-at="2023-09-06T13:14:55 IST" duration-ms="3105" status="PASS">
+        <test-method signature="Unauthorized()[pri:5, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-09-07T18:40:06 IST" name="Unauthorized" finished-at="2023-09-07T18:40:09 IST" duration-ms="3016" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Unauthorized -->
       </class> <!-- v1.Get.api.GetMeasurementDatabyRange -->
+      <class name="v3.Get.api.GetMeasurementDatabyRange">
+        <test-method signature="assertthedaterange()[pri:1, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-09-07T18:40:29 IST" name="assertthedaterange" finished-at="2023-09-07T18:40:31 IST" duration-ms="1485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertthedaterange -->
+        <test-method signature="assertTheIdRange()[pri:2, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-09-07T18:40:31 IST" name="assertTheIdRange" finished-at="2023-09-07T18:40:32 IST" duration-ms="1436" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [200] but found [404]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [200] but found [404]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:1419)
+at org.testng.Assert.assertEquals(Assert.java:1383)
+at org.testng.Assert.assertEquals(Assert.java:1429)
+at v3.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:171)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertTheIdRange -->
+        <test-method signature="invalidRangeValue()[pri:3, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-09-07T18:40:32 IST" name="invalidRangeValue" finished-at="2023-09-07T18:40:36 IST" duration-ms="4184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidRangeValue -->
+        <test-method signature="invalidFromOrToValue()[pri:4, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-09-07T18:40:36 IST" name="invalidFromOrToValue" finished-at="2023-09-07T18:40:45 IST" duration-ms="8777" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidFromOrToValue -->
+        <test-method signature="Unauthorized()[pri:5, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-09-07T18:40:45 IST" name="Unauthorized" finished-at="2023-09-07T18:40:48 IST" duration-ms="3197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="VerifyStandardFormate()[pri:6, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-09-07T18:40:48 IST" name="VerifyStandardFormate" finished-at="2023-09-07T18:40:50 IST" duration-ms="1517" status="FAIL">
+          <exception class="java.lang.ClassCastException">
+            <message>
+              <![CDATA[class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader 'bootstrap')]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader 'bootstrap')
+at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
+at credentails.CommonMethods.Standard(CommonMethods.java:68)
+at v3.Get.api.GetMeasurementDatabyRange.VerifyStandardFormate(GetMeasurementDatabyRange.java:317)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ClassCastException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyStandardFormate -->
+        <test-method signature="VerifylegacyFormate()[pri:7, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-09-07T18:40:50 IST" name="VerifylegacyFormate" finished-at="2023-09-07T18:40:52 IST" duration-ms="2372" status="FAIL">
+          <exception class="java.lang.ClassCastException">
+            <message>
+              <![CDATA[class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader 'bootstrap')]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader 'bootstrap')
+at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
+at credentails.CommonMethods.legacy(CommonMethods.java:39)
+at v3.Get.api.GetMeasurementDatabyRange.VerifylegacyFormate(GetMeasurementDatabyRange.java:344)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ClassCastException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifylegacyFormate -->
+      </class> <!-- v3.Get.api.GetMeasurementDatabyRange -->
+    </test> <!-- API Tests - GetMeasurementDataByRange -->
+    <test started-at="2023-09-07T18:40:52 IST" name="API Tests - GetMeasurementDataBySku" finished-at="2023-09-07T18:41:22 IST" duration-ms="29472">
+      <class name="v3.Get.api.GetMeasurementDataBySku">
+        <test-method signature="assertTheExteranlJsonToResponseBodyAndStatusCode()[pri:1, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-09-07T18:41:03 IST" name="assertTheExteranlJsonToResponseBodyAndStatusCode" finished-at="2023-09-07T18:41:07 IST" duration-ms="3227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertTheExteranlJsonToResponseBodyAndStatusCode -->
+        <test-method signature="verifystandardFormate()[pri:2, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-09-07T18:41:07 IST" name="verifystandardFormate" finished-at="2023-09-07T18:41:10 IST" duration-ms="3433" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifystandardFormate -->
+        <test-method signature="verifylegacyFormate()[pri:3, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-09-07T18:41:10 IST" name="verifylegacyFormate" finished-at="2023-09-07T18:41:14 IST" duration-ms="4007" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifylegacyFormate -->
+        <test-method signature="unauthorizedWithMultipeScenarious()[pri:4, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-09-07T18:41:14 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-09-07T18:41:17 IST" duration-ms="3048" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unauthorizedWithMultipeScenarious -->
+        <test-method signature="badRequestWithMultipeScenarious()[pri:5, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-09-07T18:41:17 IST" name="badRequestWithMultipeScenarious" finished-at="2023-09-07T18:41:22 IST" duration-ms="4340" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badRequestWithMultipeScenarious -->
+      </class> <!-- v3.Get.api.GetMeasurementDataBySku -->
+      <class name="v1.Get.api.GetMeasurementDataBySku">
+        <test-method signature="assertTheExteranlJsonToResponseBodyAndStatusCode()[pri:1, instance:v1.Get.api.GetMeasurementDataBySku@644d1b61]" started-at="2023-09-07T18:40:52 IST" name="assertTheExteranlJsonToResponseBodyAndStatusCode" finished-at="2023-09-07T18:40:56 IST" duration-ms="4164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertTheExteranlJsonToResponseBodyAndStatusCode -->
+        <test-method signature="unauthorizedWithMultipeScenarious()[pri:2, instance:v1.Get.api.GetMeasurementDataBySku@644d1b61]" started-at="2023-09-07T18:40:56 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-09-07T18:41:00 IST" duration-ms="3645" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unauthorizedWithMultipeScenarious -->
+        <test-method signature="badRequestWithMultipeScenarious()[pri:3, instance:v1.Get.api.GetMeasurementDataBySku@644d1b61]" started-at="2023-09-07T18:41:00 IST" name="badRequestWithMultipeScenarious" finished-at="2023-09-07T18:41:03 IST" duration-ms="3595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badRequestWithMultipeScenarious -->
+      </class> <!-- v1.Get.api.GetMeasurementDataBySku -->
+    </test> <!-- API Tests - GetMeasurementDataBySku -->
+    <test started-at="2023-09-07T18:41:22 IST" name="API Tests - MeasurementImagebyID" finished-at="2023-09-07T18:41:40 IST" duration-ms="18724">
       <class name="v1.Get.api.MeasurementImagebyID">
-        <test-method signature="idByImage()[pri:1, instance:v1.Get.api.MeasurementImagebyID@798162bc]" started-at="2023-09-06T13:15:13 IST" name="idByImage" finished-at="2023-09-06T13:15:14 IST" duration-ms="1481" status="FAIL">
+        <test-method signature="idByImage()[pri:1, instance:v1.Get.api.MeasurementImagebyID@44e4cb76]" started-at="2023-09-07T18:41:22 IST" name="idByImage" finished-at="2023-09-07T18:41:23 IST" duration-ms="1595" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [200] but found [404]]]>
@@ -178,196 +474,17 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- idByImage -->
-        <test-method signature="NoImageFound()[pri:2, instance:v1.Get.api.MeasurementImagebyID@798162bc]" started-at="2023-09-06T13:15:14 IST" name="NoImageFound" finished-at="2023-09-06T13:15:16 IST" duration-ms="1501" status="PASS">
+        <test-method signature="NoImageFound()[pri:2, instance:v1.Get.api.MeasurementImagebyID@44e4cb76]" started-at="2023-09-07T18:41:23 IST" name="NoImageFound" finished-at="2023-09-07T18:41:26 IST" duration-ms="2445" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NoImageFound -->
-        <test-method signature="Unauthorized()[pri:3, instance:v1.Get.api.MeasurementImagebyID@798162bc]" started-at="2023-09-06T13:15:16 IST" name="Unauthorized" finished-at="2023-09-06T13:15:17 IST" duration-ms="1567" status="PASS">
+        <test-method signature="Unauthorized()[pri:3, instance:v1.Get.api.MeasurementImagebyID@44e4cb76]" started-at="2023-09-07T18:41:26 IST" name="Unauthorized" finished-at="2023-09-07T18:41:27 IST" duration-ms="1859" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Unauthorized -->
       </class> <!-- v1.Get.api.MeasurementImagebyID -->
-      <class name="v1.Get.api.GetMeasurementDataBySku">
-        <test-method signature="assertTheExteranlJsonToResponseBodyAndStatusCode()[pri:1, instance:v1.Get.api.GetMeasurementDataBySku@1e4f4a5c]" started-at="2023-09-06T13:14:55 IST" name="assertTheExteranlJsonToResponseBodyAndStatusCode" finished-at="2023-09-06T13:14:58 IST" duration-ms="3026" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- assertTheExteranlJsonToResponseBodyAndStatusCode -->
-        <test-method signature="unauthorizedWithMultipeScenarious()[pri:2, instance:v1.Get.api.GetMeasurementDataBySku@1e4f4a5c]" started-at="2023-09-06T13:14:58 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-09-06T13:15:01 IST" duration-ms="2650" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unauthorizedWithMultipeScenarious -->
-        <test-method signature="badRequestWithMultipeScenarious()[pri:3, instance:v1.Get.api.GetMeasurementDataBySku@1e4f4a5c]" started-at="2023-09-06T13:15:01 IST" name="badRequestWithMultipeScenarious" finished-at="2023-09-06T13:15:04 IST" duration-ms="3044" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- badRequestWithMultipeScenarious -->
-      </class> <!-- v1.Get.api.GetMeasurementDataBySku -->
-      <class name="v1.Get.api.LatestMeasurementImage">
-        <test-method signature="Latestmeasurementimage()[pri:0, instance:v1.Get.api.LatestMeasurementImage@37313c65]" started-at="2023-09-06T13:15:04 IST" name="Latestmeasurementimage" finished-at="2023-09-06T13:15:05 IST" duration-ms="1867" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Latestmeasurementimage -->
-        <test-method signature="Unauthorized()[pri:0, instance:v1.Get.api.LatestMeasurementImage@37313c65]" started-at="2023-09-06T13:15:05 IST" name="Unauthorized" finished-at="2023-09-06T13:15:07 IST" duration-ms="1388" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Unauthorized -->
-        <test-method signature="notFound()[pri:0, instance:v1.Get.api.LatestMeasurementImage@37313c65]" started-at="2023-09-06T13:15:07 IST" name="notFound" finished-at="2023-09-06T13:15:08 IST" duration-ms="1401" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- notFound -->
-      </class> <!-- v1.Get.api.LatestMeasurementImage -->
-      <class name="v1.Get.api.ListMeasurementIDandDates">
-        <test-method signature="Notfound()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@465232e9]" started-at="2023-09-06T13:15:08 IST" name="Notfound" finished-at="2023-09-06T13:15:10 IST" duration-ms="1462" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Notfound -->
-        <test-method signature="ScanIdListEndpoint()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@465232e9]" started-at="2023-09-06T13:15:10 IST" name="ScanIdListEndpoint" finished-at="2023-09-06T13:15:11 IST" duration-ms="1487" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ScanIdListEndpoint -->
-        <test-method signature="Unauthorized()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@465232e9]" started-at="2023-09-06T13:15:11 IST" name="Unauthorized" finished-at="2023-09-06T13:15:13 IST" duration-ms="1427" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Unauthorized -->
-      </class> <!-- v1.Get.api.ListMeasurementIDandDates -->
-    </test> <!-- API Tests - Version 1 -->
-    <test started-at="2023-09-06T13:15:17 IST" name="API Tests - Version 2" finished-at="2023-09-06T13:15:50 IST" duration-ms="32439">
-      <class name="v2.Get.api.GetMeasurementDataById">
-        <test-method signature="assertJsonfileToResponseBody()[pri:1, instance:v2.Get.api.GetMeasurementDataById@53f3bdbd]" started-at="2023-09-06T13:15:17 IST" name="assertJsonfileToResponseBody" finished-at="2023-09-06T13:15:19 IST" duration-ms="1313" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Date value for key 'scanned_time' does not match the expected value.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Date value for key 'scanned_time' does not match the expected value.
-at org.testng.Assert.fail(Assert.java:111)
-at v2.Get.api.GetMeasurementDataById.compareResponseWithExternalData(GetMeasurementDataById.java:139)
-at v2.Get.api.GetMeasurementDataById.assertJsonfileToResponseBody(GetMeasurementDataById.java:58)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- assertJsonfileToResponseBody -->
-        <test-method signature="verifybadRequest()[pri:2, instance:v2.Get.api.GetMeasurementDataById@53f3bdbd]" started-at="2023-09-06T13:15:19 IST" name="verifybadRequest" finished-at="2023-09-06T13:15:22 IST" duration-ms="3018" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifybadRequest -->
-        <test-method signature="verifyunauthorized()[pri:3, instance:v2.Get.api.GetMeasurementDataById@53f3bdbd]" started-at="2023-09-06T13:15:22 IST" name="verifyunauthorized" finished-at="2023-09-06T13:15:24 IST" duration-ms="2861" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyunauthorized -->
-      </class> <!-- v2.Get.api.GetMeasurementDataById -->
-      <class name="v2.Get.api.GetMeasurementDatabyRange">
-        <test-method signature="assertthedaterange()[pri:1, instance:v2.Get.api.GetMeasurementDatabyRange@34129c78]" started-at="2023-09-06T13:15:24 IST" name="assertthedaterange" finished-at="2023-09-06T13:15:26 IST" duration-ms="1572" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- assertthedaterange -->
-        <test-method signature="assertTheIdRange()[pri:2, instance:v2.Get.api.GetMeasurementDatabyRange@34129c78]" started-at="2023-09-06T13:15:26 IST" name="assertTheIdRange" finished-at="2023-09-06T13:15:28 IST" duration-ms="1515" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [200] but found [404]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [200] but found [404]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:1419)
-at org.testng.Assert.assertEquals(Assert.java:1383)
-at org.testng.Assert.assertEquals(Assert.java:1429)
-at v2.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:149)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- assertTheIdRange -->
-        <test-method signature="invalidRangeValue()[pri:3, instance:v2.Get.api.GetMeasurementDatabyRange@34129c78]" started-at="2023-09-06T13:15:28 IST" name="invalidRangeValue" finished-at="2023-09-06T13:15:29 IST" duration-ms="1428" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidRangeValue -->
-        <test-method signature="invalidFromOrToValue()[pri:4, instance:v2.Get.api.GetMeasurementDatabyRange@34129c78]" started-at="2023-09-06T13:15:29 IST" name="invalidFromOrToValue" finished-at="2023-09-06T13:15:35 IST" duration-ms="5718" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidFromOrToValue -->
-        <test-method signature="Unauthorized()[pri:5, instance:v2.Get.api.GetMeasurementDatabyRange@34129c78]" started-at="2023-09-06T13:15:35 IST" name="Unauthorized" finished-at="2023-09-06T13:15:37 IST" duration-ms="2763" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Unauthorized -->
-      </class> <!-- v2.Get.api.GetMeasurementDatabyRange -->
-      <class name="v2.Get.api.ListMeasurementIDandDates">
-        <test-method signature="Notfound()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@4c2bb6e0]" started-at="2023-09-06T13:15:42 IST" name="Notfound" finished-at="2023-09-06T13:15:44 IST" duration-ms="1278" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Notfound -->
-        <test-method signature="ScanIdList()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@4c2bb6e0]" started-at="2023-09-06T13:15:44 IST" name="ScanIdList" finished-at="2023-09-06T13:15:45 IST" duration-ms="1398" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ScanIdList -->
-        <test-method signature="Unauthorized()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@4c2bb6e0]" started-at="2023-09-06T13:15:45 IST" name="Unauthorized" finished-at="2023-09-06T13:15:47 IST" duration-ms="1436" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Unauthorized -->
-      </class> <!-- v2.Get.api.ListMeasurementIDandDates -->
       <class name="v2.Get.api.MeasurementImagebyID">
-        <test-method signature="VeridyTheIdByImage()[pri:1, instance:v2.Get.api.MeasurementImagebyID@3e62d773]" started-at="2023-09-06T13:15:47 IST" name="VeridyTheIdByImage" finished-at="2023-09-06T13:15:48 IST" duration-ms="1518" status="FAIL">
+        <test-method signature="VeridyTheIdByImage()[pri:1, instance:v2.Get.api.MeasurementImagebyID@51cab489]" started-at="2023-09-07T18:41:27 IST" name="VeridyTheIdByImage" finished-at="2023-09-07T18:41:30 IST" duration-ms="2596" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [200] but found [404]]]>
@@ -417,25 +534,28 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VeridyTheIdByImage -->
-        <test-method signature="testNoImageFound(java.lang.Integer)[pri:2, instance:v2.Get.api.MeasurementImagebyID@3e62d773]" started-at="2023-09-06T13:15:48 IST" name="testNoImageFound" finished-at="2023-09-06T13:15:48 IST" duration-ms="0" status="FAIL">
-          <exception class="org.testng.TestNGException">
+        <test-method signature="testNoImageFound()[pri:2, instance:v2.Get.api.MeasurementImagebyID@51cab489]" started-at="2023-09-07T18:41:30 IST" name="testNoImageFound" finished-at="2023-09-07T18:41:32 IST" duration-ms="1474" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[
-Parameter 'InvalidImageId' is required by @Test on method testNoImageFound but has not been marked @Optional or defined
-in /home/usha/Music/WebserviceAutomation/testng.xml]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'InvalidImageId' is required by @Test on method testNoImageFound but has not been marked @Optional or defined
-in /home/usha/Music/WebserviceAutomation/testng.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:267)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
-at org.testng.internal.Parameters.createParameters(Parameters.java:684)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:879)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
-at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
-at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:911)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at credentails.CommonMethods.imageIdAssert(CommonMethods.java:164)
+at v2.Get.api.MeasurementImagebyID.testNoImageFound(MeasurementImagebyID.java:49)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -457,412 +577,17 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNoImageFound -->
-        <test-method signature="Unauthorized()[pri:3, instance:v2.Get.api.MeasurementImagebyID@3e62d773]" started-at="2023-09-06T13:15:48 IST" name="Unauthorized" finished-at="2023-09-06T13:15:50 IST" duration-ms="1578" status="PASS">
+        <test-method signature="Unauthorized()[pri:3, instance:v2.Get.api.MeasurementImagebyID@51cab489]" started-at="2023-09-07T18:41:32 IST" name="Unauthorized" finished-at="2023-09-07T18:41:33 IST" duration-ms="1542" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Unauthorized -->
       </class> <!-- v2.Get.api.MeasurementImagebyID -->
-      <class name="v2.Get.api.LatestMeasurementImage">
-        <test-method signature="Latestmeasurementimage()[pri:0, instance:v2.Get.api.LatestMeasurementImage@6c7a164b]" started-at="2023-09-06T13:15:37 IST" name="Latestmeasurementimage" finished-at="2023-09-06T13:15:39 IST" duration-ms="1993" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Latestmeasurementimage -->
-        <test-method signature="Unauthorized()[pri:0, instance:v2.Get.api.LatestMeasurementImage@6c7a164b]" started-at="2023-09-06T13:15:39 IST" name="Unauthorized" finished-at="2023-09-06T13:15:41 IST" duration-ms="1585" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Unauthorized -->
-        <test-method signature="notFound()[pri:0, instance:v2.Get.api.LatestMeasurementImage@6c7a164b]" started-at="2023-09-06T13:15:41 IST" name="notFound" finished-at="2023-09-06T13:15:42 IST" duration-ms="1423" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- notFound -->
-      </class> <!-- v2.Get.api.LatestMeasurementImage -->
-    </test> <!-- API Tests - Version 2 -->
-    <test started-at="2023-09-06T13:15:50 IST" name="API Tests - Version 3" finished-at="2023-09-06T13:16:51 IST" duration-ms="61609">
-      <class name="v3.Get.api.DownloadMeasurementArtifactImages">
-        <test-method signature="Download_Measurement_Artifact_Images_v3()[pri:0, instance:v3.Get.api.DownloadMeasurementArtifactImages@11df2829]" started-at="2023-09-06T13:16:48 IST" name="Download_Measurement_Artifact_Images_v3" finished-at="2023-09-06T13:16:51 IST" duration-ms="2855" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Download_Measurement_Artifact_Images_v3 -->
-      </class> <!-- v3.Get.api.DownloadMeasurementArtifactImages -->
-      <class name="v3.Get.api.ListMeasurementIDandDates">
-        <test-method signature="Notfound()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@7926352f]" started-at="2023-09-06T13:16:36 IST" name="Notfound" finished-at="2023-09-06T13:16:38 IST" duration-ms="1492" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Correct status code not returned expected [401] but found [404]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Correct status code not returned expected [401] but found [404]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:1419)
-at org.testng.Assert.assertEquals(Assert.java:1383)
-at credentails.CommonMethods.assertMessageAndStatuscode(CommonMethods.java:34)
-at v3.Get.api.ListMeasurementIDandDates.Notfound(ListMeasurementIDandDates.java:67)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Notfound -->
-        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@7926352f]" started-at="2023-09-06T13:16:38 IST" name="Unauthorized" finished-at="2023-09-06T13:16:39 IST" duration-ms="1508" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Unauthorized -->
-        <test-method signature="testScanIdListEndpoint()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@7926352f]" started-at="2023-09-06T13:16:39 IST" name="testScanIdListEndpoint" finished-at="2023-09-06T13:16:41 IST" duration-ms="1479" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testScanIdListEndpoint -->
-      </class> <!-- v3.Get.api.ListMeasurementIDandDates -->
-      <class name="v3.Get.api.GetMeasurementDataBySku">
-        <test-method signature="assertTheExteranlJsonToResponseBodyAndStatusCode()[pri:1, instance:v3.Get.api.GetMeasurementDataBySku@64518270]" started-at="2023-09-06T13:16:19 IST" name="assertTheExteranlJsonToResponseBodyAndStatusCode" finished-at="2023-09-06T13:16:21 IST" duration-ms="2881" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- assertTheExteranlJsonToResponseBodyAndStatusCode -->
-        <test-method signature="verifystandardFormate()[pri:2, instance:v3.Get.api.GetMeasurementDataBySku@64518270]" started-at="2023-09-06T13:16:21 IST" name="verifystandardFormate" finished-at="2023-09-06T13:16:24 IST" duration-ms="2956" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifystandardFormate -->
-        <test-method signature="verifylegacyFormate()[pri:3, instance:v3.Get.api.GetMeasurementDataBySku@64518270]" started-at="2023-09-06T13:16:24 IST" name="verifylegacyFormate" finished-at="2023-09-06T13:16:27 IST" duration-ms="3013" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifylegacyFormate -->
-        <test-method signature="unauthorizedWithMultipeScenarious()[pri:4, instance:v3.Get.api.GetMeasurementDataBySku@64518270]" started-at="2023-09-06T13:16:27 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-09-06T13:16:30 IST" duration-ms="2756" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unauthorizedWithMultipeScenarious -->
-        <test-method signature="badRequestWithMultipeScenarious()[pri:5, instance:v3.Get.api.GetMeasurementDataBySku@64518270]" started-at="2023-09-06T13:16:30 IST" name="badRequestWithMultipeScenarious" finished-at="2023-09-06T13:16:33 IST" duration-ms="2867" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- badRequestWithMultipeScenarious -->
-      </class> <!-- v3.Get.api.GetMeasurementDataBySku -->
-      <class name="v3.Get.api.GetMeasurementArtifactImage">
-        <test-method signature="Get_Measurement_Artifact_Image_v3()[pri:0, instance:v3.Get.api.GetMeasurementArtifactImage@77524ca7]" started-at="2023-09-06T13:16:46 IST" name="Get_Measurement_Artifact_Image_v3" finished-at="2023-09-06T13:16:48 IST" duration-ms="2849" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "java.util.List.size()" because "additional_image_id" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "additional_image_id" is null
-at v3.Get.api.ListMeasurementArtifactsIDandTitle.List_Measurement_Artifacts_ID_and_Title_200status(ListMeasurementArtifactsIDandTitle.java:38)
-at v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3(GetMeasurementArtifactImage.java:23)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Get_Measurement_Artifact_Image_v3 -->
-      </class> <!-- v3.Get.api.GetMeasurementArtifactImage -->
-      <class name="v3.Get.api.LatestMeasurementImage">
-        <test-method signature="Latestmeasurementimage()[pri:0, instance:v3.Get.api.LatestMeasurementImage@6ee88e21]" started-at="2023-09-06T13:16:33 IST" name="Latestmeasurementimage" finished-at="2023-09-06T13:16:35 IST" duration-ms="1818" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Latestmeasurementimage -->
-        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.LatestMeasurementImage@6ee88e21]" started-at="2023-09-06T13:16:35 IST" name="Unauthorized" finished-at="2023-09-06T13:16:36 IST" duration-ms="1561" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Unauthorized -->
-      </class> <!-- v3.Get.api.LatestMeasurementImage -->
-      <class name="v3.Get.api.GetMeasurementDatabyRange">
-        <test-method signature="assertthedaterange()[pri:1, instance:v3.Get.api.GetMeasurementDatabyRange@1953bc95]" started-at="2023-09-06T13:16:03 IST" name="assertthedaterange" finished-at="2023-09-06T13:16:04 IST" duration-ms="1563" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- assertthedaterange -->
-        <test-method signature="assertTheIdRange()[pri:2, instance:v3.Get.api.GetMeasurementDatabyRange@1953bc95]" started-at="2023-09-06T13:16:04 IST" name="assertTheIdRange" finished-at="2023-09-06T13:16:06 IST" duration-ms="1431" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [200] but found [404]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [200] but found [404]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:1419)
-at org.testng.Assert.assertEquals(Assert.java:1383)
-at org.testng.Assert.assertEquals(Assert.java:1429)
-at v3.Get.api.GetMeasurementDatabyRange.assertTheIdRange(GetMeasurementDatabyRange.java:167)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- assertTheIdRange -->
-        <test-method signature="invalidRangeValue()[pri:3, instance:v3.Get.api.GetMeasurementDatabyRange@1953bc95]" started-at="2023-09-06T13:16:06 IST" name="invalidRangeValue" finished-at="2023-09-06T13:16:07 IST" duration-ms="1415" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidRangeValue -->
-        <test-method signature="invalidFromOrToValue()[pri:4, instance:v3.Get.api.GetMeasurementDatabyRange@1953bc95]" started-at="2023-09-06T13:16:07 IST" name="invalidFromOrToValue" finished-at="2023-09-06T13:16:13 IST" duration-ms="5936" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidFromOrToValue -->
-        <test-method signature="Unauthorized()[pri:5, instance:v3.Get.api.GetMeasurementDatabyRange@1953bc95]" started-at="2023-09-06T13:16:13 IST" name="Unauthorized" finished-at="2023-09-06T13:16:16 IST" duration-ms="2846" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Unauthorized -->
-        <test-method signature="VerifyStandardFormate()[pri:6, instance:v3.Get.api.GetMeasurementDatabyRange@1953bc95]" started-at="2023-09-06T13:16:16 IST" name="VerifyStandardFormate" finished-at="2023-09-06T13:16:17 IST" duration-ms="1430" status="FAIL">
-          <exception class="java.lang.ClassCastException">
-            <message>
-              <![CDATA[class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader 'bootstrap')]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader 'bootstrap')
-at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
-at credentails.CommonMethods.Standard(CommonMethods.java:68)
-at v3.Get.api.GetMeasurementDatabyRange.VerifyStandardFormate(GetMeasurementDatabyRange.java:313)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.ClassCastException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyStandardFormate -->
-        <test-method signature="VerifylegacyFormate()[pri:7, instance:v3.Get.api.GetMeasurementDatabyRange@1953bc95]" started-at="2023-09-06T13:16:17 IST" name="VerifylegacyFormate" finished-at="2023-09-06T13:16:19 IST" duration-ms="1447" status="FAIL">
-          <exception class="java.lang.ClassCastException">
-            <message>
-              <![CDATA[class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader 'bootstrap')]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class java.util.List (java.util.LinkedHashMap and java.util.List are in module java.base of loader 'bootstrap')
-at io.restassured.path.json.JsonPath.getList(JsonPath.java:375)
-at credentails.CommonMethods.legacy(CommonMethods.java:39)
-at v3.Get.api.GetMeasurementDatabyRange.VerifylegacyFormate(GetMeasurementDatabyRange.java:340)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.ClassCastException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifylegacyFormate -->
-      </class> <!-- v3.Get.api.GetMeasurementDatabyRange -->
-      <class name="v3.Get.api.GetAllMeasurementDatabySKU">
-        <test-method signature="SkipFailureIsFalse()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:15:50 IST" name="SkipFailureIsFalse" finished-at="2023-09-06T13:15:51 IST" duration-ms="1395" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SkipFailureIsFalse -->
-        <test-method signature="SkipFailureIsTrue()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:15:51 IST" name="SkipFailureIsTrue" finished-at="2023-09-06T13:15:52 IST" duration-ms="1419" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SkipFailureIsTrue -->
-        <test-method signature="badRequestmultiplescenario()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:15:52 IST" name="badRequestmultiplescenario" finished-at="2023-09-06T13:15:54 IST" duration-ms="1432" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- badRequestmultiplescenario -->
-        <test-method signature="badRequestmultiplescenario1()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:15:54 IST" name="badRequestmultiplescenario1" finished-at="2023-09-06T13:15:55 IST" duration-ms="1418" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- badRequestmultiplescenario1 -->
-        <test-method signature="lessThanStartDate()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:15:55 IST" name="lessThanStartDate" finished-at="2023-09-06T13:15:57 IST" duration-ms="1437" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- lessThanStartDate -->
-        <test-method signature="noMeasurement(java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:15:57 IST" name="noMeasurement" finished-at="2023-09-06T13:15:57 IST" duration-ms="0" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Cannot inject @Test annotated Method [noMeasurement] with [class java.lang.String].
-For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Cannot inject @Test annotated Method [noMeasurement] with [class java.lang.String].
-For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
-at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:436)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:350)
-at org.testng.internal.Parameters.createParameters(Parameters.java:693)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:879)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
-at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
-at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:911)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- noMeasurement -->
-        <test-method signature="unauthorizedWithMultipeScenarious()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:15:57 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-09-06T13:15:58 IST" duration-ms="1322" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unauthorizedWithMultipeScenarious -->
-        <test-method signature="verifySkuId()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:15:58 IST" name="verifySkuId" finished-at="2023-09-06T13:16:00 IST" duration-ms="1411" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySkuId -->
-        <test-method signature="verifylegacyFormat()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:16:00 IST" name="verifylegacyFormat" finished-at="2023-09-06T13:16:01 IST" duration-ms="1496" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifylegacyFormat -->
-        <test-method signature="verifystandardFormat()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@4bc6da03]" started-at="2023-09-06T13:16:01 IST" name="verifystandardFormat" finished-at="2023-09-06T13:16:03 IST" duration-ms="1505" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifystandardFormat -->
-      </class> <!-- v3.Get.api.GetAllMeasurementDatabySKU -->
       <class name="v3.Get.api.MeasurementImagebyID">
-        <test-method signature="idByImage()[pri:1, instance:v3.Get.api.MeasurementImagebyID@35145874]" started-at="2023-09-06T13:16:41 IST" name="idByImage" finished-at="2023-09-06T13:16:43 IST" duration-ms="1655" status="FAIL">
+        <test-method signature="idByImage()[pri:1, instance:v3.Get.api.MeasurementImagebyID@74960e9d]" started-at="2023-09-07T18:41:33 IST" name="idByImage" finished-at="2023-09-07T18:41:35 IST" duration-ms="1686" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [200] but found [404]]]>
@@ -912,15 +637,244 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- idByImage -->
-        <test-method signature="testNoImageFound()[pri:2, instance:v3.Get.api.MeasurementImagebyID@35145874]" started-at="2023-09-06T13:16:43 IST" name="testNoImageFound" finished-at="2023-09-06T13:16:44 IST" duration-ms="1438" status="PASS">
+        <test-method signature="testNoImageFound()[pri:2, instance:v3.Get.api.MeasurementImagebyID@74960e9d]" started-at="2023-09-07T18:41:35 IST" name="testNoImageFound" finished-at="2023-09-07T18:41:37 IST" duration-ms="2199" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNoImageFound -->
-        <test-method signature="Unauthorized()[pri:3, instance:v3.Get.api.MeasurementImagebyID@35145874]" started-at="2023-09-06T13:16:44 IST" name="Unauthorized" finished-at="2023-09-06T13:16:46 IST" duration-ms="1531" status="PASS">
+        <test-method signature="Unauthorized()[pri:3, instance:v3.Get.api.MeasurementImagebyID@74960e9d]" started-at="2023-09-07T18:41:37 IST" name="Unauthorized" finished-at="2023-09-07T18:41:40 IST" duration-ms="3313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Unauthorized -->
       </class> <!-- v3.Get.api.MeasurementImagebyID -->
+    </test> <!-- API Tests - MeasurementImagebyID -->
+    <test started-at="2023-09-07T18:41:40 IST" name="API Tests - ListMeasurementIDandDates" finished-at="2023-09-07T18:41:59 IST" duration-ms="18276">
+      <class name="v3.Get.api.ListMeasurementIDandDates">
+        <test-method signature="Notfound()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@39e53bef]" started-at="2023-09-07T18:41:52 IST" name="Notfound" finished-at="2023-09-07T18:41:53 IST" duration-ms="1487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notfound -->
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@39e53bef]" started-at="2023-09-07T18:41:53 IST" name="Unauthorized" finished-at="2023-09-07T18:41:55 IST" duration-ms="1514" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="testScanIdListEndpoint()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@39e53bef]" started-at="2023-09-07T18:41:55 IST" name="testScanIdListEndpoint" finished-at="2023-09-07T18:41:59 IST" duration-ms="3600" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testScanIdListEndpoint -->
+      </class> <!-- v3.Get.api.ListMeasurementIDandDates -->
+      <class name="v2.Get.api.ListMeasurementIDandDates">
+        <test-method signature="Notfound()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@7ca492d9]" started-at="2023-09-07T18:41:47 IST" name="Notfound" finished-at="2023-09-07T18:41:48 IST" duration-ms="1392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notfound -->
+        <test-method signature="ScanIdList()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@7ca492d9]" started-at="2023-09-07T18:41:48 IST" name="ScanIdList" finished-at="2023-09-07T18:41:50 IST" duration-ms="1532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ScanIdList -->
+        <test-method signature="Unauthorized()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@7ca492d9]" started-at="2023-09-07T18:41:50 IST" name="Unauthorized" finished-at="2023-09-07T18:41:52 IST" duration-ms="2404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v2.Get.api.ListMeasurementIDandDates -->
+      <class name="v1.Get.api.ListMeasurementIDandDates">
+        <test-method signature="Notfound()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@7742a45c]" started-at="2023-09-07T18:41:40 IST" name="Notfound" finished-at="2023-09-07T18:41:42 IST" duration-ms="1486" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notfound -->
+        <test-method signature="ScanIdListEndpoint()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@7742a45c]" started-at="2023-09-07T18:41:42 IST" name="ScanIdListEndpoint" finished-at="2023-09-07T18:41:44 IST" duration-ms="2486" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ScanIdListEndpoint -->
+        <test-method signature="Unauthorized()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@7742a45c]" started-at="2023-09-07T18:41:44 IST" name="Unauthorized" finished-at="2023-09-07T18:41:47 IST" duration-ms="2366" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v1.Get.api.ListMeasurementIDandDates -->
+    </test> <!-- API Tests - ListMeasurementIDandDates -->
+    <test started-at="2023-09-07T18:41:59 IST" name="API Tests - LatestMeasurementImage" finished-at="2023-09-07T18:42:17 IST" duration-ms="17965">
+      <class name="v3.Get.api.LatestMeasurementImage">
+        <test-method signature="Latestmeasurementimage()[pri:0, instance:v3.Get.api.LatestMeasurementImage@7ec08115]" started-at="2023-09-07T18:42:12 IST" name="Latestmeasurementimage" finished-at="2023-09-07T18:42:15 IST" duration-ms="2617" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Latestmeasurementimage -->
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.LatestMeasurementImage@7ec08115]" started-at="2023-09-07T18:42:15 IST" name="Unauthorized" finished-at="2023-09-07T18:42:17 IST" duration-ms="1631" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v3.Get.api.LatestMeasurementImage -->
+      <class name="v1.Get.api.LatestMeasurementImage">
+        <test-method signature="Latestmeasurementimage()[pri:0, instance:v1.Get.api.LatestMeasurementImage@8840c98]" started-at="2023-09-07T18:41:59 IST" name="Latestmeasurementimage" finished-at="2023-09-07T18:42:01 IST" duration-ms="2706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Latestmeasurementimage -->
+        <test-method signature="Unauthorized()[pri:0, instance:v1.Get.api.LatestMeasurementImage@8840c98]" started-at="2023-09-07T18:42:01 IST" name="Unauthorized" finished-at="2023-09-07T18:42:03 IST" duration-ms="1786" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="notFound()[pri:0, instance:v1.Get.api.LatestMeasurementImage@8840c98]" started-at="2023-09-07T18:42:03 IST" name="notFound" finished-at="2023-09-07T18:42:05 IST" duration-ms="1485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notFound -->
+      </class> <!-- v1.Get.api.LatestMeasurementImage -->
+      <class name="v2.Get.api.LatestMeasurementImage">
+        <test-method signature="Latestmeasurementimage()[pri:0, instance:v2.Get.api.LatestMeasurementImage@626b639e]" started-at="2023-09-07T18:42:05 IST" name="Latestmeasurementimage" finished-at="2023-09-07T18:42:07 IST" duration-ms="1950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Latestmeasurementimage -->
+        <test-method signature="Unauthorized()[pri:0, instance:v2.Get.api.LatestMeasurementImage@626b639e]" started-at="2023-09-07T18:42:07 IST" name="Unauthorized" finished-at="2023-09-07T18:42:08 IST" duration-ms="1888" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="notFound()[pri:0, instance:v2.Get.api.LatestMeasurementImage@626b639e]" started-at="2023-09-07T18:42:08 IST" name="notFound" finished-at="2023-09-07T18:42:12 IST" duration-ms="3891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notFound -->
+      </class> <!-- v2.Get.api.LatestMeasurementImage -->
+    </test> <!-- API Tests - LatestMeasurementImage -->
+    <test started-at="2023-09-07T18:42:17 IST" name="API Tests - Version 3" finished-at="2023-09-07T18:42:54 IST" duration-ms="37068">
+      <class name="v3.Get.api.DownloadMeasurementArtifactImages">
+        <test-method signature="Download_Measurement_Artifact_Images_v3()[pri:0, instance:v3.Get.api.DownloadMeasurementArtifactImages@508ad266]" started-at="2023-09-07T18:42:51 IST" name="Download_Measurement_Artifact_Images_v3" finished-at="2023-09-07T18:42:54 IST" duration-ms="3058" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Download_Measurement_Artifact_Images_v3 -->
+      </class> <!-- v3.Get.api.DownloadMeasurementArtifactImages -->
+      <class name="v3.Get.api.GetMeasurementArtifactImage">
+        <test-method signature="Get_Measurement_Artifact_Image_v3()[pri:0, instance:v3.Get.api.GetMeasurementArtifactImage@d2708a7]" started-at="2023-09-07T18:42:44 IST" name="Get_Measurement_Artifact_Image_v3" finished-at="2023-09-07T18:42:51 IST" duration-ms="6178" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.List.size()" because "additional_image_id" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "additional_image_id" is null
+at v3.Get.api.ListMeasurementArtifactsIDandTitle.List_Measurement_Artifacts_ID_and_Title_200status(ListMeasurementArtifactsIDandTitle.java:38)
+at v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3(GetMeasurementArtifactImage.java:23)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Get_Measurement_Artifact_Image_v3 -->
+      </class> <!-- v3.Get.api.GetMeasurementArtifactImage -->
+      <class name="v3.Get.api.GetAllMeasurementDatabySKU">
+        <test-method signature="SkipFailureIsFalse()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:21 IST" name="SkipFailureIsFalse" finished-at="2023-09-07T18:42:23 IST" duration-ms="2113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SkipFailureIsFalse -->
+        <test-method signature="SkipFailureIsTrue()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:23 IST" name="SkipFailureIsTrue" finished-at="2023-09-07T18:42:25 IST" duration-ms="1448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SkipFailureIsTrue -->
+        <test-method signature="badRequestmultiplescenario()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:25 IST" name="badRequestmultiplescenario" finished-at="2023-09-07T18:42:26 IST" duration-ms="1447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badRequestmultiplescenario -->
+        <test-method signature="badRequestmultiplescenario1()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:26 IST" name="badRequestmultiplescenario1" finished-at="2023-09-07T18:42:28 IST" duration-ms="1430" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badRequestmultiplescenario1 -->
+        <test-method signature="lessThanStartDate()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:28 IST" name="lessThanStartDate" finished-at="2023-09-07T18:42:30 IST" duration-ms="2714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lessThanStartDate -->
+        <test-method signature="noMeasurement(java.lang.String)[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:30 IST" name="noMeasurement" finished-at="2023-09-07T18:42:30 IST" duration-ms="0" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Cannot inject @Test annotated Method [noMeasurement] with [class java.lang.String].
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Cannot inject @Test annotated Method [noMeasurement] with [class java.lang.String].
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
+at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:436)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:350)
+at org.testng.internal.Parameters.createParameters(Parameters.java:693)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:879)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
+at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
+at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:911)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- noMeasurement -->
+        <test-method signature="unauthorizedWithMultipeScenarious()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:30 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-09-07T18:42:32 IST" duration-ms="1421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unauthorizedWithMultipeScenarious -->
+        <test-method signature="verifySkuId()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:32 IST" name="verifySkuId" finished-at="2023-09-07T18:42:34 IST" duration-ms="2281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySkuId -->
+        <test-method signature="verifylegacyFormat()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:34 IST" name="verifylegacyFormat" finished-at="2023-09-07T18:42:39 IST" duration-ms="5352" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifylegacyFormat -->
+        <test-method signature="verifystandardFormat()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@538a2f0e]" started-at="2023-09-07T18:42:39 IST" name="verifystandardFormat" finished-at="2023-09-07T18:42:44 IST" duration-ms="5001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifystandardFormat -->
+      </class> <!-- v3.Get.api.GetAllMeasurementDatabySKU -->
+      <class name="v3.Get.api.GenerateAPIAccessToken">
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.GenerateAPIAccessToken@6d5f4900]" started-at="2023-09-07T18:42:17 IST" name="Unauthorized" finished-at="2023-09-07T18:42:18 IST" duration-ms="1485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="accesstokenandrefereshtoken()[pri:0, instance:v3.Get.api.GenerateAPIAccessToken@6d5f4900]" started-at="2023-09-07T18:42:18 IST" name="accesstokenandrefereshtoken" finished-at="2023-09-07T18:42:21 IST" duration-ms="3120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accesstokenandrefereshtoken -->
+      </class> <!-- v3.Get.api.GenerateAPIAccessToken -->
     </test> <!-- API Tests - Version 3 -->
   </suite> <!-- WebServiceTesting -->
 </testng-results>
