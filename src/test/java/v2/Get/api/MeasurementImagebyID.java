@@ -37,7 +37,7 @@ public class MeasurementImagebyID extends CommonMethods {
         Response response = RestAssured
         		
                 .given()
-                	.pathParam("id",155)
+                	.pathParam("id",Credentails.InvalidImageId)
                 		.header("systemid", Credentails.systemid)
                 				.header("userid", Credentails.userid)
                 .when()

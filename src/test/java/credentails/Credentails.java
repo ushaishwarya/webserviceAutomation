@@ -8,43 +8,43 @@ import java.util.Date;
 
 public class Credentails {
 
-	public static String v1="https://qa.vmeasure.cloud:6600/api/v1";
+	public static String v1="https://stage.vmeasure.cloud:6600/api/v1";
 
-	public static String v2="https://qa.vmeasure.cloud:6600/api/v2";
+	public static String v2="https://stage.vmeasure.cloud:6600/api/v2";
 
-	public static String v3="https://qa.vmeasure.cloud:6600/api/v3";
+	public static String v3="https://stage.vmeasure.cloud:6600/api/v3";
 
 
-	public static String filepath="/home/usha/Downloads/measurements-2023-09-06 13-12-38.json";
+	public static String filepath="/home/usha/Downloads/measurements-2023-09-08 19-25-34.json";
 
-	public static String systemid="1671014053897VqKnRS9zeuqYygKyZdwVZopLrIm";
+	public static String systemid="1665583342135BAZGyd9TTiGExWAAUEszYZUckZH";
 
 
 	public static String userid="1673253571738_9w3cqD7Fb7JxJHk8116pkThP1c";
 
-	public static String secretid="3fe4ed66-3cfb-4524-abdb-b0cf777ffe91";	
+	public static String secretid="9f03de24-b049-4ecf-b193-3018e658bce3";	
 
 
 
 	public static String referenceboxsku="123456";
-	public static Integer ImageId =10855;
+	public static Integer ImageId =10891;
 
-	public static String userFromDate="2023-09-01";
-	public static String userToDate="2023-09-06";
-	public static Integer userFromId=10850;
+	public static String userFromDate="2023-09-06";
+	public static String userToDate="2023-09-09";
+	public static Integer userFromId=10884;
 
-	public static Integer userToId=10859;
+	public static Integer userToId=10891;
 
 	public static Integer InvalidImageId=123;
 
 	public static String Sku="suzume";
 
-	public static String invalidSku="abc";
+	public static String invalidSku="tika";
 
-	public static String startDate="2023-09-01";
-	public static String endDate="2023-09-06";
+	public static String startDate="2023-09-06";
+	public static String endDate="2023-09-09";
 	public static String lessninty="2023-01-19";
-	public static String artifactid="10859";
+	public static String artifactid="10891";
 	public static String heightPref="1.5";
 	public static String envelopeMod="false";
 

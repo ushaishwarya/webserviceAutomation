@@ -1,6 +1,6 @@
 package v3.Get.api;
 
-import org.testng.Assert;
+
 
 import org.testng.annotations.Test;
 
@@ -8,7 +8,6 @@ import credentails.Credentails;
 import credentails.CommonMethods;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class LiveCalibration extends CommonMethods{
@@ -32,22 +31,7 @@ public class LiveCalibration extends CommonMethods{
 			.get("/calibrate");
 		
 		
-        JsonPath jsonPath = response.jsonPath();
-        
-        String additionalinfo=jsonPath.getString("additionalInfo");
-        System.out.println("v3 calibration "+additionalinfo);
-
-        
-        Integer status=jsonPath.getInt("statusCode");
-        
-        Assert.assertEquals(additionalinfo, "System Calibrated Successfully.");
-        
-        Assert.assertEquals(status, 300);
-        
-        int statuscode=response.getStatusCode();
-        
-        Assert.assertEquals(statuscode, 200);
-        
+       calibrationAssert(response);        
 
 
 		

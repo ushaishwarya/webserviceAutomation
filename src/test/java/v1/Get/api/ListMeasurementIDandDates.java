@@ -22,7 +22,8 @@ public class ListMeasurementIDandDates extends CommonMethods {
                 .then()
                 		.extract()
                 			.response();
-        
+        System.out.println(response.asPrettyString());
+
         assertIdAndDate(response);
     }
     @Test

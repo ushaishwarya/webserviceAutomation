@@ -4,6 +4,7 @@ package v3.Get.api;
 import java.io.IOException;
 
 
+
 import java.util.List;
 
 import org.testng.Assert;
@@ -280,7 +281,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 		}
 	
 	@Test
-	public void noMeasurement(String invalidSku) throws IOException {
+	public void noMeasurement() throws IOException {
 
 		RestAssured.baseURI = Credentails.v3;
 

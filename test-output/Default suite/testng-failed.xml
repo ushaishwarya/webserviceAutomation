@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="v2.Get.api.GetMeasurementDataById">
+      <class name="v1.Get.api.ListMeasurementIDandDates">
         <methods>
-          <include name="assertJsonfileToResponseBody"/>
+          <include name="ScanIdListEndpoint"/>
         </methods>
-      </class> <!-- v2.Get.api.GetMeasurementDataById -->
+      </class> <!-- v1.Get.api.ListMeasurementIDandDates -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -204,9 +204,15 @@ public class CommonMethods {
 	public static void calibrationAssert(Response response) {
 
 		JsonPath jsonPath = response.jsonPath();
+		
+		String id=jsonPath.getString("id");
+
+		System.out.println("calibration id "+id);
 
 		String additionalinfo=jsonPath.getString("additionalInfo");
-		System.out.println("v1 calibration "+additionalinfo);
+		
+		
+		System.out.println("calibration "+additionalinfo);
 
 		Integer status=jsonPath.getInt("statusCode");
 
@@ -221,11 +227,17 @@ public class CommonMethods {
 	public static void measurementAssert(Response response) {
 
 		JsonPath jsonPath = response.jsonPath();
+		
+		String id=jsonPath.getString("id");
+
+		System.out.println("calibration id "+id);
+
 
 		String additionalinfo=jsonPath.getString("additionalInfo");
 
 		Assert.assertEquals(additionalinfo, "Object Measured Successfully");
 
+		System.out.println("Measurement "+additionalinfo);
 
 		Integer status=jsonPath.getInt("statusCode");
 		Assert.assertEquals(status, 400);

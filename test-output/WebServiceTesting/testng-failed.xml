@@ -3,57 +3,53 @@
 <suite name="Failed suite [WebServiceTesting]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="API Tests - GetMeasurementDataByRange(failed)">
     <classes>
-      <class name="v3.Get.api.GetMeasurementDatabyRange">
-        <methods>
-          <include name="assertTheIdRange"/>
-          <include name="VerifylegacyFormate"/>
-          <include name="VerifyStandardFormate"/>
-        </methods>
-      </class> <!-- v3.Get.api.GetMeasurementDatabyRange -->
-      <class name="v1.Get.api.GetMeasurementDatabyRange">
-        <methods>
-          <include name="assertTheIdRange"/>
-        </methods>
-      </class> <!-- v1.Get.api.GetMeasurementDatabyRange -->
       <class name="v2.Get.api.GetMeasurementDatabyRange">
         <methods>
-          <include name="assertTheIdRange"/>
+          <include name="assertthedaterange"/>
         </methods>
       </class> <!-- v2.Get.api.GetMeasurementDatabyRange -->
     </classes>
   </test> <!-- API Tests - GetMeasurementDataByRange(failed) -->
   <test thread-count="5" name="API Tests - MeasurementImagebyID(failed)">
     <classes>
-      <class name="v1.Get.api.MeasurementImagebyID">
-        <methods>
-          <include name="idByImage"/>
-        </methods>
-      </class> <!-- v1.Get.api.MeasurementImagebyID -->
       <class name="v2.Get.api.MeasurementImagebyID">
         <methods>
-          <include name="VeridyTheIdByImage"/>
           <include name="testNoImageFound"/>
         </methods>
       </class> <!-- v2.Get.api.MeasurementImagebyID -->
-      <class name="v3.Get.api.MeasurementImagebyID">
-        <methods>
-          <include name="idByImage"/>
-        </methods>
-      </class> <!-- v3.Get.api.MeasurementImagebyID -->
     </classes>
   </test> <!-- API Tests - MeasurementImagebyID(failed) -->
+  <test thread-count="5" name="API Tests - ListMeasurementIDandDates(failed)">
+    <classes>
+      <class name="v2.Get.api.ListMeasurementIDandDates">
+        <methods>
+          <include name="ScanIdList"/>
+        </methods>
+      </class> <!-- v2.Get.api.ListMeasurementIDandDates -->
+      <class name="v3.Get.api.ListMeasurementIDandDates">
+        <methods>
+          <include name="testScanIdListEndpoint"/>
+        </methods>
+      </class> <!-- v3.Get.api.ListMeasurementIDandDates -->
+      <class name="v1.Get.api.ListMeasurementIDandDates">
+        <methods>
+          <include name="ScanIdListEndpoint"/>
+        </methods>
+      </class> <!-- v1.Get.api.ListMeasurementIDandDates -->
+    </classes>
+  </test> <!-- API Tests - ListMeasurementIDandDates(failed) -->
   <test thread-count="5" name="API Tests - Version 3(failed)">
     <classes>
-      <class name="v3.Get.api.GetMeasurementArtifactImage">
-        <methods>
-          <include name="Get_Measurement_Artifact_Image_v3"/>
-        </methods>
-      </class> <!-- v3.Get.api.GetMeasurementArtifactImage -->
       <class name="v3.Get.api.GetAllMeasurementDatabySKU">
         <methods>
           <include name="noMeasurement"/>
         </methods>
       </class> <!-- v3.Get.api.GetAllMeasurementDatabySKU -->
+      <class name="v3.Get.api.LiveMeasurementCheck">
+        <methods>
+          <include name="liveMeasurementCheck200status"/>
+        </methods>
+      </class> <!-- v3.Get.api.LiveMeasurementCheck -->
     </classes>
   </test> <!-- API Tests - Version 3(failed) -->
 </suite> <!-- Failed suite [WebServiceTesting] -->

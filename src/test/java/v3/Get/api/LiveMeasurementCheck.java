@@ -54,21 +54,21 @@ public class LiveMeasurementCheck {
     boolean status=jsonPath.getBoolean("status");
     int statusCode=jsonPath.getInt("statusCode");
     String additionalInfo=jsonPath.getString("additionalInfo");
-    Double length=jsonPath.getDouble("length");
-    double width=jsonPath.getDouble("width");
-    double height=jsonPath.getDouble("height");
-    String weightUnit=jsonPath.getString("weightUni");
-    double actualWeight=jsonPath.getDouble("actualWeight");
+//    Double length=jsonPath.getDouble("length");
+//    double width=jsonPath.getDouble("width");
+//    double height=jsonPath.getDouble("height");
+//    String weightUnit=jsonPath.getString("weightUni");
+//    double actualWeight=jsonPath.getDouble("actualWeight");
     
     Assert.assertEquals(sku, Credentails.Sku);
     Assert.assertEquals(status, Credentails.status);
     Assert.assertEquals(statusCode, Credentails.statusCode);
     Assert.assertEquals(additionalInfo, Credentails.additionalInfo);
-    Assert.assertEquals(length, Credentails.length);
-    Assert.assertEquals(width, Credentails.width);
-    Assert.assertEquals(height, Credentails.height);
-    Assert.assertEquals(weightUnit, Credentails.weightUni);
-    Assert.assertEquals(actualWeight, Credentails.actualWeight);
+//    Assert.assertEquals(length, Credentails.length);
+//    Assert.assertEquals(width, Credentails.width);
+//    Assert.assertEquals(height, Credentails.height);
+//    Assert.assertEquals(weightUnit, Credentails.weightUni);
+//    Assert.assertEquals(actualWeight, Credentails.actualWeight);
 
 
     

@@ -11,7 +11,8 @@ import io.restassured.response.Response;
 
 public class ListMeasurementIDandDates extends CommonMethods {
     @Test
-    public void ScanIdList() {
+    public void ScanIdListEndpoint() {
+    	
         RestAssured.baseURI = Credentails.v2;
 
         Response response = RestAssured
@@ -23,7 +24,7 @@ public class ListMeasurementIDandDates extends CommonMethods {
                 .then()
                 		.extract()
                 			.response();
-
+        
         assertIdAndDate(response);
     }
     @Test
