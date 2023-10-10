@@ -15,7 +15,7 @@ public class LiveCalibration extends CommonMethods{
 	public static void CalibratedSuccessfully () throws InterruptedException {
         Thread.sleep(3000); // Time is in milliseconds
 
-		RestAssured.baseURI=Credentails.v1;
+		RestAssured.baseURI=Credentails.baseurl;
 		Response response= RestAssured.given()
 			.header("systemid",Credentails.systemid)
 			.header("userid",Credentails.userid)
@@ -25,10 +25,10 @@ public class LiveCalibration extends CommonMethods{
 			.queryParam("envelopeMod",Credentails.envelopeMod)
 			
 		.when()
-			.get("/calibrate");
+			.get("v1/calibrate");
 		
 		
-		calibrationAssert(response);      
+		verify_key_and_value_for_LiveCalibration(response);      
 
 		
 	}
@@ -48,7 +48,7 @@ public class LiveCalibration extends CommonMethods{
             	
            }
 		
-		RestAssured.baseURI=Credentails.v1;
+		RestAssured.baseURI=Credentails.baseurl;
 		Response response= RestAssured.given()
 			.header("systemid",Credentails.systemid)
 			.header("userid",Credentails.userid)
@@ -58,7 +58,7 @@ public class LiveCalibration extends CommonMethods{
 			.queryParam("envelopeMod",Credentails.envelopeMod)
 			
 		.when()
-			.get("/calibrate");
+			.get("v1/calibrate");
 		
         assertMessageAndStatuscode(response, "Please send the preferable height and unit", 400);        
 		
@@ -77,7 +77,7 @@ public class LiveCalibration extends CommonMethods{
             	
            }
 		
-		RestAssured.baseURI=Credentails.v1;
+		RestAssured.baseURI=Credentails.baseurl;
 		Response response= RestAssured.given()
 			.header("systemid",Credentails.systemid)
 			.header("userid",Credentails.userid)
@@ -87,7 +87,7 @@ public class LiveCalibration extends CommonMethods{
 			.queryParam("envelopeMod",Credentails.envelopeMod)
 			
 		.when()
-			.get("/calibrate");
+			.get("v1/calibrate");
 		
         
         assertMessageAndStatuscode(response, "Enter valid heightPref either 1.1, 1.5 or 2.2", 400);              

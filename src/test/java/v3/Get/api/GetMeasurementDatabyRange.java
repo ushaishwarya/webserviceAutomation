@@ -60,7 +60,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 				System.out.println("Date range is valid.");
 
 				// API Request using RestAssured
-				RestAssured.baseURI = Credentails.v3;
+				RestAssured.baseURI = Credentails.baseurl;
 
 				Response response = RestAssured.given()
 						.header("Content-Type","application/json")
@@ -70,7 +70,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 						.queryParam("from", Credentails.userFromDate)
 						.queryParam("to", Credentails.userToDate)
 						.when()
-						.get("/dimension")
+						.get("v3/dimension")
 						.then()
 						.extract()
 						.response();
@@ -130,7 +130,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 
 		try {
 
-			RestAssured.baseURI = Credentails.v3;
+			RestAssured.baseURI = Credentails.baseurl;
 
 			Response response = RestAssured.given()
 					.header("Content-Type","application/json")
@@ -140,7 +140,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 					.queryParam("from", Credentails.userFromId)
 					.queryParam("to", Credentails.userToId)
 					.when()
-					.get("/dimension")
+					.get("v3/dimension")
 					.then()
 					.extract()
 					.response();
@@ -182,7 +182,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 	}
 	@Test(priority=3)
 	public  void invalidRangeValue() {
-		RestAssured.baseURI = Credentails.v3;
+		RestAssured.baseURI = Credentails.baseurl;
 
 		Response response = RestAssured.given()
 				.header("Content-Type","application/json")
@@ -193,7 +193,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 				.queryParam("from",Credentails.userFromId)
 				.queryParam("to", Credentails.userToId)
 				.when()
-				.get("/dimension")
+				.get("v3/dimension")
 				.then()
 				.extract()
 				.response();
@@ -229,7 +229,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 			}
 
 
-			RestAssured.baseURI = Credentails.v3;
+			RestAssured.baseURI = Credentails.baseurl;
 
 			Response response = RestAssured.given()
 					.header("Content-Type","application/json")
@@ -239,7 +239,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 					.queryParam("from",userfrom)
 					.queryParam("to", userto)
 					.when()
-					.get("/dimension")
+					.get("v3/dimension")
 					.then()
 					.extract()
 					.response();
@@ -272,7 +272,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 			}
 
 
-			RestAssured.baseURI = Credentails.v3;
+			RestAssured.baseURI = Credentails.baseurl;
 
 			Response response = RestAssured.given()
 					.header("Content-Type","application/json")
@@ -283,7 +283,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 					.queryParam("from", Credentails.userFromId)
 					.queryParam("to", Credentails.userToId)
 					.when()
-					.get("/dimension")
+					.get("v3/dimension")
 					.then()
 					.extract()
 					.response();
@@ -297,7 +297,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 	@Test(priority = 6)
 	public void VerifyStandardFormate() {
 		try {
-			RestAssured.baseURI = Credentails.v3;
+			RestAssured.baseURI = Credentails.baseurl;
 
 			Response response = RestAssured.given()
 					.header("Content-Type", "application/json")
@@ -310,7 +310,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 					.queryParam("isStandardDimensionUnitFormat", "true")
 					.queryParam("isStandardWeightUnitFormat", "true")
 					.when()
-					.get("/dimension")
+					.get("v3/dimension")
 					.then()
 					.extract()
 					.response();
@@ -323,7 +323,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 	@Test(priority = 7)
 	public void VerifylegacyFormate() {
 		try {
-			RestAssured.baseURI = Credentails.v3;
+			RestAssured.baseURI = Credentails.baseurl;
 
 			Response response = RestAssured.given()
 					.header("Content-Type", "application/json")
@@ -336,7 +336,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 					.queryParam("isStandardDimensionUnitFormat", "false")
 					.queryParam("isStandardWeightUnitFormat", "false")
 					.when()
-					.get("/dimension")
+					.get("v3/dimension")
 					.then()
 					.extract()
 					.response();

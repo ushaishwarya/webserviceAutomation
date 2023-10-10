@@ -16,10 +16,11 @@ import io.restassured.response.Response;
 public class PostAuth {
 	public static String accessToken;
 	public static String refreshToken;
+	
 	public static String[] getauth() {
 
 
-		RestAssured.baseURI =Credentails.v3;
+		RestAssured.baseURI =Credentails.baseurl;
 		// Create a Map to represent the dynamic payload
 		Map<String, Object> requestBody = new HashMap<>();
 		requestBody.put("user_id", Credentails.userid);
@@ -38,7 +39,7 @@ public class PostAuth {
 
 
 				.when()
-				.post("auth");
+				.post("v3/auth");
 
 		accessToken = response.jsonPath().getString("access_token");
 		refreshToken = response.jsonPath().getString("refresh_token");

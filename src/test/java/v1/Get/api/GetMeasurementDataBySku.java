@@ -45,7 +45,7 @@ public class GetMeasurementDataBySku extends CommonMethods {
             }
             
             
-            RestAssured.baseURI = Credentails.v1;
+            RestAssured.baseURI =Credentails.baseurl;
 
             for (String id : valuesSet) {
                 Response response = RestAssured.given()
@@ -53,7 +53,7 @@ public class GetMeasurementDataBySku extends CommonMethods {
                     .header("systemid", Credentails.systemid)
                     .header("userid", Credentails.userid)
                     .when()
-                    .get("/sku")
+                    .get("v1/sku")
                     .then()
                     .extract()
                     .response();
@@ -76,7 +76,7 @@ public class GetMeasurementDataBySku extends CommonMethods {
     @Test(priority=2)
   public void unauthorizedWithMultipeScenarious() throws IOException {
 
-      RestAssured.baseURI = Credentails.v1;
+      RestAssured.baseURI =Credentails.baseurl;
 
       int numIterations = 3;
 
@@ -102,7 +102,7 @@ public class GetMeasurementDataBySku extends CommonMethods {
                   .header("systemid", systemId)
                   .header("userid", userId)
               .when()
-                  .get("/sku")
+                  .get("v1/sku")
             .then()
             .extract()
             .response();
@@ -122,7 +122,7 @@ public class GetMeasurementDataBySku extends CommonMethods {
   @Test(priority=3)
   public void badRequestWithMultipeScenarious() throws IOException {
 
-      RestAssured.baseURI = Credentails.v1;
+      RestAssured.baseURI =Credentails.baseurl;
       int numIterations = 2;
       for (int i = 1; i <= numIterations; i++) {
           String id = ""; 
@@ -141,7 +141,7 @@ public class GetMeasurementDataBySku extends CommonMethods {
                   .header("systemid", Credentails.systemid)
                   .header("userid", Credentails.userid)
               .when()
-                  .get("/sku")
+                  .get("v1/sku")
               .then()
                   .extract()
                   .response();

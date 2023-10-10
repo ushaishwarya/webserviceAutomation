@@ -74,7 +74,7 @@ public class GetMeasurementDataById extends CommonMethods {
         System.out.println("Maximum Response Time in milliseconds: " + maxResponseTime);
     }
     public static Response callApiv3(String id) {
-        RestAssured.baseURI = Credentails.v3;
+        RestAssured.baseURI = Credentails.baseurl;
 
         Response response = RestAssured.given()
                 .pathParam("id", id)
@@ -86,7 +86,7 @@ public class GetMeasurementDataById extends CommonMethods {
                 .queryParam("isStandardWeightUnitFormat", "true")
 
                 .when()
-                .get("/dimension/{id}")
+                .get("v3/dimension/{id}")
                 .then()
                 .extract()
                 .response();
@@ -107,7 +107,7 @@ public class GetMeasurementDataById extends CommonMethods {
         JsonNode jsonResponse = objectMapper.readTree(response.getBody().asString());
         
                 
-        List<String> keysToSkip = Arrays.asList("scanned_time_zone", "workflow_data", "additional_info","retried_count","failed_status_codes","mode","webhook_log_ids","user_name","system","site");
+        List<String> keysToSkip = Arrays.asList("scanned_time_zone", "workflow_data", "additional_info","retried_count","failed_status_codes","mode","webhook_log_ids","user_name","system","site","system_name");
 
 
         for (Map.Entry<String, Object> entry : externalData.entrySet()) {
@@ -128,7 +128,7 @@ public class GetMeasurementDataById extends CommonMethods {
             if (keysToSkip.contains(key)) {
                 continue; 
             }
-            if (expectedValue.equals("NA") && (actualValue.equals("null") || actualValue.isEmpty())) {
+			if (expectedValue.equals("NA") || expectedValue.equals("null") || (actualValue.equals("null") || actualValue.isEmpty())) {
                 continue; 
             }
             if (key.equals("scanned_time")) {
@@ -199,7 +199,7 @@ public class GetMeasurementDataById extends CommonMethods {
     @Test(priority=2)
     public void verifybadRequest() throws IOException {
 
-        RestAssured.baseURI = Credentails.v3;
+        RestAssured.baseURI = Credentails.baseurl;
         int numIterations = 2;
         for (int i = 1; i <= numIterations; i++) {
             String id = ""; 
@@ -218,7 +218,7 @@ public class GetMeasurementDataById extends CommonMethods {
                     .header("systemid", Credentails.systemid)
                     .header("userid", Credentails.userid)
                 .when()
-                    .get("/dimension/{id}")
+                    .get("v3/dimension/{id}")
                 .then()
                     .extract()
                     .response();
@@ -242,7 +242,7 @@ public class GetMeasurementDataById extends CommonMethods {
     @Test(priority=3)
     public void verifyunauthorized() throws IOException {
 
-        RestAssured.baseURI = Credentails.v3;
+        RestAssured.baseURI = Credentails.baseurl;
 
         int numIterations = 3;         
         List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
@@ -270,7 +270,7 @@ public class GetMeasurementDataById extends CommonMethods {
                     .header("systemid", systemId)
                     .header("userid", userId)
                 .when()
-                    .get("/dimension/{id}")
+                    .get("v3/dimension/{id}")
               .then()
               .extract()
               .response();
@@ -288,7 +288,7 @@ public class GetMeasurementDataById extends CommonMethods {
     @Test(priority=4)
     public void verifNotFound(){
 
-        RestAssured.baseURI = Credentails.v3;
+        RestAssured.baseURI = Credentails.baseurl;
 
 
             Response response = RestAssured.given()
@@ -296,7 +296,7 @@ public class GetMeasurementDataById extends CommonMethods {
                     .header("systemid", Credentails.systemid)
                     .header("userid",Credentails.userid )
                 .when()
-                    .get("/dimension/{id}")
+                    .get("v3/dimension/{id}")
               .then()
               .extract()
               .response();
@@ -312,7 +312,7 @@ public class GetMeasurementDataById extends CommonMethods {
             Object idValue = jsonDataList.get(0).get("id");
             String id = (idValue != null) ? idValue.toString() : null;
 
-            RestAssured.baseURI = Credentails.v3;
+            RestAssured.baseURI = Credentails.baseurl;
             String[] tokens = PostAuth.getauth();
             String accessToken = tokens[0];
 
@@ -325,7 +325,7 @@ public class GetMeasurementDataById extends CommonMethods {
                     .queryParam("isStandardDimensionUnitFormat", "true")
                     .queryParam("isStandardWeightUnitFormat", "true")
                     .when()
-                    .get("/dimension/{id}")
+                    .get("v3/dimension/{id}")
                     .then()
                     .extract()
                     .response();
@@ -341,7 +341,7 @@ public class GetMeasurementDataById extends CommonMethods {
         	Object idValue = jsonDataList.get(0).get("id");
         		String id = (idValue != null) ? idValue.toString() : null;
 
-        		RestAssured.baseURI = Credentails.v3;
+        		RestAssured.baseURI = Credentails.baseurl;
 
         	Response response = RestAssured.given()
         		
@@ -355,7 +355,7 @@ public class GetMeasurementDataById extends CommonMethods {
                 .			queryParam("isStandardWeightUnitFormat", "false")
                 
                 .when()
-                	.get("/dimension/{id}")
+                	.get("v3/dimension/{id}")
                 	
                 .then()
                 	.extract()

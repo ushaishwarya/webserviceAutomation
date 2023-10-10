@@ -20,10 +20,10 @@ public class ListMeasurementArtifactsIDandTitle {
         String[] tokens = PostAuth.getauth();
         String accessToken = tokens[0];
 
-        RestAssured.baseURI = Credentails.v3;
+        RestAssured.baseURI = Credentails.baseurl;
 
         Response response = RestAssured.given()
-            .pathParam("id", "6295")
+            .pathParam("id", Credentails.artifactid)
             .header("Content-Type", "application/json")
             .header("System-Token", Credentails.systemid)
             .header("Authorization", "Bearer " + accessToken)

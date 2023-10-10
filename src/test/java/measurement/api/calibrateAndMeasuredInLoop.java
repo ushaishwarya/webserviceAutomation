@@ -1,5 +1,6 @@
 package measurement.api;
 
+import java.io.FileWriter;
 import java.util.Scanner;
 
 
@@ -17,12 +18,11 @@ public class calibrateAndMeasuredInLoop extends CommonMethods{
 	static String[] tokens = PostAuth.getauth();
 	static String accessToken = tokens[0];
 	
-
-	@Test(enabled = true)
+	@Test(enabled=true)
 	public static void CalibratedSuccessfully () throws InterruptedException {
         Thread.sleep(3000); // Time is in milliseconds
 
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 		Response response= RestAssured.given()
 	    		.header("System-Token",Credentails.systemid)
 	    		.header("Authorization","Bearer "+accessToken)
@@ -32,22 +32,36 @@ public class calibrateAndMeasuredInLoop extends CommonMethods{
 			.queryParam("envelopeMod",Credentails.envelopeMod)
 			
 		.when()
-			.get("/calibrate");
+			.get("v3/calibrate");
 		
 	    JSONObject jsonResponse = new JSONObject(response.getBody().asPrettyString());
 	    Integer id = jsonResponse.getInt("id");
 	    String message = jsonResponse.getString("additionalInfo");
 
-		
+        String filePath = Credentails.pathtostoreresponse;
+
 	    System.out.println(id +":" + message);
+	    
+//        FileWriter fileWriter = new FileWriter(filePath);
+//        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//
+//        // Write the JSON response to the file
+//        bufferedWriter.write(jsonResponse);
+//
+//        // Close the BufferedWriter to flush and save the data to the file
+//        bufferedWriter.close();
+
+        System.out.println("JSON response has been saved to " + filePath);
+
 
 	}
 
-	@Test
+	@Test(priority=2)
 	public static void measurements() throws InterruptedException {
 		
 		System.out.println("Measurement Count:");
 		
+		@SuppressWarnings("resource")
 		Scanner sc=new Scanner(System.in);
 		
 		int measurementcount=sc.nextInt();
@@ -56,23 +70,25 @@ public class calibrateAndMeasuredInLoop extends CommonMethods{
 			
         Thread.sleep(3000); 
 		
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 		
 		Response response= RestAssured.given()
 		
 	    		.header("System-Token",Credentails.systemid)
 	    		.header("Authorization","Bearer "+accessToken)
-	    		.queryParam("sku", "suzume")
+	    		.queryParam("sku", "suzumitaki")
 			
 		.when()
-			.get("/measure");
+			.get("v3/measure");
 		
 		
-	    JSONObject jsonResponse = new JSONObject(response.getBody().asPrettyString());
-	    Integer id = jsonResponse.getInt("id");
-	    String message = jsonResponse.getString("additionalInfo");
+		
+//	    JSONObject jsonResponse = new JSONObject(response.getBody().asPrettyString());
+//	    Integer id = jsonResponse.getInt("id");
+//	    String message = jsonResponse.getString("additionalInfo");
 	    
-	    System.out.println("In Loop" + i + "" +id +":" + message);
+//	    System.out.println("In Loop" + i  +":" + message);
+		System.out.println(response.asPrettyString());
 
 		}
 }

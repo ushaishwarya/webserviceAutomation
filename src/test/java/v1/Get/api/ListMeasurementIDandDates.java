@@ -11,25 +11,23 @@ public class ListMeasurementIDandDates extends CommonMethods {
     @Test
     public void ScanIdListEndpoint() {
     	
-        RestAssured.baseURI = Credentails.v1;
+        RestAssured.baseURI = Credentails.baseurl;
 
         Response response = RestAssured
         		.given()
                 		.header("systemid", Credentails.systemid)
                 				.header("userid", Credentails.userid)
                 .when()
-                		.get("/scanidlist")
+                		.get("v1/scanidlist")
                 .then()
                 		.extract()
                 			.response();
-        System.out.println(response.asPrettyString());
-
-        assertIdAndDate(response);
+       assertIdAndDate(response);
     }
     @Test
 	public void Unauthorized() {
 
-	    RestAssured.baseURI = Credentails.v1;
+	    RestAssured.baseURI = Credentails.baseurl;
 	    
 	    Response response = RestAssured
 	    		
@@ -37,7 +35,7 @@ public class ListMeasurementIDandDates extends CommonMethods {
 	            		.header("systemid", "")
 	            				.header("userid", "")
 	            .when()
-                		.get("/scanidlist")
+                		.get("v1/scanidlist")
 	            .then()
 	            	.extract()
 	            		.response();
@@ -49,7 +47,7 @@ public class ListMeasurementIDandDates extends CommonMethods {
     @Test
 	public void Notfound() {
 
-	    RestAssured.baseURI = Credentails.v1;
+	    RestAssured.baseURI = Credentails.baseurl;
 	    
 	    Response response = RestAssured
 	    		

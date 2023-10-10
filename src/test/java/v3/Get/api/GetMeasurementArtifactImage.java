@@ -27,13 +27,13 @@ System.out.println(responses);
 		String[] tokens = PostAuth.getauth();
 		String accessToken = tokens[0];
 		
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 	    for (Integer additionalImageId : responses) {
 
         Response response = RestAssured
 		
 		.given()
-			.queryParam("measurement_id","6295")
+			.queryParam("measurement_id",Credentails.artifactid)
             .queryParam("additional_image_id",additionalImageId) // Convert List to Array
 			
 			.header("Content-Type","application/json")
@@ -41,7 +41,7 @@ System.out.println(responses);
 			.header("Authorization","Bearer "+accessToken)
 			
 		.when()
-			.get("/dimension-additional-image")
+			.get("v3/dimension-additional-image")
 			
 		.then()
 			.extract().response();

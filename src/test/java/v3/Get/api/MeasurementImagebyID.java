@@ -16,7 +16,7 @@ public class MeasurementImagebyID extends CommonMethods{
     @Test(priority=1)
     public void idByImage() {
     	
-        RestAssured.baseURI = Credentails.v3;
+        RestAssured.baseURI = Credentails.baseurl;
         
         Response response = RestAssured
         		
@@ -25,7 +25,7 @@ public class MeasurementImagebyID extends CommonMethods{
                 		.header("System-Token",Credentails.systemid)
                 				.header("Authorization","Bearer "+accessToken)
                 .when()
-                	.get("/image/{id}")
+                	.get("v3/image/{id}")
                 .then()
                 	.extract()
                 		.response();
@@ -39,7 +39,7 @@ public class MeasurementImagebyID extends CommonMethods{
     @Test(priority=2)
     public void testNoImageFound() {
         
-        RestAssured.baseURI = Credentails.v3;
+        RestAssured.baseURI = Credentails.baseurl;
         
         Response response = RestAssured
         		
@@ -48,7 +48,7 @@ public class MeasurementImagebyID extends CommonMethods{
             			.header("System-Token",Credentails.systemid)
             				.header("Authorization","Bearer "+accessToken)
                 .when()
-                	.get("/image/{id}")
+                	.get("v3/image/{id}")
                 .then()
                 	.extract()
                 		.response();
@@ -60,7 +60,7 @@ public class MeasurementImagebyID extends CommonMethods{
     @Test(priority=3)
 	public void Unauthorized() {
 
-    RestAssured.baseURI = Credentails.v3;
+    RestAssured.baseURI = Credentails.baseurl;
     
     Response response = RestAssured
     		
@@ -69,7 +69,7 @@ public class MeasurementImagebyID extends CommonMethods{
             			.header("System-Token","")
             					.header("Authorization","Bearer "+"")
             .when()
-            		.get("/image/{id}")
+            		.get("v3/image/{id}")
             .then()
             	.extract()
             		.response();

@@ -22,7 +22,7 @@ public class DeleteAccessandRefreshToken extends CommonMethods {
     String accessToken = tokens[0];
     String refreshToken = tokens[1];
     
-	RestAssured.baseURI=Credentails.v3;
+	RestAssured.baseURI=Credentails.baseurl;
 	
     Response response = given()
 		.header("Content-Type","application/json")
@@ -30,7 +30,7 @@ public class DeleteAccessandRefreshToken extends CommonMethods {
 		.header("Authorization","Bearer "+accessToken)
 	
 		.when()
-			.delete("/auth/revoke-access")
+			.delete("v3/auth/revoke-access")
 		.then()
 		.extract()
 		.response();
@@ -45,7 +45,7 @@ public class DeleteAccessandRefreshToken extends CommonMethods {
     String accessToken = tokens[0];
     String refreshToken = tokens[1];
     
-	RestAssured.baseURI=Credentails.v3;
+	RestAssured.baseURI=Credentails.baseurl;
 	
     Response response = given()
 		.header("Content-Type","application/json")
@@ -53,7 +53,7 @@ public class DeleteAccessandRefreshToken extends CommonMethods {
 		.header("Authorization","Bearer "+refreshToken)
 	
 		.when()
-			.delete("/auth/revoke-access")
+			.delete("v3/auth/revoke-access")
 		.then()
 		.extract()
 		.response();

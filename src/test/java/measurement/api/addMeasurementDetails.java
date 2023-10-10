@@ -12,7 +12,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class addMeasurementDetails {
-    @Test
+    @Test(enabled=true)
     public void postmethod() {
         
         String[] tokenAndMacid = secretKeyWithMacid.shared_Key();
@@ -22,9 +22,11 @@ public class addMeasurementDetails {
 
 
         
-        String current_Time = Credentails.datas();
+        @SuppressWarnings("unused")
+		String current_Time = Credentails.datas();
 
-        Scanner sc = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
 
         System.out.println("Measurement Count:");
         int measurementcount = sc.nextInt();
@@ -34,7 +36,7 @@ public class addMeasurementDetails {
         int measurementid = sc.nextInt();
         sc.nextLine(); 
         
-        System.out.println("PassOrFail:");
+        System.out.println("True(OR)False:");
         Boolean status = sc.nextBoolean();
         sc.nextLine(); 
 
@@ -55,7 +57,7 @@ public class addMeasurementDetails {
                         .multiPart("width", "14.0")
                         .multiPart("height", "15.0")
                         .multiPart("weightUnit", "kg")
-                        .multiPart("sku", sku)
+                        .multiPart("sku", sku) 
                         .multiPart("cubicVolume","10")
                         .multiPart("realVolume","10")
                         .multiPart("statusCode","400")
@@ -63,7 +65,7 @@ public class addMeasurementDetails {
                         .multiPart("additionalInfo", "Object Measured Successfully")
                         .multiPart("MacId", macid)
                         .multiPart("volumetricWeight", "36")
-                        .multiPart("scannedOn", "2022-02-02 10:00:PM")//current_Time
+                        .multiPart("scannedOn",current_Time)//current_Time
                         .multiPart("scannedTimeZone", "Asia/Kolkata")
                         .when()
                         .post("/add-measurement-details");
@@ -74,5 +76,6 @@ public class addMeasurementDetails {
                 System.out.println( "Id"+"----"+i+ "-------------"+ message);
             }
         }
+
     }
 

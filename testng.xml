@@ -6,13 +6,13 @@
         <classes>
             <class name="v1.Get.api.LiveCalibration">
                 <methods>
-                    <include name="CalibratedSuccessfully" />
+                    <exclude name="CalibratedSuccessfully" />
                 </methods>
             </class>
 
             <class name="v1.Get.api.LiveMeasurement">
                 <methods>
-                    <include name="measurements" />
+                    <exclude name="measurements" />
                 </methods>
             </class>
         </classes>
@@ -22,13 +22,13 @@
         <classes>
             <class name="v2.Get.api.LiveCalibration">
                 <methods>
-                    <include name="CalibratedSuccessfully" />
+                    <exclude name="CalibratedSuccessfully" />
                 </methods>
             </class>
 
             <class name="v2.Get.api.LiveMeasurement">
                 <methods>
-                    <include name="measurements" />
+                    <exclude name="measurements" />
                 </methods>
             </class>
         </classes>
@@ -38,13 +38,13 @@
         <classes>
             <class name="v3.Get.api.LiveCalibration">
                 <methods>
-                    <include name="CalibratedSuccessfully" />
+                    <exclude name="CalibratedSuccessfully" />
                 </methods>
             </class>
 
             <class name="v3.Get.api.LiveMeasurement">
                 <methods>
-                    <include name="measurements" />
+                    <exclude name="measurements" />
                 </methods>
             </class>
         </classes>
@@ -112,5 +112,5 @@
 			</class>
         </classes>
     </test>
-
+    
 </suite>

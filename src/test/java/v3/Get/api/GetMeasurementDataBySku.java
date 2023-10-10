@@ -45,7 +45,7 @@ public class GetMeasurementDataBySku extends CommonMethods{
                 }
             }
             
-            RestAssured.baseURI = Credentails.v3;
+            RestAssured.baseURI = Credentails.baseurl;
 
             for (String id : valuesSet) {
                 Response response = RestAssured.given()
@@ -55,7 +55,7 @@ public class GetMeasurementDataBySku extends CommonMethods{
         			.header("Authorization","Bearer "+accessToken)
                     
                    .when()
-                   .get("/sku")
+                   .get("v3/sku")
                    .then()
                     .extract()
                    .response();
@@ -98,7 +98,7 @@ public class GetMeasurementDataBySku extends CommonMethods{
                 }
 
 
-                RestAssured.baseURI = Credentails.v3;                
+                RestAssured.baseURI = Credentails.baseurl;                
 
                 for (String id : valuesSet) {
                     Response response = RestAssured.given()
@@ -106,15 +106,16 @@ public class GetMeasurementDataBySku extends CommonMethods{
                             .header("Content-Type", "application/json")
                             .header("System-Token", Credentails.systemid)
                             .header("Authorization", "Bearer " + accessToken)
-                            .queryParam("isStandardDateFormat", "true")
-                            .queryParam("isStandardDimensionUnitFormat", "true")
-                            .queryParam("isStandardWeightUnitFormat", "true")
+            				.queryParam("isStandardDateFormat", "true")
+            				.queryParam("isStandardDimensionUnitFormat", "true")
+            				.queryParam("isStandardWeightUnitFormat", "true")
 
                             .when()
-                            .get("/sku")
+                            .get("v3/sku")
                             .then()
                             .extract()
                             .response();
+                    
 
                 Standard(response);
                 }
@@ -146,7 +147,7 @@ public void verifylegacyFormate() throws IOException {
             }
         }
 
-        RestAssured.baseURI = Credentails.v3;                
+        RestAssured.baseURI = Credentails.baseurl;                
 
         for (String id : valuesSet) {
             Response response = RestAssured.given()
@@ -154,15 +155,16 @@ public void verifylegacyFormate() throws IOException {
                     .header("Content-Type", "application/json")
                     .header("System-Token", Credentails.systemid)
                     .header("Authorization", "Bearer " + accessToken)
-                    .queryParam("isStandardDateFormat", "false")
-                    .queryParam("isStandardDimensionUnitFormat", "false")
-                    .queryParam("isStandardWeightUnitFormat", "false")
+    				.queryParam("isStandardDateFormat", "false")
+    				.queryParam("isStandardDimensionUnitFormat", "false")
+    				.queryParam("isStandardWeightUnitFormat", "false")
 
                     .when()
-                    .get("/sku")
+                    .get("v3/sku")
                     .then()
                     .extract()
                     .response();
+
             
             legacy(response);
 
@@ -175,7 +177,7 @@ public void verifylegacyFormate() throws IOException {
 @Test(priority=4)
 public void unauthorizedWithMultipeScenarious() throws IOException {
 
-  RestAssured.baseURI = Credentails.v1;
+  RestAssured.baseURI = Credentails.baseurl;
 
   int numIterations = 3;
 
@@ -206,7 +208,7 @@ public void unauthorizedWithMultipeScenarious() throws IOException {
   			.header("System-Token",systemId)
   			.header("Authorization","Bearer "+token)
           .when()
-              .get("/sku")
+              .get("v3/sku")
         .then()
         .extract()
         .response();
@@ -225,7 +227,7 @@ public static List<Map<String, Object>> readJsonFile1(String filePath) throws IO
 @Test(priority=5)
 public void badRequestWithMultipeScenarious() throws IOException {
 
-  RestAssured.baseURI = Credentails.v3;
+  RestAssured.baseURI = Credentails.baseurl;
   int numIterations = 2;
   for (int i = 1; i <= numIterations; i++) {
       String id = ""; 
@@ -245,7 +247,7 @@ public void badRequestWithMultipeScenarious() throws IOException {
       			.header("System-Token",Credentails.systemid)
       			.header("Authorization","Bearer "+accessToken)
           .when()
-              .get("/sku")
+              .get("v3/sku")
           .then()
               .extract()
               .response();

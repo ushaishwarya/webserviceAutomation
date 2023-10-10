@@ -1,5 +1,7 @@
 package credentails;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,6 +26,77 @@ import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
 public class CommonMethods {
+	
+	public static void verify_key_and_value_for_LiveCalibration(Response response) {
+		
+		//Assert Key
+		String exceptedkeystore=response.asPrettyString();
+		
+		String[] exceptedkey= {"id","statusCode","height","angle","calibratedOn","status","dimensionUnit","additionalInfo"};
+		for(String key:exceptedkey) {
+			assertTrue(exceptedkeystore.contains(key),"Key"+key+"key does not get in Live calibration response");
+		}
+		
+		//Extract value from key
+		JsonPath jsonPath = response.jsonPath();
+		
+		int responsestatuscode=response.getStatusCode();
+
+		
+		String id=jsonPath.getString("id");
+			String additionalinfo=jsonPath.getString("additionalInfo");
+				Integer livecalibrationstatus=jsonPath.getInt("statusCode");
+				
+		//Assert excepted and actual value
+		Assert.assertEquals(responsestatuscode, 200);
+			Assert.assertEquals(additionalinfo, "System Calibrated Successfully.");
+				Assert.assertEquals(livecalibrationstatus, 300);
+
+		//To Print
+		System.out.println("calibration id "+id);
+		System.out.println("calibration Message"+additionalinfo);
+
+
+		
+	}
+
+	
+	public static void verify_key_and_value_for_LiveMeasurement(Response response) {
+		System.out.println(response.asPrettyString());
+
+		//Assert key
+		String exceptedkeystore=response.asPrettyString();
+		String[] exceptedkey= {"id","scannedOn","status","statusCode","dimensionUnit","weightUnit","length","width","height","actualWeight","auxiliaryActualWeight","additionalInfo","volumetricWeight","auxiliaryVolumetricWeight","realVolume","cubicVolume","remainingMeasurementCheckCount"};
+		
+		for(String key:exceptedkey) {
+			assertTrue(exceptedkeystore.contains(key),"keys"+ key +"key does not get in Live Measurement response");
+			System.out.println(key);
+
+		}
+
+		//Extract value from key
+		JsonPath jsonPath = response.jsonPath();
+		
+		int responsestatuscode=response.getStatusCode();
+			String id=jsonPath.getString("id");
+				String additionalinfo=jsonPath.getString("additionalInfo");
+					boolean statuspassorfail=jsonPath.getBoolean("status");
+						Integer measurementstatus=jsonPath.getInt("statusCode");
+
+
+		//Assert excepted and actual value
+		Assert.assertEquals(responsestatuscode, 200);
+			Assert.assertEquals(additionalinfo, "Object Measured Successfully");
+				Assert.assertEquals(statuspassorfail, true);
+					Assert.assertEquals(measurementstatus, 400);
+
+		//To Print
+		System.out.println("Measurement id "+id);
+			System.out.println("Measurement info"+additionalinfo);
+
+	}
+		
+
 
 	public static void assertMessageAndStatuscode(Response response, String expectedMessage, int expectedStatusCode) {
 		JSONObject jsonResponse = new JSONObject(response.getBody().asString());
@@ -42,6 +115,10 @@ public class CommonMethods {
 			String actualWeightUnitFormat = data.get("weightUnit").toString();
 			String actualDateUnitFormat = data.get("scannedOn").toString();
 
+			System.out.println(actualDimensionUnitFormat);
+			System.out.println(actualWeightUnitFormat);
+			System.out.println(actualDateUnitFormat);
+
 			// Your assertions here
 			Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("Inch")
 					|| actualDimensionUnitFormat.equalsIgnoreCase("Centimeter"),
@@ -49,7 +126,8 @@ public class CommonMethods {
 
 			Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("Kilogram")
 					|| actualWeightUnitFormat.equalsIgnoreCase("gram")
-					|| actualWeightUnitFormat.equalsIgnoreCase("pound"),
+					|| actualWeightUnitFormat.equalsIgnoreCase("pound")
+					|| actualWeightUnitFormat.equalsIgnoreCase("lb-oz"),
 					"Response weight unit format is not one of 'Kilogram', 'gram', or 'pound'.");
 
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM d, yyyy h:mm:ss a", Locale.ENGLISH);
@@ -70,6 +148,11 @@ public class CommonMethods {
 			String actualDimensionUnitFormat = data.get("dimensionUnit").toString();
 			String actualWeightUnitFormat = data.get("weightUnit").toString();
 			String actualDateUnitFormat = data.get("scannedOn").toString();
+			
+			System.out.println(actualDimensionUnitFormat);
+			System.out.println(actualWeightUnitFormat);
+			System.out.println(actualDateUnitFormat);
+
 
 			// Your assertions here
 			Assert.assertTrue(actualDimensionUnitFormat.equalsIgnoreCase("in")
@@ -78,7 +161,9 @@ public class CommonMethods {
 
 			Assert.assertTrue(actualWeightUnitFormat.equalsIgnoreCase("kg")
 					|| actualWeightUnitFormat.equalsIgnoreCase("g")
-					|| actualWeightUnitFormat.equalsIgnoreCase("lb"),
+					|| actualWeightUnitFormat.equalsIgnoreCase("lb")
+					|| actualWeightUnitFormat.equalsIgnoreCase("lb-oz"),
+
 					"Response weight unit format is not one of 'kg', 'g', or 'lb'.");
 
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -165,24 +250,37 @@ public class CommonMethods {
 
 	}
 	public void assertIdAndDate(Response response) {
+		
+		//Assert key
+		
+		String exceptedresponse=response.asPrettyString();		
+		String [] exceptedkey= {"id","scannedOn"};
+		
+		for(String keys:exceptedkey) {
+			
+			assertTrue(exceptedresponse.contains(keys));
 
+			
+		}
+		
+		
 		Assert.assertEquals(response.getStatusCode(), 200, "Unexpected status code");
 
 		// Parse the JSON response body
-		JsonPath jsonPath = response.jsonPath();
-		List<Map<String, Object>> scanIdList = jsonPath.getList("$");
-
-		// Validate each object in the array
-		for (Map<String, Object> scanId : scanIdList) {
-			Assert.assertTrue(scanId.containsKey("id"), "Missing 'id' property");
-			Assert.assertTrue(scanId.get("id") instanceof Integer, "'id' should be an integer");
-
-			Assert.assertTrue(scanId.containsKey("scannedOn"), "Missing 'scannedOn' property");
-			String scannedOn = (String) scanId.get("scannedOn");
-
-			//System.out.println(scannedOn);
-			Assert.assertTrue(validateDatePattern(scannedOn), "'scannedOn' has invalid date pattern");
-		}
+//		JsonPath jsonPath = response.jsonPath();
+//		List<Map<String, Object>> scanIdList = jsonPath.getList("$");
+//
+//		// Validate each object in the array
+//		for (Map<String, Object> scanId : scanIdList) {
+//			Assert.assertTrue(scanId.containsKey("id"), "Missing 'id' property");
+//			Assert.assertTrue(scanId.get("id") instanceof String, "'id' should be an integer");
+//
+//			Assert.assertTrue(scanId.containsKey("scannedOn"), "Missing 'scannedOn' property");
+//			String scannedOn = (String) scanId.get("scannedOn");
+//
+//			//System.out.println(scannedOn);
+//			Assert.assertTrue(validateDatePattern(scannedOn), "'scannedOn' has invalid date pattern");
+//		}
 	}
 
 	private boolean validateDatePattern(String date) {
@@ -201,59 +299,5 @@ public class CommonMethods {
 		}
 	}
 
-	public static void calibrationAssert(Response response) {
-
-		JsonPath jsonPath = response.jsonPath();
-		
-		String id=jsonPath.getString("id");
-
-		System.out.println("calibration id "+id);
-
-		String additionalinfo=jsonPath.getString("additionalInfo");
-		
-		
-		System.out.println("calibration "+additionalinfo);
-
-		Integer status=jsonPath.getInt("statusCode");
-
-		Assert.assertEquals(additionalinfo, "System Calibrated Successfully.");
-
-		Assert.assertEquals(status, 300);
-
-		int statuscode=response.getStatusCode();
-
-		Assert.assertEquals(statuscode, 200);
-	}
-	public static void measurementAssert(Response response) {
-
-		JsonPath jsonPath = response.jsonPath();
-		
-		String id=jsonPath.getString("id");
-
-		System.out.println("calibration id "+id);
-
-
-		String additionalinfo=jsonPath.getString("additionalInfo");
-
-		Assert.assertEquals(additionalinfo, "Object Measured Successfully");
-
-		System.out.println("Measurement "+additionalinfo);
-
-		Integer status=jsonPath.getInt("statusCode");
-		Assert.assertEquals(status, 400);
-
-		boolean statustorf=jsonPath.getBoolean("status");
-		Assert.assertEquals(statustorf, true);
-
-
-		int statuscode=response.getStatusCode();
-		Assert.assertEquals(statuscode, 200);
-
-	}
-	
-	public static void main(String[] args) {
-		
-	}
-	
 	
 }

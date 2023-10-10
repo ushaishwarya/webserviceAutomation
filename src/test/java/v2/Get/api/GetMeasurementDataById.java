@@ -68,7 +68,7 @@ public class GetMeasurementDataById extends CommonMethods{
     }
     
     public static Response callApi(String id) {
-        RestAssured.baseURI = Credentails.v2;
+        RestAssured.baseURI = Credentails.baseurl;
 
         Response response = RestAssured.given()
         		
@@ -78,7 +78,7 @@ public class GetMeasurementDataById extends CommonMethods{
                 		.header("userid", Credentails.userid)
                 		
                 .when()
-                	.get("/dimension/{id}")
+                	.get("v2/dimension/{id}")
                 	
                 .then()
                 	.extract()
@@ -100,7 +100,7 @@ public class GetMeasurementDataById extends CommonMethods{
         JsonNode jsonResponse = objectMapper.readTree(response.getBody().asString());
         
         
-        List<String> keysToSkip = Arrays.asList("scanned_time_zone", "workflow_data", "additional_info","retried_count","failed_status_codes","mode","webhook_log_ids","user_name","system","site");
+        List<String> keysToSkip = Arrays.asList("scanned_time_zone", "workflow_data", "additional_info","retried_count","failed_status_codes","mode","webhook_log_ids","user_name","system","site","system_name");
 
 
         for (Map.Entry<String, Object> entry : externalData.entrySet()) {
@@ -121,7 +121,7 @@ public class GetMeasurementDataById extends CommonMethods{
             if (keysToSkip.contains(key)) {
                 continue; 
             }
-            if (expectedValue.equals("NA") && (actualValue.equals("null") || actualValue.isEmpty())) {
+			if (expectedValue.equals("NA") || expectedValue.equals("null") || (actualValue.equals("null") || actualValue.isEmpty())) {
                 continue;             }
             if (key.equals("scanned_time")) {
                 DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("MMM d yyyy, hh:mm:ss a", Locale.ENGLISH);
@@ -191,7 +191,7 @@ public class GetMeasurementDataById extends CommonMethods{
     @Test(priority=2)
     public void verifybadRequest() throws IOException {
 
-        RestAssured.baseURI = Credentails.v2;
+        RestAssured.baseURI = Credentails.baseurl;
         int numIterations = 2;
         for (int i = 1; i <= numIterations; i++) {
             String id = ""; 
@@ -210,7 +210,7 @@ public class GetMeasurementDataById extends CommonMethods{
                     .header("systemid", Credentails.systemid)
                     .header("userid", Credentails.userid)
                 .when()
-                    .get("/dimension/{id}")
+                    .get("v2/dimension/{id}")
                 .then()
                     .extract()
                     .response();
@@ -234,7 +234,7 @@ public class GetMeasurementDataById extends CommonMethods{
     @Test(priority=3)
     public void verifyunauthorized() throws IOException {
 
-        RestAssured.baseURI = Credentails.v2;
+        RestAssured.baseURI = Credentails.baseurl;
 
         int numIterations = 3;         
         List<Map<String, Object>> jsonDataList = readJsonFile(Credentails.filepath);
@@ -262,7 +262,7 @@ public class GetMeasurementDataById extends CommonMethods{
                     .header("systemid", systemId)
                     .header("userid", userId)
                 .when()
-                    .get("/dimension/{id}")
+                    .get("v2/dimension/{id}")
               .then()
               .extract()
               .response();

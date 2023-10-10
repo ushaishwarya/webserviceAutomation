@@ -51,7 +51,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 
 	            if (isValidDateRange(fromDate1, toDate1, validFromDate, validToDate)) {
 
-	                RestAssured.baseURI = Credentails.v1;
+	                RestAssured.baseURI =Credentails.baseurl;
 
 	                Response response = RestAssured.given()
 	                        .header("systemid", Credentails.systemid)
@@ -60,7 +60,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 	                        .queryParam("from", Credentails.userFromDate)
 	                        .queryParam("to", Credentails.userToDate)
 	                        .when()
-	                        .get("/dimension")
+	                        .get("v1/dimension")
 	                        .then()
 	                        .extract()
 	                        .response();
@@ -117,7 +117,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 		  public  void assertTheIdRange() {
 
 	    	try {
-		                RestAssured.baseURI = Credentails.v1;
+		                RestAssured.baseURI =Credentails.baseurl;
 
 		                Response response = RestAssured.given()
 		                        .header("systemid", Credentails.systemid)
@@ -126,7 +126,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
 		                        .queryParam("from", Credentails.userFromId)
 		                        .queryParam("to", Credentails.userToId)
 		                        .when()
-		                        .get("/dimension")
+		                        .get("v1/dimension")
 		                        .then()
 		                        .extract()
 		                        .response();
@@ -171,7 +171,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
       @Test(priority=3)
 
   	  public  void invalidRangeValue() {
-          RestAssured.baseURI = Credentails.v1;
+          RestAssured.baseURI =Credentails.baseurl;
 
           Response response = RestAssured.given()
                   .header("systemid", Credentails.systemid)
@@ -180,7 +180,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
                   .queryParam("from",Credentails.userFromDate)
                   .queryParam("to", Credentails.userToDate)
                   .when()
-                  .get("/dimension")
+                  .get("v1/dimension")
                   .then()
                   .extract()
                   .response();
@@ -217,7 +217,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
           }
 
 
-          RestAssured.baseURI = Credentails.v1;
+          RestAssured.baseURI =Credentails.baseurl;
 
           Response response = RestAssured.given()
                   .header("systemid", Credentails.systemid)
@@ -226,7 +226,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
                   .queryParam("from",userfrom)
                   .queryParam("to", userto)
                   .when()
-                  .get("/dimension")
+                  .get("v1/dimension")
                   .then()
                   .extract()
                   .response();
@@ -256,7 +256,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
               }
               
 
-              RestAssured.baseURI = Credentails.v1;
+              RestAssured.baseURI =Credentails.baseurl;
 
               Response response = RestAssured.given()
                       .header("systemid", systemId)
@@ -265,7 +265,7 @@ public class GetMeasurementDatabyRange extends CommonMethods{
                       .queryParam("from", Credentails.userFromId)
                       .queryParam("to", Credentails.userToId)
                       .when()
-                      .get("/dimension")
+                      .get("v1/dimension")
                       .then()
                       .extract()
                       .response();

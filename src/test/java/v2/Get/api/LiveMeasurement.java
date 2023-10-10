@@ -1,6 +1,8 @@
 package v2.Get.api;
 
 
+
+
 import org.testng.annotations.Test;
 
 import credentails.CommonMethods;
@@ -14,7 +16,7 @@ public class LiveMeasurement extends CommonMethods {
         Thread.sleep(3000); // Time is in milliseconds
 
 		
-		RestAssured.baseURI=Credentails.v2;
+		RestAssured.baseURI=Credentails.baseurl;
 		
 		Response response= RestAssured.given()
 		
@@ -22,21 +24,22 @@ public class LiveMeasurement extends CommonMethods {
 			.header("userid",Credentails.userid)
 			
 		.when()
-			.get("/measure");
-			
-		measurementAssert(response);
+			.get("v2/measure");
+					
+		verify_key_and_value_for_LiveMeasurement(response);
+		
 
 	}
 	@Test
 	public void Unauthorized() {
-    RestAssured.baseURI=Credentails.v2;
+    RestAssured.baseURI=Credentails.baseurl;
 
     Response response = RestAssured
         .given()
 		.header("systemid","")
 		.header("userid","")
         .when()
-        .get("/measure")
+        .get("v2/measure")
         .then()
         .extract()
         .response();

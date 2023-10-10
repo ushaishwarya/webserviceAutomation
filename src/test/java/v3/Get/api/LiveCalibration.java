@@ -18,7 +18,7 @@ public class LiveCalibration extends CommonMethods{
 	public static void CalibratedSuccessfully () throws InterruptedException {
         Thread.sleep(3000); 
 
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 		Response response= RestAssured.given()
 	    		.header("System-Token",Credentails.systemid)
 	    		.header("Authorization","Bearer "+accessToken)
@@ -28,10 +28,10 @@ public class LiveCalibration extends CommonMethods{
 			.queryParam("envelopeMod",Credentails.envelopeMod)
 			
 		.when()
-			.get("/calibrate");
+			.get("v3/calibrate");
 		
 		
-       calibrationAssert(response);        
+		verify_key_and_value_for_LiveCalibration(response);        
 
 
 		
@@ -52,7 +52,7 @@ public class LiveCalibration extends CommonMethods{
             	
            }
 		
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 		Response response= RestAssured.given()
 	    		.header("System-Token",Credentails.systemid)
 	    		.header("Authorization","Bearer "+accessToken)
@@ -62,7 +62,7 @@ public class LiveCalibration extends CommonMethods{
 			.queryParam("envelopeMod",Credentails.envelopeMod)
 			
 		.when()
-			.get("/calibrate");
+			.get("v3/calibrate");
 		
         
         assertMessageAndStatuscode(response, "Please send the preferable height and unit", 400);
@@ -83,7 +83,7 @@ public class LiveCalibration extends CommonMethods{
             	
            }
 		
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 		Response response= RestAssured.given()
 	    		.header("System-Token",Credentails.systemid)
 	    		.header("Authorization","Bearer "+accessToken)
@@ -93,7 +93,7 @@ public class LiveCalibration extends CommonMethods{
 			.queryParam("envelopeMod",Credentails.envelopeMod)
 			
 		.when()
-			.get("/calibrate");
+			.get("v3/calibrate");
 		
         
         assertMessageAndStatuscode(response, "Enter valid heightPref either 1.1, 1.5 or 2.2", 400);
@@ -105,7 +105,7 @@ public class LiveCalibration extends CommonMethods{
 	
 	@Test
 	public void Unauthorized() {
-    RestAssured.baseURI=Credentails.v3;
+    RestAssured.baseURI=Credentails.baseurl;
 
     Response response = RestAssured
         .given()
@@ -113,7 +113,7 @@ public class LiveCalibration extends CommonMethods{
 		.header("System-Token","")
 		.header("Authorization","Bearer "+"")
         .when()
-        .get("/calibrate")
+        .get("v3/calibrate")
         .then()
         .extract()
         .response();

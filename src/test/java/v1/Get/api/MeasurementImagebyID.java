@@ -11,7 +11,7 @@ public class MeasurementImagebyID extends CommonMethods{
     @Test(priority=1)
     public void idByImage() {
     	
-        RestAssured.baseURI = Credentails.v1;
+        RestAssured.baseURI = Credentails.baseurl;
         
         Response response = RestAssured
         		
@@ -20,7 +20,7 @@ public class MeasurementImagebyID extends CommonMethods{
                 		.header("systemid", Credentails.systemid)
                 			.header("userid", Credentails.userid)
                 .when()
-                	.get("/image/{id}")
+                	.get("v1/image/{id}")
                 .then()
                 	.extract()
                 		.response();
@@ -32,7 +32,7 @@ public class MeasurementImagebyID extends CommonMethods{
     @Test(priority=2)
     public void NoImageFound() {
         
-        RestAssured.baseURI = Credentails.v1;
+        RestAssured.baseURI = Credentails.baseurl;
         
         Response response = RestAssured
         		
@@ -41,7 +41,7 @@ public class MeasurementImagebyID extends CommonMethods{
                 				.header("systemid", Credentails.systemid)
                 						.header("userid", Credentails.userid)
                 .when()
-                		.get("/image/{id}")
+                		.get("v1/image/{id}")
                 .then()
                 		.extract()
                 				.response();
@@ -53,7 +53,7 @@ public class MeasurementImagebyID extends CommonMethods{
     @Test(priority=3)
 	public void Unauthorized() {
 
-    RestAssured.baseURI = Credentails.v1;
+    RestAssured.baseURI = Credentails.baseurl;
     
     Response response = RestAssured
     		
@@ -62,7 +62,7 @@ public class MeasurementImagebyID extends CommonMethods{
             				.header("systemid", "")
             							.header("userid", "")
             .when()
-            		.get("/image/{id}")
+            		.get("v1/image/{id}")
             .then()
             		.extract()
             				.response();

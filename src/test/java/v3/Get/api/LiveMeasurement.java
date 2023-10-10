@@ -1,6 +1,5 @@
 package v3.Get.api;
 
-
 import org.testng.annotations.Test;
 
 import credentails.CommonMethods;
@@ -8,7 +7,6 @@ import credentails.Credentails;
 import credentails.PostAuth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
 public class LiveMeasurement extends CommonMethods {
 	static String[] tokens = PostAuth.getauth();
 	static String accessToken = tokens[0];
@@ -19,7 +17,7 @@ public class LiveMeasurement extends CommonMethods {
 
 		
 		
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 		
 		Response response= RestAssured.given()
 		
@@ -27,9 +25,9 @@ public class LiveMeasurement extends CommonMethods {
 	    		.header("Authorization","Bearer "+accessToken)
 			
 		.when()
-			.get("/measure");
+			.get("v3/measure");
 			
-		measurementAssert(response);
+		verify_key_and_value_for_LiveMeasurement(response);
         
 
 
@@ -37,7 +35,7 @@ public class LiveMeasurement extends CommonMethods {
 	
 	@Test
 	public void Unauthorized() {
-    RestAssured.baseURI=Credentails.v3;
+    RestAssured.baseURI=Credentails.baseurl;
 
     Response response = RestAssured
         .given()
@@ -45,7 +43,7 @@ public class LiveMeasurement extends CommonMethods {
 		.header("System-Token","")
 		.header("Authorization","Bearer "+"")
         .when()
-        .get("/measure")
+        .get("v3/measure")
         .then()
         .extract()
         .response();

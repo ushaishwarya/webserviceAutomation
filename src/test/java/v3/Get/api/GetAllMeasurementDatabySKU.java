@@ -23,7 +23,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 	@Test
 	public void verifySkuId() {
 
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 
 		Response response = RestAssured.given()
 
@@ -35,7 +35,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 				.queryParam("end_date", Credentails.endDate)
 
 				.when()
-				.get("/find-all-dimensions-by-sku")
+				.get("v3/find-all-dimensions-by-sku")
 
 				.then()
 				.extract()
@@ -55,7 +55,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 	@Test
 	public void SkipFailureIsTrue() {
 
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 
 		Response response = RestAssured.given()
 
@@ -68,7 +68,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 				.queryParam("skip_failure", true)
 
 				.when()
-				.get("/find-all-dimensions-by-sku")
+				.get("v3/find-all-dimensions-by-sku")
 
 				.then()
 				.extract()
@@ -89,7 +89,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 	@Test
 	public void SkipFailureIsFalse() {
 
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 
 		Response response = RestAssured.given()
 
@@ -102,7 +102,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 				.queryParam("skip_failure", false)
 
 				.when()
-				.get("/find-all-dimensions-by-sku")
+				.get("v3/find-all-dimensions-by-sku")
 
 				.then()
 				.extract()
@@ -132,7 +132,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 
 	@Test
 	public void verifylegacyFormat() {
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 
 		Response response = RestAssured.given()
 
@@ -147,7 +147,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 				.queryParam("isStandardWeightUnitFormat", "false")
 
 				.when()
-				.get("/find-all-dimensions-by-sku")
+				.get("v3/find-all-dimensions-by-sku")
 
 				.then()
 				.extract()
@@ -159,7 +159,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 	}
 	@Test
 	public void verifystandardFormat() {
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 
 		Response response = RestAssured.given()
 
@@ -174,7 +174,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 				.queryParam("isStandardWeightUnitFormat", "true")
 
 				.when()
-				.get("/find-all-dimensions-by-sku")
+				.get("v3/find-all-dimensions-by-sku")
 
 				.then()
 				.extract()
@@ -187,7 +187,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 
 	@Test
 	public void badRequestmultiplescenario() {
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 
 
 		Response response = RestAssured.given()
@@ -197,7 +197,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 				.header("Authorization","Bearer "+accessToken)
 				.queryParam("sku", "")
 				.when()
-				.get("/find-all-dimensions-by-sku")
+				.get("v3/find-all-dimensions-by-sku")
 
 				.then()
 				.extract()
@@ -210,7 +210,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 
 	@Test
 	public void  lessThanStartDate() {
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 
 
 		Response response = RestAssured.given()
@@ -223,7 +223,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 				.queryParam("end_date", Credentails.startDate)
 
 				.when()
-				.get("/find-all-dimensions-by-sku")
+				.get("v3/find-all-dimensions-by-sku")
 
 				.then()
 				.extract()
@@ -237,7 +237,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 	}
 	@Test
 	public void badRequestmultiplescenario1() {
-		RestAssured.baseURI=Credentails.v3;
+		RestAssured.baseURI=Credentails.baseurl;
 
 
 		Response response = RestAssured.given()
@@ -250,7 +250,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 				.queryParam("end_date", Credentails.endDate)
 
 				.when()
-				.get("/find-all-dimensions-by-sku")
+				.get("v3/find-all-dimensions-by-sku")
 
 				.then()
 				.extract()
@@ -265,7 +265,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 	@Test
 	public void unauthorizedWithMultipeScenarious() throws IOException {
 
-		RestAssured.baseURI = Credentails.v3;
+		RestAssured.baseURI = Credentails.baseurl;
 
 			Response response = RestAssured.given()
 					.queryParam("sku", Credentails.Sku)
@@ -273,7 +273,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 					.header("System-Token","")
 					.header("Authorization","Bearer "+"")
 					.when()
-					.get("/find-all-dimensions-by-sku")
+					.get("v3/find-all-dimensions-by-sku")
 					.then()
 					.extract()
 					.response();
@@ -283,7 +283,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 	@Test
 	public void noMeasurement() throws IOException {
 
-		RestAssured.baseURI = Credentails.v3;
+		RestAssured.baseURI = Credentails.baseurl;
 
 
 			Response response = RestAssured.given()
@@ -294,7 +294,7 @@ public class GetAllMeasurementDatabySKU extends CommonMethods{
 
 
 					.when()
-					.get("/find-all-dimensions-by-sku")
+					.get("v3/find-all-dimensions-by-sku")
 					.then()
 					.extract()
 					.response();

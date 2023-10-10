@@ -22,7 +22,7 @@ public class DownloadMeasurementArtifactImages {
         String[] tokens = PostAuth.getauth();
         String accessToken = tokens[0];
 
-        RestAssured.baseURI = Credentails.v3;
+        RestAssured.baseURI = Credentails.baseurl;
 
         Response response = RestAssured.given()
                 .pathParam("id", Credentails.artifactid)
@@ -30,7 +30,7 @@ public class DownloadMeasurementArtifactImages {
                 .header("System-Token", Credentails.systemid)
                 .header("Authorization", "Bearer " + accessToken)
                 .when()
-                .get("/download-dimension-artifacts/{id}")
+                .get("v3/download-dimension-artifacts/{id}")
                 .then()
                 .extract()
                 .response();

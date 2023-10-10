@@ -1,17 +1,494 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="82" passed="80" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-08T20:03:16 IST" name="Default suite" finished-at="2023-09-08T20:05:38 IST" duration-ms="141338">
+  <suite started-at="2023-10-06T16:14:06 IST" name="WebServiceTesting" finished-at="2023-10-06T16:19:21 IST" duration-ms="314921">
     <groups>
     </groups>
-    <test started-at="2023-09-08T20:03:16 IST" name="Default test" finished-at="2023-09-08T20:05:38 IST" duration-ms="141338">
-      <class name="measurement.api.addMeasurementDetails">
-        <test-method signature="postmethod()[pri:0, instance:measurement.api.addMeasurementDetails@38467116]" started-at="2023-09-08T20:03:16 IST" name="postmethod" finished-at="2023-09-08T20:05:38 IST" duration-ms="141302" status="PASS">
+    <test started-at="2023-10-06T16:14:06 IST" name="API Tests - Version 1-Live calibration and Live Measurement" finished-at="2023-10-06T16:14:11 IST" duration-ms="5114">
+      <class name="v1.Get.api.LiveMeasurement">
+        <test-method signature="Unauthorized()[pri:0, instance:v1.Get.api.LiveMeasurement@47caedad]" started-at="2023-10-06T16:14:10 IST" name="Unauthorized" finished-at="2023-10-06T16:14:11 IST" duration-ms="1509" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postmethod -->
-      </class> <!-- measurement.api.addMeasurementDetails -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v1.Get.api.LiveMeasurement -->
+      <class name="v1.Get.api.LiveCalibration">
+        <test-method signature="badrequest()[pri:0, instance:v1.Get.api.LiveCalibration@5a5a729f]" started-at="2023-10-06T16:14:06 IST" name="badrequest" finished-at="2023-10-06T16:14:08 IST" duration-ms="1844" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badrequest -->
+        <test-method signature="invalidheight()[pri:0, instance:v1.Get.api.LiveCalibration@5a5a729f]" started-at="2023-10-06T16:14:08 IST" name="invalidheight" finished-at="2023-10-06T16:14:10 IST" duration-ms="1734" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidheight -->
+      </class> <!-- v1.Get.api.LiveCalibration -->
+    </test> <!-- API Tests - Version 1-Live calibration and Live Measurement -->
+    <test started-at="2023-10-06T16:14:11 IST" name="API Tests - Version 2-Live calibration and Live Measurement" finished-at="2023-10-06T16:14:16 IST" duration-ms="4783">
+      <class name="v2.Get.api.LiveMeasurement">
+        <test-method signature="Unauthorized()[pri:0, instance:v2.Get.api.LiveMeasurement@60db1c0e]" started-at="2023-10-06T16:14:14 IST" name="Unauthorized" finished-at="2023-10-06T16:14:16 IST" duration-ms="1718" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v2.Get.api.LiveMeasurement -->
+      <class name="v2.Get.api.LiveCalibration">
+        <test-method signature="badrequest()[pri:0, instance:v2.Get.api.LiveCalibration@7068e664]" started-at="2023-10-06T16:14:11 IST" name="badrequest" finished-at="2023-10-06T16:14:13 IST" duration-ms="1392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badrequest -->
+        <test-method signature="invalidheight()[pri:0, instance:v2.Get.api.LiveCalibration@7068e664]" started-at="2023-10-06T16:14:13 IST" name="invalidheight" finished-at="2023-10-06T16:14:14 IST" duration-ms="1668" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidheight -->
+      </class> <!-- v2.Get.api.LiveCalibration -->
+    </test> <!-- API Tests - Version 2-Live calibration and Live Measurement -->
+    <test started-at="2023-10-06T16:14:16 IST" name="API Tests - Version 3-Live calibration and Live Measurement" finished-at="2023-10-06T16:14:24 IST" duration-ms="8012">
+      <class name="v3.Get.api.LiveMeasurement">
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.LiveMeasurement@7573b9ee]" started-at="2023-10-06T16:14:22 IST" name="Unauthorized" finished-at="2023-10-06T16:14:24 IST" duration-ms="1641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v3.Get.api.LiveMeasurement -->
+      <class name="v3.Get.api.LiveCalibration">
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.LiveCalibration@38d80d65]" started-at="2023-10-06T16:14:16 IST" name="Unauthorized" finished-at="2023-10-06T16:14:18 IST" duration-ms="1836" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="badrequest()[pri:0, instance:v3.Get.api.LiveCalibration@38d80d65]" started-at="2023-10-06T16:14:18 IST" name="badrequest" finished-at="2023-10-06T16:14:20 IST" duration-ms="1661" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badrequest -->
+        <test-method signature="invalidheight()[pri:0, instance:v3.Get.api.LiveCalibration@38d80d65]" started-at="2023-10-06T16:14:20 IST" name="invalidheight" finished-at="2023-10-06T16:14:22 IST" duration-ms="2866" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidheight -->
+      </class> <!-- v3.Get.api.LiveCalibration -->
+    </test> <!-- API Tests - Version 3-Live calibration and Live Measurement -->
+    <test started-at="2023-10-06T16:14:24 IST" name="API Tests - GetMeasurementDataById" finished-at="2023-10-06T16:15:42 IST" duration-ms="78121">
+      <class name="v2.Get.api.GetMeasurementDataById">
+        <test-method signature="assertJsonfileToResponseBody()[pri:1, instance:v2.Get.api.GetMeasurementDataById@3292d91a]" started-at="2023-10-06T16:15:05 IST" name="assertJsonfileToResponseBody" finished-at="2023-10-06T16:15:35 IST" duration-ms="30416" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertJsonfileToResponseBody -->
+        <test-method signature="verifybadRequest()[pri:2, instance:v2.Get.api.GetMeasurementDataById@3292d91a]" started-at="2023-10-06T16:15:35 IST" name="verifybadRequest" finished-at="2023-10-06T16:15:39 IST" duration-ms="3553" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifybadRequest -->
+        <test-method signature="verifyunauthorized()[pri:3, instance:v2.Get.api.GetMeasurementDataById@3292d91a]" started-at="2023-10-06T16:15:39 IST" name="verifyunauthorized" finished-at="2023-10-06T16:15:42 IST" duration-ms="3607" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyunauthorized -->
+      </class> <!-- v2.Get.api.GetMeasurementDataById -->
+      <class name="v1.Get.api.GetMeasurementDataById">
+        <test-method signature="assertJsonfileWithResponseBody()[pri:1, instance:v1.Get.api.GetMeasurementDataById@420a8042]" started-at="2023-10-06T16:14:24 IST" name="assertJsonfileWithResponseBody" finished-at="2023-10-06T16:14:58 IST" duration-ms="34086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertJsonfileWithResponseBody -->
+        <test-method signature="verifybadRequest()[pri:2, instance:v1.Get.api.GetMeasurementDataById@420a8042]" started-at="2023-10-06T16:14:58 IST" name="verifybadRequest" finished-at="2023-10-06T16:15:01 IST" duration-ms="3044" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifybadRequest -->
+        <test-method signature="verifyunauthorized()[pri:3, instance:v1.Get.api.GetMeasurementDataById@420a8042]" started-at="2023-10-06T16:15:01 IST" name="verifyunauthorized" finished-at="2023-10-06T16:15:05 IST" duration-ms="3403" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyunauthorized -->
+      </class> <!-- v1.Get.api.GetMeasurementDataById -->
+    </test> <!-- API Tests - GetMeasurementDataById -->
+    <test started-at="2023-10-06T16:15:42 IST" name="API Tests - GetMeasurementDataByRange" finished-at="2023-10-06T16:16:45 IST" duration-ms="63083">
+      <class name="v2.Get.api.GetMeasurementDatabyRange">
+        <test-method signature="assertthedaterange()[pri:1, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-10-06T16:16:02 IST" name="assertthedaterange" finished-at="2023-10-06T16:16:08 IST" duration-ms="5218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertthedaterange -->
+        <test-method signature="assertTheIdRange()[pri:2, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-10-06T16:16:08 IST" name="assertTheIdRange" finished-at="2023-10-06T16:16:09 IST" duration-ms="1883" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertTheIdRange -->
+        <test-method signature="invalidRangeValue()[pri:3, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-10-06T16:16:09 IST" name="invalidRangeValue" finished-at="2023-10-06T16:16:11 IST" duration-ms="1730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidRangeValue -->
+        <test-method signature="invalidFromOrToValue()[pri:4, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-10-06T16:16:11 IST" name="invalidFromOrToValue" finished-at="2023-10-06T16:16:18 IST" duration-ms="7142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidFromOrToValue -->
+        <test-method signature="Unauthorized()[pri:5, instance:v2.Get.api.GetMeasurementDatabyRange@15639d09]" started-at="2023-10-06T16:16:18 IST" name="Unauthorized" finished-at="2023-10-06T16:16:22 IST" duration-ms="3302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v2.Get.api.GetMeasurementDatabyRange -->
+      <class name="v1.Get.api.GetMeasurementDatabyRange">
+        <test-method signature="assertthedaterange()[pri:1, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-10-06T16:15:42 IST" name="assertthedaterange" finished-at="2023-10-06T16:15:48 IST" duration-ms="6089" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertthedaterange -->
+        <test-method signature="assertTheIdRange()[pri:2, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-10-06T16:15:48 IST" name="assertTheIdRange" finished-at="2023-10-06T16:15:50 IST" duration-ms="1796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertTheIdRange -->
+        <test-method signature="invalidRangeValue()[pri:3, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-10-06T16:15:50 IST" name="invalidRangeValue" finished-at="2023-10-06T16:15:52 IST" duration-ms="1852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidRangeValue -->
+        <test-method signature="invalidFromOrToValue()[pri:4, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-10-06T16:15:52 IST" name="invalidFromOrToValue" finished-at="2023-10-06T16:15:59 IST" duration-ms="7249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidFromOrToValue -->
+        <test-method signature="Unauthorized()[pri:5, instance:v1.Get.api.GetMeasurementDatabyRange@1d15c0a1]" started-at="2023-10-06T16:15:59 IST" name="Unauthorized" finished-at="2023-10-06T16:16:02 IST" duration-ms="3145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v1.Get.api.GetMeasurementDatabyRange -->
+      <class name="v3.Get.api.GetMeasurementDatabyRange">
+        <test-method signature="assertthedaterange()[pri:1, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-10-06T16:16:22 IST" name="assertthedaterange" finished-at="2023-10-06T16:16:28 IST" duration-ms="5969" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertthedaterange -->
+        <test-method signature="assertTheIdRange()[pri:2, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-10-06T16:16:28 IST" name="assertTheIdRange" finished-at="2023-10-06T16:16:29 IST" duration-ms="1722" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertTheIdRange -->
+        <test-method signature="invalidRangeValue()[pri:3, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-10-06T16:16:29 IST" name="invalidRangeValue" finished-at="2023-10-06T16:16:31 IST" duration-ms="1590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidRangeValue -->
+        <test-method signature="invalidFromOrToValue()[pri:4, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-10-06T16:16:31 IST" name="invalidFromOrToValue" finished-at="2023-10-06T16:16:38 IST" duration-ms="6994" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidFromOrToValue -->
+        <test-method signature="Unauthorized()[pri:5, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-10-06T16:16:38 IST" name="Unauthorized" finished-at="2023-10-06T16:16:42 IST" duration-ms="3587" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="VerifyStandardFormate()[pri:6, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-10-06T16:16:42 IST" name="VerifyStandardFormate" finished-at="2023-10-06T16:16:43 IST" duration-ms="1950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyStandardFormate -->
+        <test-method signature="VerifylegacyFormate()[pri:7, instance:v3.Get.api.GetMeasurementDatabyRange@25953be6]" started-at="2023-10-06T16:16:43 IST" name="VerifylegacyFormate" finished-at="2023-10-06T16:16:45 IST" duration-ms="1843" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifylegacyFormate -->
+      </class> <!-- v3.Get.api.GetMeasurementDatabyRange -->
+    </test> <!-- API Tests - GetMeasurementDataByRange -->
+    <test started-at="2023-10-06T16:16:45 IST" name="API Tests - GetMeasurementDataBySku" finished-at="2023-10-06T16:17:29 IST" duration-ms="43917">
+      <class name="v3.Get.api.GetMeasurementDataBySku">
+        <test-method signature="assertTheExteranlJsonToResponseBodyAndStatusCode()[pri:1, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-10-06T16:17:00 IST" name="assertTheExteranlJsonToResponseBodyAndStatusCode" finished-at="2023-10-06T16:17:08 IST" duration-ms="7451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertTheExteranlJsonToResponseBodyAndStatusCode -->
+        <test-method signature="verifystandardFormate()[pri:2, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-10-06T16:17:08 IST" name="verifystandardFormate" finished-at="2023-10-06T16:17:15 IST" duration-ms="7580" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifystandardFormate -->
+        <test-method signature="verifylegacyFormate()[pri:3, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-10-06T16:17:15 IST" name="verifylegacyFormate" finished-at="2023-10-06T16:17:22 IST" duration-ms="7135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifylegacyFormate -->
+        <test-method signature="unauthorizedWithMultipeScenarious()[pri:4, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-10-06T16:17:22 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-10-06T16:17:26 IST" duration-ms="3489" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unauthorizedWithMultipeScenarious -->
+        <test-method signature="badRequestWithMultipeScenarious()[pri:5, instance:v3.Get.api.GetMeasurementDataBySku@4bf03fee]" started-at="2023-10-06T16:17:26 IST" name="badRequestWithMultipeScenarious" finished-at="2023-10-06T16:17:29 IST" duration-ms="3380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badRequestWithMultipeScenarious -->
+      </class> <!-- v3.Get.api.GetMeasurementDataBySku -->
+      <class name="v1.Get.api.GetMeasurementDataBySku">
+        <test-method signature="assertTheExteranlJsonToResponseBodyAndStatusCode()[pri:1, instance:v1.Get.api.GetMeasurementDataBySku@644d1b61]" started-at="2023-10-06T16:16:45 IST" name="assertTheExteranlJsonToResponseBodyAndStatusCode" finished-at="2023-10-06T16:16:53 IST" duration-ms="7179" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertTheExteranlJsonToResponseBodyAndStatusCode -->
+        <test-method signature="unauthorizedWithMultipeScenarious()[pri:2, instance:v1.Get.api.GetMeasurementDataBySku@644d1b61]" started-at="2023-10-06T16:16:53 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-10-06T16:16:57 IST" duration-ms="4583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unauthorizedWithMultipeScenarious -->
+        <test-method signature="badRequestWithMultipeScenarious()[pri:3, instance:v1.Get.api.GetMeasurementDataBySku@644d1b61]" started-at="2023-10-06T16:16:57 IST" name="badRequestWithMultipeScenarious" finished-at="2023-10-06T16:17:00 IST" duration-ms="3113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badRequestWithMultipeScenarious -->
+      </class> <!-- v1.Get.api.GetMeasurementDataBySku -->
+    </test> <!-- API Tests - GetMeasurementDataBySku -->
+    <test started-at="2023-10-06T16:17:29 IST" name="API Tests - MeasurementImagebyID" finished-at="2023-10-06T16:17:50 IST" duration-ms="20788">
+      <class name="v1.Get.api.MeasurementImagebyID">
+        <test-method signature="idByImage()[pri:1, instance:v1.Get.api.MeasurementImagebyID@44e4cb76]" started-at="2023-10-06T16:17:29 IST" name="idByImage" finished-at="2023-10-06T16:17:32 IST" duration-ms="3010" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- idByImage -->
+        <test-method signature="NoImageFound()[pri:2, instance:v1.Get.api.MeasurementImagebyID@44e4cb76]" started-at="2023-10-06T16:17:32 IST" name="NoImageFound" finished-at="2023-10-06T16:17:34 IST" duration-ms="1600" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NoImageFound -->
+        <test-method signature="Unauthorized()[pri:3, instance:v1.Get.api.MeasurementImagebyID@44e4cb76]" started-at="2023-10-06T16:17:34 IST" name="Unauthorized" finished-at="2023-10-06T16:17:36 IST" duration-ms="1737" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v1.Get.api.MeasurementImagebyID -->
+      <class name="v2.Get.api.MeasurementImagebyID">
+        <test-method signature="VeridyTheIdByImage()[pri:1, instance:v2.Get.api.MeasurementImagebyID@51cab489]" started-at="2023-10-06T16:17:36 IST" name="VeridyTheIdByImage" finished-at="2023-10-06T16:17:39 IST" duration-ms="3300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VeridyTheIdByImage -->
+        <test-method signature="testNoImageFound()[pri:2, instance:v2.Get.api.MeasurementImagebyID@51cab489]" started-at="2023-10-06T16:17:39 IST" name="testNoImageFound" finished-at="2023-10-06T16:17:41 IST" duration-ms="1642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNoImageFound -->
+        <test-method signature="Unauthorized()[pri:3, instance:v2.Get.api.MeasurementImagebyID@51cab489]" started-at="2023-10-06T16:17:41 IST" name="Unauthorized" finished-at="2023-10-06T16:17:42 IST" duration-ms="1809" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v2.Get.api.MeasurementImagebyID -->
+      <class name="v3.Get.api.MeasurementImagebyID">
+        <test-method signature="idByImage()[pri:1, instance:v3.Get.api.MeasurementImagebyID@74960e9d]" started-at="2023-10-06T16:17:42 IST" name="idByImage" finished-at="2023-10-06T16:17:47 IST" duration-ms="4336" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- idByImage -->
+        <test-method signature="testNoImageFound()[pri:2, instance:v3.Get.api.MeasurementImagebyID@74960e9d]" started-at="2023-10-06T16:17:47 IST" name="testNoImageFound" finished-at="2023-10-06T16:17:48 IST" duration-ms="1609" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNoImageFound -->
+        <test-method signature="Unauthorized()[pri:3, instance:v3.Get.api.MeasurementImagebyID@74960e9d]" started-at="2023-10-06T16:17:48 IST" name="Unauthorized" finished-at="2023-10-06T16:17:50 IST" duration-ms="1736" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v3.Get.api.MeasurementImagebyID -->
+    </test> <!-- API Tests - MeasurementImagebyID -->
+    <test started-at="2023-10-06T16:17:50 IST" name="API Tests - ListMeasurementIDandDates" finished-at="2023-10-06T16:18:29 IST" duration-ms="38902">
+      <class name="v3.Get.api.ListMeasurementIDandDates">
+        <test-method signature="Notfound()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@280fafd]" started-at="2023-10-06T16:18:16 IST" name="Notfound" finished-at="2023-10-06T16:18:18 IST" duration-ms="1714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notfound -->
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@280fafd]" started-at="2023-10-06T16:18:18 IST" name="Unauthorized" finished-at="2023-10-06T16:18:20 IST" duration-ms="1588" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="testScanIdListEndpoint()[pri:0, instance:v3.Get.api.ListMeasurementIDandDates@280fafd]" started-at="2023-10-06T16:18:20 IST" name="testScanIdListEndpoint" finished-at="2023-10-06T16:18:29 IST" duration-ms="9393" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testScanIdListEndpoint -->
+      </class> <!-- v3.Get.api.ListMeasurementIDandDates -->
+      <class name="v2.Get.api.ListMeasurementIDandDates">
+        <test-method signature="Notfound()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@7742a45c]" started-at="2023-10-06T16:18:03 IST" name="Notfound" finished-at="2023-10-06T16:18:05 IST" duration-ms="1666" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notfound -->
+        <test-method signature="ScanIdListEndpoint()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@7742a45c]" started-at="2023-10-06T16:18:05 IST" name="ScanIdListEndpoint" finished-at="2023-10-06T16:18:15 IST" duration-ms="10047" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ScanIdListEndpoint -->
+        <test-method signature="Unauthorized()[pri:0, instance:v2.Get.api.ListMeasurementIDandDates@7742a45c]" started-at="2023-10-06T16:18:15 IST" name="Unauthorized" finished-at="2023-10-06T16:18:16 IST" duration-ms="1620" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v2.Get.api.ListMeasurementIDandDates -->
+      <class name="v1.Get.api.ListMeasurementIDandDates">
+        <test-method signature="Notfound()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@d5e575c]" started-at="2023-10-06T16:17:50 IST" name="Notfound" finished-at="2023-10-06T16:17:51 IST" duration-ms="1438" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notfound -->
+        <test-method signature="ScanIdListEndpoint()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@d5e575c]" started-at="2023-10-06T16:17:51 IST" name="ScanIdListEndpoint" finished-at="2023-10-06T16:18:01 IST" duration-ms="9831" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ScanIdListEndpoint -->
+        <test-method signature="Unauthorized()[pri:0, instance:v1.Get.api.ListMeasurementIDandDates@d5e575c]" started-at="2023-10-06T16:18:01 IST" name="Unauthorized" finished-at="2023-10-06T16:18:03 IST" duration-ms="1593" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v1.Get.api.ListMeasurementIDandDates -->
+    </test> <!-- API Tests - ListMeasurementIDandDates -->
+    <test started-at="2023-10-06T16:18:29 IST" name="API Tests - LatestMeasurementImage" finished-at="2023-10-06T16:18:48 IST" duration-ms="18622">
+      <class name="v3.Get.api.LatestMeasurementImage">
+        <test-method signature="Latestmeasurementimage()[pri:0, instance:v3.Get.api.LatestMeasurementImage@4a62062a]" started-at="2023-10-06T16:18:42 IST" name="Latestmeasurementimage" finished-at="2023-10-06T16:18:46 IST" duration-ms="3590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Latestmeasurementimage -->
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.LatestMeasurementImage@4a62062a]" started-at="2023-10-06T16:18:46 IST" name="Unauthorized" finished-at="2023-10-06T16:18:48 IST" duration-ms="1617" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+      </class> <!-- v3.Get.api.LatestMeasurementImage -->
+      <class name="v1.Get.api.LatestMeasurementImage">
+        <test-method signature="Latestmeasurementimage()[pri:0, instance:v1.Get.api.LatestMeasurementImage@5d71b500]" started-at="2023-10-06T16:18:29 IST" name="Latestmeasurementimage" finished-at="2023-10-06T16:18:33 IST" duration-ms="3803" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Latestmeasurementimage -->
+        <test-method signature="Unauthorized()[pri:0, instance:v1.Get.api.LatestMeasurementImage@5d71b500]" started-at="2023-10-06T16:18:33 IST" name="Unauthorized" finished-at="2023-10-06T16:18:34 IST" duration-ms="1721" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="notFound()[pri:0, instance:v1.Get.api.LatestMeasurementImage@5d71b500]" started-at="2023-10-06T16:18:34 IST" name="notFound" finished-at="2023-10-06T16:18:36 IST" duration-ms="1476" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notFound -->
+      </class> <!-- v1.Get.api.LatestMeasurementImage -->
+      <class name="v2.Get.api.LatestMeasurementImage">
+        <test-method signature="Latestmeasurementimage()[pri:0, instance:v2.Get.api.LatestMeasurementImage@8840c98]" started-at="2023-10-06T16:18:36 IST" name="Latestmeasurementimage" finished-at="2023-10-06T16:18:39 IST" duration-ms="3336" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Latestmeasurementimage -->
+        <test-method signature="Unauthorized()[pri:0, instance:v2.Get.api.LatestMeasurementImage@8840c98]" started-at="2023-10-06T16:18:39 IST" name="Unauthorized" finished-at="2023-10-06T16:18:41 IST" duration-ms="1556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="notFound()[pri:0, instance:v2.Get.api.LatestMeasurementImage@8840c98]" started-at="2023-10-06T16:18:41 IST" name="notFound" finished-at="2023-10-06T16:18:42 IST" duration-ms="1513" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notFound -->
+      </class> <!-- v2.Get.api.LatestMeasurementImage -->
+    </test> <!-- API Tests - LatestMeasurementImage -->
+    <test started-at="2023-10-06T16:18:48 IST" name="API Tests - Version 3" finished-at="2023-10-06T16:19:21 IST" duration-ms="33520">
+      <class name="v3.Get.api.DownloadMeasurementArtifactImages">
+        <test-method signature="Download_Measurement_Artifact_Images_v3()[pri:0, instance:v3.Get.api.DownloadMeasurementArtifactImages@2313db84]" started-at="2023-10-06T16:19:10 IST" name="Download_Measurement_Artifact_Images_v3" finished-at="2023-10-06T16:19:18 IST" duration-ms="7573" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Download_Measurement_Artifact_Images_v3 -->
+      </class> <!-- v3.Get.api.DownloadMeasurementArtifactImages -->
+      <class name="v3.Get.api.GetMeasurementArtifactImage">
+        <test-method signature="Get_Measurement_Artifact_Image_v3()[pri:0, instance:v3.Get.api.GetMeasurementArtifactImage@508ad266]" started-at="2023-10-06T16:19:07 IST" name="Get_Measurement_Artifact_Image_v3" finished-at="2023-10-06T16:19:10 IST" duration-ms="3096" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.List.size()" because "additional_image_id" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "additional_image_id" is null
+at v3.Get.api.ListMeasurementArtifactsIDandTitle.List_Measurement_Artifacts_ID_and_Title_200status(ListMeasurementArtifactsIDandTitle.java:38)
+at v3.Get.api.GetMeasurementArtifactImage.Get_Measurement_Artifact_Image_v3(GetMeasurementArtifactImage.java:23)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Get_Measurement_Artifact_Image_v3 -->
+      </class> <!-- v3.Get.api.GetMeasurementArtifactImage -->
+      <class name="v3.Get.api.LiveMeasurementCheck">
+        <test-method signature="liveMeasurementCheck200status()[pri:0, instance:v3.Get.api.LiveMeasurementCheck@4def7d36]" started-at="2023-10-06T16:19:18 IST" name="liveMeasurementCheck200status" finished-at="2023-10-06T16:19:21 IST" duration-ms="3604" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:1067)
+at org.testng.Assert.assertEquals(Assert.java:1107)
+at v3.Get.api.LiveMeasurementCheck.liveMeasurementCheck200status(LiveMeasurementCheck.java:59)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- liveMeasurementCheck200status -->
+      </class> <!-- v3.Get.api.LiveMeasurementCheck -->
+      <class name="v3.Get.api.GetAllMeasurementDatabySKU">
+        <test-method signature="SkipFailureIsFalse()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:18:51 IST" name="SkipFailureIsFalse" finished-at="2023-10-06T16:18:53 IST" duration-ms="1647" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SkipFailureIsFalse -->
+        <test-method signature="SkipFailureIsTrue()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:18:53 IST" name="SkipFailureIsTrue" finished-at="2023-10-06T16:18:54 IST" duration-ms="1635" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SkipFailureIsTrue -->
+        <test-method signature="badRequestmultiplescenario()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:18:54 IST" name="badRequestmultiplescenario" finished-at="2023-10-06T16:18:56 IST" duration-ms="1429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badRequestmultiplescenario -->
+        <test-method signature="badRequestmultiplescenario1()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:18:56 IST" name="badRequestmultiplescenario1" finished-at="2023-10-06T16:18:58 IST" duration-ms="1970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- badRequestmultiplescenario1 -->
+        <test-method signature="lessThanStartDate()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:18:58 IST" name="lessThanStartDate" finished-at="2023-10-06T16:18:59 IST" duration-ms="1442" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lessThanStartDate -->
+        <test-method signature="noMeasurement()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:18:59 IST" name="noMeasurement" finished-at="2023-10-06T16:19:01 IST" duration-ms="1601" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- noMeasurement -->
+        <test-method signature="unauthorizedWithMultipeScenarious()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:19:01 IST" name="unauthorizedWithMultipeScenarious" finished-at="2023-10-06T16:19:02 IST" duration-ms="1536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unauthorizedWithMultipeScenarious -->
+        <test-method signature="verifySkuId()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:19:02 IST" name="verifySkuId" finished-at="2023-10-06T16:19:04 IST" duration-ms="1446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySkuId -->
+        <test-method signature="verifylegacyFormat()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:19:04 IST" name="verifylegacyFormat" finished-at="2023-10-06T16:19:05 IST" duration-ms="1605" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifylegacyFormat -->
+        <test-method signature="verifystandardFormat()[pri:0, instance:v3.Get.api.GetAllMeasurementDatabySKU@d2708a7]" started-at="2023-10-06T16:19:05 IST" name="verifystandardFormat" finished-at="2023-10-06T16:19:07 IST" duration-ms="1539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifystandardFormat -->
+      </class> <!-- v3.Get.api.GetAllMeasurementDatabySKU -->
+      <class name="v3.Get.api.GenerateAPIAccessToken">
+        <test-method signature="Unauthorized()[pri:0, instance:v3.Get.api.GenerateAPIAccessToken@1e40fbb3]" started-at="2023-10-06T16:18:48 IST" name="Unauthorized" finished-at="2023-10-06T16:18:50 IST" duration-ms="1948" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Unauthorized -->
+        <test-method signature="accesstokenandrefereshtoken()[pri:0, instance:v3.Get.api.GenerateAPIAccessToken@1e40fbb3]" started-at="2023-10-06T16:18:50 IST" name="accesstokenandrefereshtoken" finished-at="2023-10-06T16:18:51 IST" duration-ms="1436" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accesstokenandrefereshtoken -->
+      </class> <!-- v3.Get.api.GenerateAPIAccessToken -->
+    </test> <!-- API Tests - Version 3 -->
+  </suite> <!-- WebServiceTesting -->
 </testng-results>

@@ -25,7 +25,7 @@ public class LiveMeasurementCheck {
     public void liveMeasurementCheck200status() {
 
 	
-    RestAssured.baseURI =Credentails.v3;
+    RestAssured.baseURI =Credentails.baseurl;
     // Create a Map to represent the dynamic payload
     Map<String, Object> requestBody = new HashMap<>();
     requestBody.put("sku", Credentails.referenceboxsku);
@@ -46,7 +46,7 @@ public class LiveMeasurementCheck {
         
         
        .when()
-        .post("/measurement-check");
+        .post("v3/measurement-check");
     
     System.out.println(response.asPrettyString());
     JsonPath jsonPath = response.jsonPath();
@@ -54,22 +54,11 @@ public class LiveMeasurementCheck {
     boolean status=jsonPath.getBoolean("status");
     int statusCode=jsonPath.getInt("statusCode");
     String additionalInfo=jsonPath.getString("additionalInfo");
-//    Double length=jsonPath.getDouble("length");
-//    double width=jsonPath.getDouble("width");
-//    double height=jsonPath.getDouble("height");
-//    String weightUnit=jsonPath.getString("weightUni");
-//    double actualWeight=jsonPath.getDouble("actualWeight");
     
-    Assert.assertEquals(sku, Credentails.Sku);
+    Assert.assertEquals(sku, Credentails.referenceboxsku);
     Assert.assertEquals(status, Credentails.status);
     Assert.assertEquals(statusCode, Credentails.statusCode);
     Assert.assertEquals(additionalInfo, Credentails.additionalInfo);
-//    Assert.assertEquals(length, Credentails.length);
-//    Assert.assertEquals(width, Credentails.width);
-//    Assert.assertEquals(height, Credentails.height);
-//    Assert.assertEquals(weightUnit, Credentails.weightUni);
-//    Assert.assertEquals(actualWeight, Credentails.actualWeight);
-
 
     
    

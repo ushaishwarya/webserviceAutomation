@@ -3,6 +3,7 @@ package v3.Get.api;
 import org.testng.annotations.Test;
 
 
+
 import org.testng.Assert;
 
 
@@ -19,7 +20,7 @@ public class LatestMeasurementImage extends CommonMethods{
 
 	@Test
 	public void Latestmeasurementimage() {
-    RestAssured.baseURI=Credentails.v3;
+    RestAssured.baseURI=Credentails.baseurl;
 
     Response response = RestAssured
         .given()
@@ -27,7 +28,7 @@ public class LatestMeasurementImage extends CommonMethods{
 		.header("System-Token",Credentails.systemid)
 		.header("Authorization","Bearer "+accessToken)
         .when()
-        .get("/image")
+        .get("v3/image")
         .then()
         .extract()
         .response();
@@ -39,7 +40,7 @@ public class LatestMeasurementImage extends CommonMethods{
 	
 	@Test
 	public void Unauthorized() {
-    RestAssured.baseURI=Credentails.v3;
+    RestAssured.baseURI=Credentails.baseurl;
 
     Response response = RestAssured
         .given()
@@ -47,7 +48,7 @@ public class LatestMeasurementImage extends CommonMethods{
 		.header("System-Token","")
 		.header("Authorization","Bearer "+"")
         .when()
-        .get("/image")
+        .get("v3/image")
         .then()
         .extract()
         .response();

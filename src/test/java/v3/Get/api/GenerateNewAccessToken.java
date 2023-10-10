@@ -24,7 +24,7 @@ public class GenerateNewAccessToken extends CommonMethods{
 	    String refreshToken = tokens[1];
 	    
 	    
-	    RestAssured.baseURI =Credentails.v3;
+	    RestAssured.baseURI =Credentails.baseurl;
 	    
 	    
 	    
@@ -34,7 +34,7 @@ public class GenerateNewAccessToken extends CommonMethods{
 	            .header("x-refresh-token", refreshToken)
 	            
 	            .when()
-	            .post("/auth/refresh-access")
+	            .post("v3/auth/refresh-access")
 	            .then()
 	            .extract()
 	            .response();
@@ -50,7 +50,7 @@ public class GenerateNewAccessToken extends CommonMethods{
 	    String refreshToken = tokens[1];
 	    
 	    
-	    RestAssured.baseURI =Credentails.v3;
+	    RestAssured.baseURI =Credentails.baseurl;
 	    
 	    
 	    
@@ -60,7 +60,7 @@ public class GenerateNewAccessToken extends CommonMethods{
 	            .header("x-refresh-token", accessToken)
 	            
 	            .when()
-	            .post("/auth/refresh-access")
+	            .post("v3/auth/refresh-access")
 	            .then()
 	            .extract()
 	            .response();

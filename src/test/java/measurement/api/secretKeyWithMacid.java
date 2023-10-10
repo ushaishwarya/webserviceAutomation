@@ -2,7 +2,6 @@ package measurement.api;
 
 import org.testng.annotations.Test;
 
-import credentails.Credentails;
 
 import static io.restassured.RestAssured.given;
 
@@ -19,10 +18,9 @@ public class secretKeyWithMacid {
 	@Test
 	public static String[] shared_Key() {
 		
-		
-		
 		System.out.println("MacId:");
 		
+		@SuppressWarnings("resource")
 		Scanner sc=new Scanner(System.in);
 
 		String macid=sc.nextLine();

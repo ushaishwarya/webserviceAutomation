@@ -1,55 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [WebServiceTesting]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="API Tests - GetMeasurementDataByRange(failed)">
-    <classes>
-      <class name="v2.Get.api.GetMeasurementDatabyRange">
-        <methods>
-          <include name="assertthedaterange"/>
-        </methods>
-      </class> <!-- v2.Get.api.GetMeasurementDatabyRange -->
-    </classes>
-  </test> <!-- API Tests - GetMeasurementDataByRange(failed) -->
-  <test thread-count="5" name="API Tests - MeasurementImagebyID(failed)">
-    <classes>
-      <class name="v2.Get.api.MeasurementImagebyID">
-        <methods>
-          <include name="testNoImageFound"/>
-        </methods>
-      </class> <!-- v2.Get.api.MeasurementImagebyID -->
-    </classes>
-  </test> <!-- API Tests - MeasurementImagebyID(failed) -->
-  <test thread-count="5" name="API Tests - ListMeasurementIDandDates(failed)">
-    <classes>
-      <class name="v2.Get.api.ListMeasurementIDandDates">
-        <methods>
-          <include name="ScanIdList"/>
-        </methods>
-      </class> <!-- v2.Get.api.ListMeasurementIDandDates -->
-      <class name="v3.Get.api.ListMeasurementIDandDates">
-        <methods>
-          <include name="testScanIdListEndpoint"/>
-        </methods>
-      </class> <!-- v3.Get.api.ListMeasurementIDandDates -->
-      <class name="v1.Get.api.ListMeasurementIDandDates">
-        <methods>
-          <include name="ScanIdListEndpoint"/>
-        </methods>
-      </class> <!-- v1.Get.api.ListMeasurementIDandDates -->
-    </classes>
-  </test> <!-- API Tests - ListMeasurementIDandDates(failed) -->
   <test thread-count="5" name="API Tests - Version 3(failed)">
     <classes>
-      <class name="v3.Get.api.GetAllMeasurementDatabySKU">
-        <methods>
-          <include name="noMeasurement"/>
-        </methods>
-      </class> <!-- v3.Get.api.GetAllMeasurementDatabySKU -->
       <class name="v3.Get.api.LiveMeasurementCheck">
         <methods>
           <include name="liveMeasurementCheck200status"/>
         </methods>
       </class> <!-- v3.Get.api.LiveMeasurementCheck -->
+      <class name="v3.Get.api.GetMeasurementArtifactImage">
+        <methods>
+          <include name="Get_Measurement_Artifact_Image_v3"/>
+        </methods>
+      </class> <!-- v3.Get.api.GetMeasurementArtifactImage -->
     </classes>
   </test> <!-- API Tests - Version 3(failed) -->
 </suite> <!-- Failed suite [WebServiceTesting] -->

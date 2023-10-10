@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [WebServiceTesting]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="API Tests - Version 3(failed)">
     <classes>
-      <class name="v1.Get.api.ListMeasurementIDandDates">
+      <class name="v3.Get.api.LiveMeasurementCheck">
         <methods>
-          <include name="ScanIdListEndpoint"/>
+          <include name="liveMeasurementCheck200status"/>
         </methods>
-      </class> <!-- v1.Get.api.ListMeasurementIDandDates -->
+      </class> <!-- v3.Get.api.LiveMeasurementCheck -->
+      <class name="v3.Get.api.GetMeasurementArtifactImage">
+        <methods>
+          <include name="Get_Measurement_Artifact_Image_v3"/>
+        </methods>
+      </class> <!-- v3.Get.api.GetMeasurementArtifactImage -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- API Tests - Version 3(failed) -->
+</suite> <!-- Failed suite [WebServiceTesting] -->
