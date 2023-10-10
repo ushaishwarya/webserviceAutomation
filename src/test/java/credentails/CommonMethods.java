@@ -36,7 +36,7 @@ public class CommonMethods {
 		for(String key:exceptedkey) {
 			assertTrue(exceptedkeystore.contains(key),"Key"+key+"key does not get in Live calibration response");
 		}
-		
+		//
 		//Extract value from key
 		JsonPath jsonPath = response.jsonPath();
 		
